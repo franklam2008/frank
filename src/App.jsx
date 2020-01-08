@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="container-fluid">
+        <div className="container-fluid ">
           <Row>
             <Col xs={2} lg={1}></Col>
             <Col xs={2} lg={1} className="sideBarMenu bg-dark ">
