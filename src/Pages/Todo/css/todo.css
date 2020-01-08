@@ -1,0 +1,11 @@
+.todoCon .clearDiv {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todoCon .clearDiv div {
+  margin: 0 auto;
+  padding-top: 7px;
+}
+/*# sourceMappingURL=todo.css.map */
