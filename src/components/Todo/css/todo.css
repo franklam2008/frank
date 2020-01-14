@@ -1,0 +1,57 @@
+.todoCon .container {
+  background-color: white;
+  max-width: 800px;
+  border-radius: 10px;
+  -webkit-box-shadow: 7px 7px 5px 3px #9b9b9b;
+          box-shadow: 7px 7px 5px 3px #9b9b9b;
+}
+
+.todoCon .container .title,
+.todoCon .container .list {
+  border-bottom: 1px solid #c4c4c4;
+  padding: 20px;
+}
+
+.todoCon .container .title h5 {
+  color: #222222;
+}
+
+.todoCon .container .title h6 {
+  color: #a0a0a0;
+}
+
+.todoCon .container .list {
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.todoCon .container .footer {
+  padding: 20px;
+}
+
+.todoCon .container .todoName {
+  margin-left: 15px;
+}
+
+.todoCon .clearDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todoCon .clearDiv div {
+  margin: 0 auto;
+  padding-top: 7px;
+}
+
+@media only screen and (max-width: 600px) {
+  .addTodo {
+    margin-bottom: 15px;
+  }
+  .title h6 {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=todo.css.map */

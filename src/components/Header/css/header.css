@@ -1,0 +1,191 @@
+.App .container-fluid .row #openCol {
+  width: 180px;
+}
+
+.App .container-fluid .row .sideBarMenu {
+  height: 100vh;
+  padding: 0;
+  width: 80px;
+  overflow: hidden;
+  background-color: #2d3338;
+  position: fixed;
+  -webkit-box-shadow: -4px 0px 7px 9px #3f3f3f;
+          box-shadow: -4px 0px 7px 9px #3f3f3f;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.App .container-fluid .row .sideBarMenu ul {
+  height: calc(var(--vh, 1vh) * 100);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.App .container-fluid .row .sideBarMenu ul li a {
+  padding: 0px;
+}
+
+.App .container-fluid .row .sideBarMenu ul img {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 60px;
+}
+
+.App .container-fluid .row .sideBarMenu ul span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f8f8f8;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: 10px;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuItem {
+  text-align: left;
+  padding: 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 20px;
+  border-left: 2px solid rgba(0, 0, 0, 0);
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuItem svg {
+  font-size: 40px;
+  color: whitesmoke;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuItem:hover {
+  background-color: rgba(29, 29, 29, 0.705);
+}
+
+.App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem {
+  background-color: rgba(29, 29, 29, 0.705);
+  border-left: 2px solid #858585;
+}
+
+.App .container-fluid .row .sideBarMenu ul a.activeLink svg {
+  font-size: 40px;
+  color: #00c4fb;
+}
+
+.menuMainIcon {
+  margin-bottom: 30px;
+}
+
+.tooltip-inner {
+  font-size: 16px;
+}
+
+.activeLink .btn svg,
+.activeLink span {
+  color: #00cbff !important;
+}
+
+/* spin starts */
+.spin-it-once {
+  -webkit-animation: spin 1.2s;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.2s;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+.spin-infinite {
+  -webkit-animation: spin 2.0s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2.0s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes resize {
+  0%,
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+
+@keyframes resize {
+  0%,
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+
+/* spin ends */
+@media only screen and (max-width: 600px) {
+  .menuMainIcon {
+    margin-bottom: 20px;
+  }
+  .App .container-fluid .row #openCol {
+    width: 160px;
+  }
+  .App .container-fluid .row .sideBarMenu {
+    width: 60px;
+  }
+  .App .container-fluid .row .sideBarMenu ul img {
+    margin-left: 5px;
+    padding-top: 10px;
+    width: 50px;
+  }
+  .App .container-fluid .row .sideBarMenu ul .menuItem {
+    padding: 15px 10px;
+    padding-left: 10px;
+  }
+  .App .container-fluid .row .sideBarMenu ul .btn {
+    width: 100%;
+    padding: 10px 0 10px 0;
+  }
+}
+/*# sourceMappingURL=header.css.map */

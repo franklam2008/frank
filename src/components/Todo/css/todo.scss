@@ -1,0 +1,55 @@
+// *{color:black !important}
+.todoCon {
+  .container {
+    background-color: rgb(255, 255, 255);
+    max-width: 800px;
+    border-radius: 10px;
+      box-shadow: 7px 7px 5px 3px #9b9b9b;
+      
+    .title,
+    .list {
+      border-bottom: 1px solid rgb(196, 196, 196);
+      padding: 20px;
+    }
+    .title {
+      h5{
+        color:rgb(34, 34, 34)
+
+      }
+      h6{
+        color:rgb(160, 160, 160)
+      }
+    }
+    .list {
+      border-bottom: 1px solid rgb(196, 196, 196);
+    }
+    .footer {
+      padding: 20px;
+    }
+    .todoName{
+      
+      margin-left: 15px;
+    }
+  }
+  .clearDiv {
+    display: flex;
+    div {
+      margin: 0 auto;
+      padding-top: 7px;
+    }
+    // .btn {
+    // }
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .addTodo{
+    margin-bottom: 15px;
+  }
+  .title {
+    
+    h6{
+      font-size: 14px;
+    }
+  }
+}

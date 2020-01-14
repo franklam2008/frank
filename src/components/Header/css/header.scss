@@ -1,0 +1,155 @@
+.App {
+  .container-fluid .row {
+    #openCol {
+      width: 180px;
+    }
+    .sideBarMenu {
+      height: 100vh;
+      padding: 0;
+      width: 80px;
+      overflow: hidden;
+      background-color: rgb(45, 51, 56);
+      position: fixed;
+      box-shadow: -4px 0px 7px 9px #3f3f3f;
+      z-index: 1;
+      transition: all 0.4s;
+      ul {
+        height: calc(var(--vh, 1vh) * 100);
+        justify-content: space-between;
+        padding: 30px 0px;
+        li {
+          a {
+            padding: 0px;
+          }
+        }
+        img {
+          //   menu img
+          margin-left: 10px;
+          margin-top: 20px;
+          width: 60px;
+        }
+        span {
+          font-size: 20px;
+          font-weight: 500;
+          color: rgb(248, 248, 248);
+          transition: all 0.4s;
+          align-self: center;
+          padding-left: 10px;
+        }
+        .menuItem {
+          text-align: left;
+          padding: 20px 10px;
+          display: flex;
+          padding-left: 20px;
+          border-left: 2px solid rgba(0, 0, 0, 0);
+          svg {
+            // menu icon
+            font-size: 40px;
+            color: rgb(245, 245, 245);
+            transition: all 0.4s;
+          }
+        }
+        .menuItem:hover {
+          background-color: rgba(29, 29, 29, 0.705);
+        }
+        a.activeLink {
+          .menuItem {
+            background-color: rgba(29, 29, 29, 0.705);
+            border-left: 2px solid rgb(133, 133, 133);
+          }
+          svg {
+            // menu icon
+            font-size: 40px;
+            color: rgb(0, 196, 251);
+          }
+        }
+      }
+    }
+  }
+}
+.menuMainIcon {
+  margin-bottom: 30px;
+}
+.tooltip-inner {
+  font-size: 16px;
+}
+.activeLink .btn svg,
+.activeLink span {
+  color: rgb(0, 203, 255) !important;
+}
+
+/* spin starts */
+.spin-it-once{
+  -webkit-animation: spin 1.2s ; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.2s ; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.spin-infinite{
+  -webkit-animation: spin 2.0s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2.0s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+@keyframes resize {
+  0%,
+  100% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+/* spin ends */
+@media only screen and (max-width: 600px) {
+  .menuMainIcon {
+    margin-bottom: 20px;
+  }
+  .App {
+    .container-fluid .row {
+      #openCol {
+        width: 160px;
+      }
+
+      .sideBarMenu {
+        width: 60px;
+        ul {
+          img {
+            //   menu img
+            margin-left: 5px;
+            padding-top: 10px;
+            width: 50px;
+          }
+          .menuItem {
+            padding: 15px 10px;
+            padding-left: 10px;
+          }
+        }
+        ul .btn {
+          width: 100%;
+          padding: 10px 0 10px 0;
+        }
+      }
+    }
+  }
+}

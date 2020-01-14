@@ -1,0 +1,11 @@
+.aboutCon .madeWith {
+  color: #c62828;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.aboutCon .madeWith svg {
+  font-size: 25px;
+  padding-bottom: 7.5px;
+}
+/*# sourceMappingURL=about.css.map */

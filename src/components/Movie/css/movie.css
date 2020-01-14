@@ -1,0 +1,128 @@
+.movieCon {
+  padding-bottom: 20px;
+}
+
+.movieCon .input-group {
+  padding-top: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.movieCon .inputError {
+  margin-top: 100px;
+  text-align: center;
+  color: red;
+}
+
+.movieCon .card {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.movieCon .card .card-body {
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.movieCon .card-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.movieCon .card-title .score {
+  color: white;
+  background-color: #3ad474;
+  border-radius: 50%;
+  height: 40px;
+  min-width: 40px;
+  display: inline-block;
+  padding-top: 4px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.movieCon .card-title .score span {
+  background: #353535;
+  padding-top: 6px;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  color: white;
+  display: inline-block;
+}
+
+.movieCon .movieList .card-text {
+  overflow: hidden;
+  margin: 0;
+}
+
+.movieCon .movieList {
+  padding: 0 20px;
+}
+
+.movieCon .card .imgCon {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 300px;
+  overflow: hidden;
+}
+
+.movieCon .card .imgCon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.movieCon .card .imgCon * {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.movieCon .card .cardFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movieCon .card .cardFooter .date {
+  font-size: 12px;
+}
+
+.movieCon .card .cardFooter a {
+  color: white;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .movieCon .card .card-text {
+    margin-bottom: 12px;
+  }
+}
+/*# sourceMappingURL=movie.css.map */

@@ -1,0 +1,103 @@
+.userLoginCon .modal-content {
+  margin: 0 auto;
+  -webkit-box-shadow: 5px 5px 3px 3px rgba(56, 56, 56, 0.562);
+          box-shadow: 5px 5px 3px 3px rgba(56, 56, 56, 0.562);
+}
+
+.userLoginCon .modal-content .modal-header {
+  border: none;
+}
+
+.userLoginCon .modal-content .modal-body {
+  margin: 0 auto;
+  min-width: 500px;
+  min-height: 400px;
+  max-width: 700px;
+}
+
+.userLoginCon .modal-content .modal-body .loginImgCol {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.userLoginCon .modal-content .modal-body .loginImgCol .loginImg {
+  width: 100%;
+}
+
+.userLoginCon .modal-content .modal-body .loginHeader {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.userLoginCon .modal-content .modal-body .lockIcon {
+  font-size: 40px;
+  color: #ff5252;
+}
+
+.userLoginCon .modal-content .hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+}
+
+.userLoginCon .modal-content .hr-text:before {
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#818078), to(transparent));
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+.userLoginCon .modal-content .hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #fcfcfa;
+}
+
+.userLoginCon .modal-content .modal-footer {
+  border: none;
+}
+
+.userLoginCon .btn {
+  -webkit-box-shadow: 1px 1px 1.5px 0.5px rgba(56, 56, 56, 0.288);
+          box-shadow: 1px 1px 1.5px 0.5px rgba(56, 56, 56, 0.288);
+}
+
+.userLoginCon .btn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+@media only screen and (max-width: 600px) {
+  .userLoginCon .modal-content {
+    width: 100%;
+  }
+  .userLoginCon .modal-content .modal-body {
+    min-width: 100%;
+    min-height: 400px;
+  }
+  .loginImgCol .loginImg {
+    max-width: 170px;
+  }
+}
+/*# sourceMappingURL=userLogin.css.map */

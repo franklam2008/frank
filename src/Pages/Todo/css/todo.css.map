@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAEE,QAFM,CAEN,SAAS,CAAA;EAKP,eAAe,EAAE,aAAa;CAC/B;;AARH,AAGI,QAHI,CAEN,SAAS,CACP,GAAG,CAAA;EACD,MAAM,EAAE,MAAM;EACd,WAAW,EAAE,GAAG;CACjB",
-    "sources": [
-        "todo.scss"
-    ],
-    "names": [],
-    "file": "todo.css"
-}

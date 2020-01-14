@@ -1,0 +1,71 @@
+.signUpBtnCon {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.signUp-btn {
+  border-radius: 50%;
+  margin-left: 12px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  display: inline-block;
+  background: -webkit-gradient(linear, left top, right top, from(#6675ff), to(#4499fa));
+  background: linear-gradient(to right, #6675ff, #4499fa);
+  -webkit-box-shadow: 5px 5px 7px 3px #181818;
+          box-shadow: 5px 5px 7px 3px #181818;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.signUp-btn div {
+  background: #3a3a3a;
+  border-radius: 50%;
+  height: 52px;
+  width: 52px;
+  color: #f8f8f8;
+  padding-top: 8px;
+  font-size: 20px;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+.signUp-btn div:hover {
+  background: #eeeeee;
+  color: #222;
+}
+
+.signUp-btn:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#4499fa), to(#6675ff));
+  background: linear-gradient(to right, #4499fa, #6675ff);
+  -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+  -webkit-box-shadow: 0px 0px 0px 0px #222;
+          box-shadow: 0px 0px 0px 0px #222;
+}
+
+@media only screen and (max-width: 600px) {
+  .signUp-btn {
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+    padding: 3px;
+    -webkit-box-shadow: 3px 3px 5px 2px #181818;
+            box-shadow: 3px 3px 5px 2px #181818;
+  }
+  .signUp-btn div {
+    height: 44px;
+    width: 44px;
+    padding-top: 5px;
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=userBtn.css.map */
