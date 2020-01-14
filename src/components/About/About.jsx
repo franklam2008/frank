@@ -24,7 +24,7 @@ export default function About() {
   return (
     <div className="aboutCon">
       <div className="mainTitle">About</div>
-      <p>This is a ReactJS Application with Authentication.</p>
+      <p>This is a ReactJS Application with Authentication from Firebase.</p>
       <p>Feel free to visit my personal Website.</p>
       <a
         href="https://www.ifranklam.com"
