@@ -1,0 +1,12 @@
+.lolCon {
+  color: var(--textWhite);
+}
+
+.lolChamp {
+  min-height: 200px;
+}
+
+.red {
+  background-color: red;
+}
+/*# sourceMappingURL=Lol.css.map */

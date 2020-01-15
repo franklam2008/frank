@@ -1,5 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import { BrowserRouter as Router, Route ,Redirect} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from "react-router-dom";
 // pages
 import Header from "../Header/Header.jsx";
 import PokemonApp from "../Pokemon/PokemonApp.jsx";
@@ -17,6 +22,9 @@ import { Row, Col } from "react-bootstrap";
 import "./AppEventListener";
 // import { StoreProvider } from "../Store/Store-provider.jsx";
 import { UserProvider } from "../Firebase/FirebaseStore.jsx";
+import LolApp from "../Lol/LolApp.jsx";
+
+// fetch('https://api.darksky.net/forecast/d130903942442b3ccae7c1f6a56c60c2/37.8267,-122.4233').then(blob=>blob.json()).then(data=>console.log(data))
 
 function App() {
   const [openCol, setOpenCol] = useState(false);
@@ -29,7 +37,7 @@ function App() {
         <div className="App">
           <div className="container-fluid">
             <Row>
-              <Col className="backSideBar" xs={0} lg={1}></Col>
+              <Col className="backSideBar" xs={0} sm={1} md={1}lg={1}></Col>
               <Col
                 id={openCol ? "openCol" : undefined}
                 className="sideBarMenu"
@@ -37,15 +45,24 @@ function App() {
               >
                 <Header setOpenCol={setOpenCol} openCol={openCol} />
               </Col>
-              <Col xs={12} lg={11} className="mainCon">
-                {/* Paths to different Pages */}
-                <Redirect exact from="/" to="/home" />
-                <Route path="/home" component={Home} />
-                <Route path="/Pokemon" component={PokemonApp} />
-                <Route path="/MovieList" component={MovieApp} />
-                <Route path="/Todo" component={TodoApp} />
-                <Route path="/about" component={About} />
-                <Route path="/counter" component={Counter} />
+              <Col
+                xs={12}
+                md={11}sm={11}
+                lg={11}
+                id={openCol ? "mainConDark" : " "}
+                className="mainCon"
+              >
+                <Switch>
+                  {/* Paths to different Pages */}
+                  <Route exact path="/" component={Home} />
+                  <Route path="/pokemon" component={PokemonApp} />
+                  <Route path="/movieList" component={MovieApp} />
+                  <Route path="/todo" component={TodoApp} />
+                  <Route path="/lol" component={LolApp} />
+                  <Route path="/about" component={About} />
+                  <Route path="/counter" component={Counter} />
+                  <Route render={() => <Redirect to="/" />} />
+                </Switch>
               </Col>
             </Row>
           </div>

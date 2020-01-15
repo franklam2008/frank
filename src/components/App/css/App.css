@@ -44,6 +44,19 @@
   opacity: 0;
 }
 
+#mainConDark:after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  mix-blend-mode: multiply;
+}
+
 .pageBtn {
   background-color: var(--pinkSaved) !important;
   color: white !important;
@@ -65,6 +78,9 @@
   .mainTitle {
     margin: 0 auto;
     text-align: center;
+  }
+  #mainConDark:after {
+    background: rgba(0, 0, 0, 0.75);
   }
 }
 /*# sourceMappingURL=App.css.map */

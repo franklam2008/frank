@@ -10,7 +10,7 @@ export default function Home({ authUser }) {
     <section>
       <div className="loginHeader">
         <TiHomeOutline className="lockIcon" />
-        <h4>Hi, {authUser.displayName || authUser.email}</h4>
+        <h4>Hi, {authUser.displayName ?? "Guest"}</h4>
       </div>
       <p>Email: {authUser.email}</p>
 

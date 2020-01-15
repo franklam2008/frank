@@ -1,15 +1,15 @@
 import React, { createContext, useReducer, useContext, useEffect } from "react";
 import fire from "../../config/Fire";
 
-const noUser = {
-  //dom will return error when reading authUser.email when authUser = null
-  displayName: null,
-  email: null
-};
+// const noUser = {
+//   //dom will return error when reading authUser.email when authUser = null
+//   displayName: null,
+//   email: null
+// };
 const defaultState = {
   counter: 0,
   login: false,
-  authUser: noUser,
+  authUser: null,
   db: {}
 };
 
@@ -41,7 +41,7 @@ function reducer(state = defaultState, action = {}) {
       readDatabase(uid);
       return { ...state, login: true, authUser: action.payload };
     case "REMOVE_USER":
-      return { ...state, login: false, authUser: noUser };
+      return { ...state, login: false, authUser: null };
     case "ADD_DB":
       return { ...state, db: action.payload };
     case "ADD_POKEMON":
@@ -67,7 +67,7 @@ function readDatabase(uid) {
     .child(uid);
   dbRef.on("value", snapshot => {
     //do sth
-    console.log(snapshot.val());
+    // console.log(snapshot.val());
   });
 }
 function writeUserData(userId, name, email) {

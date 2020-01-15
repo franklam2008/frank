@@ -23,12 +23,12 @@
   font-weight: 800;
   padding: 30px;
   color: var(--textWhite);
-  img{
+  img {
     width: 50px;
-    
+
     padding-right: 10px;
   }
-  .subTitle{
+  .subTitle {
     font-size: 1rem;
     font-weight: 500;
     color: var(--subTextWhite);
@@ -37,12 +37,24 @@
 .hide {
   opacity: 0;
 }
-.pageBtn{
+#mainConDark:after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  mix-blend-mode: multiply;
+}
+.pageBtn {
   background-color: var(--pinkSaved) !important;
   color: white !important;
-  border: none!important;
+  border: none !important;
 }
-.pageBtn:hover{
+.pageBtn:hover {
   background-color: rgb(201, 64, 105) !important;
 }
 .capitalize {
@@ -54,9 +66,12 @@
     opacity: 0 !important;
   }
   .mainTitle {
-    
     margin: 0 auto;
     text-align: center;
+  }
+  #mainConDark:after {
     
+    background: rgba(0, 0, 0, 0.75);
+   
   }
 }

@@ -1,5 +1,5 @@
 .App .container-fluid .row #openCol {
-  width: 180px;
+  width: 200px;
 }
 
 .App .container-fluid .row .sideBarMenu {
@@ -9,7 +9,7 @@
   width: 80px;
   overflow: hidden;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -98,7 +98,7 @@
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem {
   background-color: var(--darkBlueSaved);
-  border-left: 2px solid var(--pink);
+  border-left: 2px solid var(--pinkSaved);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink svg {
@@ -107,10 +107,6 @@
 
 .menuMainIcon {
   margin-bottom: 30px;
-}
-
-.tooltip-inner {
-  font-size: 16px;
 }
 
 /* spin starts */
@@ -192,6 +188,7 @@
     width: 160px;
     height: 100vh;
     background-color: var(--blueSaved);
+    border-right: 2px solid var(--pinkSaved);
   }
   .App .container-fluid .row .sideBarMenu {
     height: 80px;

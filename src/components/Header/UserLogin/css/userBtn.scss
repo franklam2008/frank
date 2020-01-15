@@ -1,56 +1,55 @@
-.signUpBtnCon{
-          cursor: pointer;
-          display: flex;
+.signUpBtnCon {
+  cursor: pointer;
+  display: flex;
 }
 .signUp-btn {
+  border-radius: 50%;
+  margin-left: 12px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  display: inline-block;
+  background: linear-gradient(to right, rgb(102, 117, 255), rgb(68, 153, 250));
+  box-shadow: 3px 3px 7px 1px rgb(24, 24, 24);
+  transition: all 0.4s;
+  cursor: pointer;
+  div {
+    background: rgb(58, 58, 58);
     border-radius: 50%;
-    margin-left:12px;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    justify-content: center;
-    padding: 4px;
-    border-radius: 50%;
-    display: inline-block;
-    background: linear-gradient(to right, rgb(102, 117, 255), rgb(68, 153, 250));
-    box-shadow: 3px 3px 7px 1px rgb(24, 24, 24);
-    transition: all 0.4s;
-    cursor: pointer;
+    height: 52px;
+    width: 52px;
+    color: rgb(248, 248, 248);
+    padding-top: 8px;
+    font-size: 20px;
+    transition: background-color 0.4s;
+  }
+  div:hover {
+    background: rgb(238, 238, 238);
+    color: #222;
+  }
+}
+.signUp-btn:hover {
+  background: linear-gradient(to right, rgb(68, 153, 250), rgb(102, 117, 255));
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #222;
+}
+
+@media only screen and (max-width: 600px) {
+  .signUp-btn {
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+    padding: 3px;
+    box-shadow: 3px 3px 5px 2px rgb(24, 24, 24);
+
     div {
-      background: rgb(58, 58, 58);
-      border-radius: 50%;
-      height: 52px;
-      width: 52px;
-      color: rgb(248, 248, 248);
-      padding-top: 8px;
-      font-size: 20px;
-      transition: background-color 0.4s;
-    }
-    div:hover {
-      background: rgb(238, 238, 238);
-      color: #222;
+      height: 44px;
+      width: 44px;
+      padding-top: 5px;
+      font-size: 18px;
     }
   }
-  .signUp-btn:hover {
-    background: linear-gradient(to right,rgb(68, 153, 250), rgb(102, 117, 255));
-    transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0px 0px #222;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .signUp-btn {
-      margin-left: 5px;
-      height: 50px;
-      width: 50px;
-      padding: 3px;
-      box-shadow: 3px 3px 5px 2px rgb(24, 24, 24);
-  
-      div {
-        height: 44px;
-        width: 44px;
-        padding-top: 5px;
-        font-size: 18px;
-      }
-    }
-  }
-  
+}

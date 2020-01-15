@@ -3,7 +3,7 @@ import UserLogin from "./UserLogin/UserLogin.jsx";
 import { NavLink } from "react-router-dom";
 import { Tooltip, OverlayTrigger } from "react-bootstrap";
 //css & icon & Img
-import { GiGlassBall } from "react-icons/gi";
+import { GiGlassBall, GiCrossedSwords } from "react-icons/gi";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import {
@@ -18,58 +18,51 @@ export default function Header({ openCol, setOpenCol }) {
   return (
     <ul className="nav flex-column">
       <li>
-        <div className=" menuIconCon"  onClick={() => {setOpenCol(!openCol);spin_once()}}>
+        <div
+          className="menuIconCon"
+          onClick={() => {
+            setOpenCol(!openCol);
+            spin_once();
+          }}
+        >
           <IoIosMenu />
-          <div id={spinOnce?"menuCircle":" "} className={
-              spinOnce
-                ? "spin-it-once menuCircle"
-                : "menuCircle"
-            }></div>
-
+          <div
+            id={spinOnce ? "menuCircle" : " "}
+            className={spinOnce ? "spin-it-once menuCircle" : "menuCircle"}
+          ></div>
         </div>
-        {/* <div>
-          <img
-            className={
-              spinOnce
-                ? "spin-it-once  nav-item menuMainIcon"
-                : "menuMainIcon nav-item"
-            }
-            src={reactImg}
-            draggable={false}
-            alt="react"
-            onClick={() => spin_once()}
-          />
-          {openCol && (
-            <span className={!openCol ? "hide" : undefined}>Close</span>
-          )}
-        </div> */}
 
         {[
           {
             name: "Dashboard",
             icon: MdDashboard,
-            link: "/home"
+            link: "/"
           },
           {
             name: "Movie",
             icon: MdLocalMovies,
-            link: "/MovieList"
+            link: "movieList"
           },
           {
             name: "Pokemon",
             icon: GiGlassBall,
-            link: "/Pokemon"
+            link: "pokemon"
           },
-          
+          {
+            name: "League",
+            icon: GiCrossedSwords,
+            link: "lol"
+          },
+
           {
             name: "Todo",
             icon: MdFormatListBulleted,
-            link: "/Todo"
+            link: "todo"
           },
           {
             name: "About",
             icon: AiOutlineQuestionCircle,
-            link: "/about"
+            link: "about"
           }
         ].map(item => (
           <OverlayTrigger
@@ -80,6 +73,7 @@ export default function Header({ openCol, setOpenCol }) {
             <NavLink
               className="nav-link nav-item"
               activeClassName="activeLink"
+              exact
               to={item.link}
             >
               <div className="menuItem">
@@ -97,17 +91,12 @@ export default function Header({ openCol, setOpenCol }) {
       </li>
     </ul>
   );
+
   function spin_once() {
     //spin items
     setSpinOnce(true);
     setTimeout(function() {
       setSpinOnce(false);
     }, 950);
-
-    // setSpinOnce(false)
-    // this.classList.remove("spin-it-once");
-
-    // void this.offsetWidth;
-    // this.classList.add("spin-it-once");
   }
 }
