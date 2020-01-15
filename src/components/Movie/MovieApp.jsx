@@ -20,18 +20,18 @@ export default function Movie() {
   );
 
   useEffect(() => {
-    let one = currentPageUrl;
-    let two = changePageNum(currentPageUrl, true, null, true);
+    // let one = currentPageUrl;
+    // let two = changePageNum(currentPageUrl, true, null, true);
     // let three = "https://api.storyblok.com/v1/cdn/stories/vue?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt";
 
-    const requestOne = axios.get(one);
-    const requestTwo = axios.get(two);
+    // const requestOne = axios.get(one);
+    // const requestTwo = axios.get(two);
     // const requestThree = axios.get(three);
 
-    axios
-      .all([requestOne, requestTwo])
-      .then(
-        axios.spread((...responses) => {
+    // axios
+    //   .all([requestOne, requestTwo])
+    //   .then(
+    //     axios.spread((...responses) => {
           // const responseOne = responses[0];
           // const responseTwo = responses[1];
           // if (responseOne.data.results.length !== 0) {
@@ -54,11 +54,11 @@ export default function Movie() {
 
           // const responesThree = responses[2]
           // use/access the results
-        })
-      )
-      .catch(errors => {
+        // })
+      // )
+      // .catch(errors => {
         // react on errors.
-      });
+      // });
 
     axios.get(currentPageUrl).then(response => {
       // console.log(response)
@@ -75,7 +75,7 @@ export default function Movie() {
       setLoading(false);
     });
 
-    //fetch to check next page available
+    // fetch to check next page available
     axios
       .get(changePageNum(currentPageUrl, true, null, true))
       .then(response => {

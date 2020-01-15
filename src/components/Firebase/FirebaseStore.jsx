@@ -28,32 +28,11 @@ export function UserProvider({ children }) {
     });
   }, []);
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+
 }
 
 export const useStore = () => useContext(UserContext);
 
-function readDatabase(uid) {
-  const db = fire.database();
-  const dbRef = db
-    .ref()
-    .child("users")
-    .child(uid);
-  dbRef.on("value", snapshot => {
-    //do sth
-  });
-  
-}
-function writeUserData(userId, name, email) {
-  fire
-    .database()
-    .ref("users/" + userId)
-    .set({
-      username: name,
-      email: email
-      // profile_picture : imageUrl
-    });
-    
-}
 function reducer(state = defaultState, action = {}) {
   switch (action.type) {
     case "ADD_USER":
@@ -64,6 +43,8 @@ function reducer(state = defaultState, action = {}) {
     case "REMOVE_USER":
       return { ...state, login: false, authUser: noUser };
     case "ADD_DB":
+      return { ...state, db: action.payload };
+    case "ADD_POKEMON":
       return { ...state, db: action.payload };
     case "MINUS1":
       return { ...state, counter: state.counter - 1 };
@@ -76,4 +57,26 @@ function reducer(state = defaultState, action = {}) {
     default:
       return state;
   }
+}
+function readDatabase(uid) {
+
+  const db = fire.database();
+  const dbRef = db
+    .ref()
+    .child("users")
+    .child(uid);
+  dbRef.on("value", snapshot => {
+    //do sth
+    console.log(snapshot.val());
+  });
+}
+function writeUserData(userId, name, email) {
+  fire
+    .database()
+    .ref("users/" + userId)
+    .set({
+      username: name,
+      email: email
+      // profile_picture : imageUrl
+    });
 }

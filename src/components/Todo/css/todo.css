@@ -12,7 +12,8 @@
 }
 
 .todoCon .container .title h6 {
-  color: var(--textWhite);
+  color: var(--subTextWhite);
+  margin: 0;
 }
 
 .todoCon .container .list {

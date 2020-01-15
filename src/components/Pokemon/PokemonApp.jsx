@@ -4,6 +4,8 @@ import Pagination from "./Pagination.jsx";
 import PokemonList from "./PokemonList.jsx";
 import { Spinner } from "react-bootstrap";
 
+import pokeBallIcon from '../assets/img/pokeBallIcon.png'
+
 import "./css/pokemon.css";
 export default function Pokemon() {
   const [pokemon, setPokemon] = useState([]);
@@ -58,7 +60,10 @@ export default function Pokemon() {
 
   return (
     <section className="pokemonCon">
-      <div className="mainTitle">Pokemon</div>
+      <div className="mainTitle">
+      <img src={pokeBallIcon} alt="movie"/>
+        
+        Pokemon</div>
       <Pagination
         gotoNextPage={nextPageUrl ? gotoNextPage : null}
         gotoPrevPage={prevPageUrl ? gotoPrevPage : null}

@@ -51,15 +51,16 @@ export default function Header({ openCol, setOpenCol }) {
             link: "/home"
           },
           {
-            name: "Pokemon",
-            icon: GiGlassBall,
-            link: "/Pokemon"
-          },
-          {
             name: "Movie",
             icon: MdLocalMovies,
             link: "/MovieList"
           },
+          {
+            name: "Pokemon",
+            icon: GiGlassBall,
+            link: "/Pokemon"
+          },
+          
           {
             name: "Todo",
             icon: MdFormatListBulleted,

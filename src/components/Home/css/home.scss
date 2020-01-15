@@ -1,9 +1,35 @@
 .homeCon {
   position: relative;
   min-height: 200px;
-}
-.homeCon .header {
-  width: 100%;
-
+  .header {
+    width: 100%;
   
+    
+  }
+  .homeSectionCon{
+    background-color: var(--blueSaved);
+    border-radius: 20px;
+    min-height: 200px;
+    padding: 20px;
+    a{
+      padding: 0;
+    }
+    h3{
+      color: var(--lightBlueSaved);
+      font-size: 1.2rem;
+    }
+    h3:hover{
+      text-decoration: underline;
+    }
+  }
+  .movieCon{
+    img{
+      max-height: 200px;
+    }
+  }
+  .pokeCon{
+    img{
+      max-height: 80px;
+    }
+  }
 }

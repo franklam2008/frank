@@ -6,4 +6,32 @@
 .homeCon .header {
   width: 100%;
 }
+
+.homeCon .homeSectionCon {
+  background-color: var(--blueSaved);
+  border-radius: 20px;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.homeCon .homeSectionCon a {
+  padding: 0;
+}
+
+.homeCon .homeSectionCon h3 {
+  color: var(--lightBlueSaved);
+  font-size: 1.2rem;
+}
+
+.homeCon .homeSectionCon h3:hover {
+  text-decoration: underline;
+}
+
+.homeCon .movieCon img {
+  max-height: 200px;
+}
+
+.homeCon .pokeCon img {
+  max-height: 80px;
+}
 /*# sourceMappingURL=home.css.map */
