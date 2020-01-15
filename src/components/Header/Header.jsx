@@ -5,35 +5,44 @@ import { Tooltip, OverlayTrigger } from "react-bootstrap";
 //css & icon & Img
 import { GiGlassBall } from "react-icons/gi";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { IoIosMenu } from "react-icons/io";
 import {
   MdLocalMovies,
   MdFormatListBulleted,
   MdDashboard
 } from "react-icons/md";
 import "./css/header.css";
-import reactImg from "../assets/img/react.png";
 
 export default function Header({ openCol, setOpenCol }) {
   const [spinOnce, setSpinOnce] = useState(false);
   return (
     <ul className="nav flex-column">
       <li>
-          <div onClick={() => setOpenCol(!openCol)}>
-            <img
-              className={
-                spinOnce
-                  ? "spin-it-once  nav-item menuMainIcon"
-                  : "menuMainIcon nav-item"
-              }
-              src={reactImg}
-              draggable={false}
-              alt="react"
-              onClick={() => spin_once()}
-            />
-            {openCol && (
-              <span className={!openCol ? "hide" : undefined}>Close</span>
-            )}
-          </div>
+        <div className=" menuIconCon"  onClick={() => {setOpenCol(!openCol);spin_once()}}>
+          <IoIosMenu />
+          <div id={spinOnce?"menuCircle":" "} className={
+              spinOnce
+                ? "spin-it-once menuCircle"
+                : "menuCircle"
+            }></div>
+
+        </div>
+        {/* <div>
+          <img
+            className={
+              spinOnce
+                ? "spin-it-once  nav-item menuMainIcon"
+                : "menuMainIcon nav-item"
+            }
+            src={reactImg}
+            draggable={false}
+            alt="react"
+            onClick={() => spin_once()}
+          />
+          {openCol && (
+            <span className={!openCol ? "hide" : undefined}>Close</span>
+          )}
+        </div> */}
 
         {[
           {
@@ -92,7 +101,7 @@ export default function Header({ openCol, setOpenCol }) {
     setSpinOnce(true);
     setTimeout(function() {
       setSpinOnce(false);
-    }, 750);
+    }, 950);
 
     // setSpinOnce(false)
     // this.classList.remove("spin-it-once");

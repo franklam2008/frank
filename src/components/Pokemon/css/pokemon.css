@@ -57,6 +57,7 @@
 .pokemonCon .card .pokeName {
   color: var(--textWhite);
   text-align: center;
+  font-size: 1rem;
 }
 
 .modal-title {
@@ -190,5 +191,48 @@
 
 .fairy {
   background-color: #ffaec9;
+}
+
+@media only screen and (max-width: 600px) {
+  .pokemonCon .col-md-4 {
+    padding: 5px;
+    margin-bottom: 0;
+  }
+  .pokemonCon .card .imgCon {
+    margin: 0 auto;
+    background-color: var(--blueSaved);
+    border: 2px solid transparent;
+    text-align: center;
+    padding: .5rem;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  .pokemonCon .card .imgCon img {
+    height: 100%;
+    width: 100%;
+  }
+  .pokemonCon .card .imgCon * {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .pokemonCon .card .pokeName {
+    font-size: .8rem;
+  }
 }
 /*# sourceMappingURL=pokemon.css.map */

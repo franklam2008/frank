@@ -5,10 +5,10 @@
     }
     .sideBarMenu {
       height: 100vh;
+      background-color: var(--blueSaved);
       padding: 0;
       width: 80px;
       overflow: hidden;
-      background-color: var(--blueSaved);
       position: fixed;
       // box-shadow: -4px 0px 7px 9px #2F4967;
       z-index: 1;
@@ -22,11 +22,37 @@
             padding: 0px;
           }
         }
-        img {
-          //   menu img
-          margin-left: 10px;
-          margin-top: 20px;
-          width: 60px;
+        .menuIconCon {
+          text-align: left;
+          padding: 15px 15px;
+          display: flex;
+          position: relative;
+          cursor: pointer;
+          #menuCircle {
+            border-top-color: var(--pink);
+          }
+          .menuCircle {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            border-radius: 50%;
+            height: 56px;
+            width: 56px;
+
+            border-radius: 50%;
+            border: 10px solid transparent;
+          }
+          svg {
+            // menu icon
+            position: relative;
+            z-index: 99;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 50px;
+            background-color: var(--blueSaved);
+            color: rgb(245, 245, 245);
+            transition: all 0.4s;
+          }
         }
         span {
           font-size: 20px;
@@ -75,8 +101,8 @@
 
 /* spin starts */
 .spin-it-once {
-  -webkit-animation: spin 0.75s; /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 0.75s; /* Chrome, Firefox 16+, IE 10+, Opera */
+  -webkit-animation: spin 1s; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1s; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 .spin-infinite {
   -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
@@ -98,9 +124,9 @@
     transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
   }
   100% {
-    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(360deg); /* IE 9 */
-    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: rotate(1060deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(1060deg); /* IE 9 */
+    transform: rotate(1060deg); /* Firefox 16+, IE 10+, Opera */
   }
 }
 @keyframes spin {
@@ -110,36 +136,58 @@
     transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
   }
   100% {
-    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(360deg); /* IE 9 */
-    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: rotate(1060deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(1060deg); /* IE 9 */
+    transform: rotate(1060deg); /* Firefox 16+, IE 10+, Opera */
   }
 }
 /* spin ends */
 @media only screen and (max-width: 600px) {
-  
   .App {
     .container-fluid .row {
       #openCol {
         width: 160px;
+        height: 100vh;
+        background-color: var(--blueSaved);
       }
-
       .sideBarMenu {
+        height: 80px;
+        background-color: rgba(0, 0, 0, 0);
         width: 60px;
-        ul {
-          img {
-            //   menu img
-            margin-left: 0px;
-            margin-top: 20px;
-            width: 60px;
+        ul .menuIconCon {
+        
+          padding: 15px 7px;
+         
+          .menuCircle {
+            position: absolute;
+            left: 4px;
+            top: 12px;
+            border-radius: 50%;
+            height: 56px;
+            width: 56px;
+            
           }
+          svg {
+            // menu icon
+            position: relative;
+            z-index: 99;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 50px;
+            background-color: var(--blueSaved);
+            color: rgb(245, 245, 245);
+            transition: all 0.4s;
+          }
+        }
+        ul {
+          padding: 15px 0px;
+
           .menuItem {
             padding: 15px 10px;
             padding-left: 10px;
           }
           span {
             font-size: 1rem;
-          
           }
         }
         ul .btn {

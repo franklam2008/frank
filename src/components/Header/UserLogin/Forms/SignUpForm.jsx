@@ -1,40 +1,13 @@
-import React, { useRef, useState }  from "react";
+import React, { useRef, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import fire from "../../../../config/Fire";
 
-export default function SignUpForm({setSignUpPage}) {
+export default function SignUpForm({ setSignUpPage }) {
   const [error, setError] = useState("");
   const emailInput = useRef();
   const passwordInput = useRef();
   const nameInput = useRef();
-  
-  function signUp(e) {
-    const email = emailInput.current.value;
-    const password = passwordInput.current.value;
-    const name = nameInput.current.value;
-    e.preventDefault();
-    fire
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(u => {
-        var user = fire.auth().currentUser;
-        user
-          .updateProfile({
-            displayName: name
-          })
-          .then(function() {
-            // Update successful.
-          })
-          .catch(function(error) {
-            // An error happened.
-          });
-        console.log(u);
-      })
-      .catch(error => {
-        setError(error.message);
-        console.log(error);
-      });
-  }
+
   return (
     <div>
       <Form>
@@ -64,13 +37,44 @@ export default function SignUpForm({setSignUpPage}) {
         <Button variant="success" type="submit" block onClick={signUp}>
           Submit
         </Button>
-        <Button variant="secondary" type="submit" block  onClick={() => setSignUpPage(false)}>
+        <Button
+          variant="secondary"
+          type="submit"
+          block
+          onClick={() => setSignUpPage(false)}
+        >
           Back
         </Button>
-  
 
         <span>{error}</span>
       </Form>
     </div>
   );
+  function signUp(e) {
+    const email = emailInput.current.value;
+    const password = passwordInput.current.value;
+    const name = nameInput.current.value;
+    e.preventDefault();
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(u => {
+        var user = fire.auth().currentUser;
+        user
+          .updateProfile({
+            displayName: name
+          })
+          .then(function() {
+            // Update successful.
+          })
+          .catch(function(error) {
+            // An error happened.
+          });
+        console.log(u);
+      })
+      .catch(error => {
+        setError(error.message);
+        console.log(error);
+      });
+  }
 }

@@ -4,10 +4,10 @@
 
 .App .container-fluid .row .sideBarMenu {
   height: 100vh;
+  background-color: var(--blueSaved);
   padding: 0;
   width: 80px;
   overflow: hidden;
-  background-color: var(--blueSaved);
   position: fixed;
   z-index: 1;
   -webkit-transition: all 0.4s;
@@ -26,10 +26,41 @@
   padding: 0px;
 }
 
-.App .container-fluid .row .sideBarMenu ul img {
-  margin-left: 10px;
-  margin-top: 20px;
-  width: 60px;
+.App .container-fluid .row .sideBarMenu ul .menuIconCon {
+  text-align: left;
+  padding: 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuCircle {
+  border-top-color: var(--pink);
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon .menuCircle {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  border-radius: 50%;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon svg {
+  position: relative;
+  z-index: 99;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 50px;
+  background-color: var(--blueSaved);
+  color: whitesmoke;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .App .container-fluid .row .sideBarMenu ul span {
@@ -84,9 +115,9 @@
 
 /* spin starts */
 .spin-it-once {
-  -webkit-animation: spin 0.75s;
+  -webkit-animation: spin 1s;
   /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 0.75s;
+  animation: spin 1s;
   /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
@@ -130,10 +161,10 @@
     /* Firefox 16+, IE 10+, Opera */
   }
   100% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(1060deg);
     /* Chrome, Opera 15+, Safari 3.1+ */
     /* IE 9 */
-    transform: rotate(360deg);
+    transform: rotate(1060deg);
     /* Firefox 16+, IE 10+, Opera */
   }
 }
@@ -147,10 +178,10 @@
     /* Firefox 16+, IE 10+, Opera */
   }
   100% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(1060deg);
     /* Chrome, Opera 15+, Safari 3.1+ */
     /* IE 9 */
-    transform: rotate(360deg);
+    transform: rotate(1060deg);
     /* Firefox 16+, IE 10+, Opera */
   }
 }
@@ -159,14 +190,38 @@
 @media only screen and (max-width: 600px) {
   .App .container-fluid .row #openCol {
     width: 160px;
+    height: 100vh;
+    background-color: var(--blueSaved);
   }
   .App .container-fluid .row .sideBarMenu {
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0);
     width: 60px;
   }
-  .App .container-fluid .row .sideBarMenu ul img {
-    margin-left: 0px;
-    margin-top: 20px;
-    width: 60px;
+  .App .container-fluid .row .sideBarMenu ul .menuIconCon {
+    padding: 15px 7px;
+  }
+  .App .container-fluid .row .sideBarMenu ul .menuIconCon .menuCircle {
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+  }
+  .App .container-fluid .row .sideBarMenu ul .menuIconCon svg {
+    position: relative;
+    z-index: 99;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 50px;
+    background-color: var(--blueSaved);
+    color: whitesmoke;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .App .container-fluid .row .sideBarMenu ul {
+    padding: 15px 0px;
   }
   .App .container-fluid .row .sideBarMenu ul .menuItem {
     padding: 15px 10px;

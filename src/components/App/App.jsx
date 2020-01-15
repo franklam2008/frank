@@ -29,7 +29,7 @@ function App() {
         <div className="App">
           <div className="container-fluid">
             <Row>
-              <Col className="backSideBar" xs={2} lg={1}></Col>
+              <Col className="backSideBar" xs={0} lg={1}></Col>
               <Col
                 id={openCol ? "openCol" : undefined}
                 className="sideBarMenu"
@@ -37,7 +37,7 @@ function App() {
               >
                 <Header setOpenCol={setOpenCol} openCol={openCol} />
               </Col>
-              <Col xs={10} lg={11} className="mainCon">
+              <Col xs={12} lg={11} className="mainCon">
                 {/* Paths to different Pages */}
                 <Redirect exact from="/" to="/home" />
                 <Route path="/home" component={Home} />

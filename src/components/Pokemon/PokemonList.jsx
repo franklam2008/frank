@@ -23,7 +23,7 @@ export default function PokemonList({ pokemon }) {
     <section className="container-fluid">
       <Row>
         {pokemon.map(pokemon => (
-          <Col className="mb-3" xs={6} md={4} lg={2} key={pokemon.name}>
+          <Col className="" xs={4} md={4} lg={2} key={pokemon.name}>
             <Card>
               {/* <Card.Header className="capitalize">
                 {pokemon.name}
