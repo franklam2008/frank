@@ -7,7 +7,7 @@
     color: var(--textWhite);
     .title,
     .list {
-      border-bottom: 1px solid var(--lightBlueSaved);
+      border-bottom: 1px dashed var(--lightBlueSaved);
       padding: 20px;
     }
     .title {
@@ -18,7 +18,7 @@
       }
     }
     .list {
-      border-bottom: 1px solid var(--lightBlueSaved);
+      border-bottom: 1px dashed var(--lightBlueSaved);
 
     }
     .footer {

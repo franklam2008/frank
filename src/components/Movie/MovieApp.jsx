@@ -32,8 +32,8 @@ export default function Movie() {
       .all([requestOne, requestTwo])
       .then(
         axios.spread((...responses) => {
-          const responseOne = responses[0];
-          const responseTwo = responses[1];
+          // const responseOne = responses[0];
+          // const responseTwo = responses[1];
           // if (responseOne.data.results.length !== 0) {
           //   setMovies(responseOne.data.results);
           //   setError(false);

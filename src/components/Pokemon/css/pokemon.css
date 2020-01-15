@@ -60,33 +60,55 @@
   font-size: 1rem;
 }
 
-.modal-title {
+.PokeLightBox .modal-title {
   padding-left: 50px;
 }
 
-.lightBox img {
+.PokeLightBox .modal-header, .PokeLightBox .modal-footer {
+  border: none;
+}
+
+.PokeLightBox .modal-content {
+  background-color: var(--darkBlueSaved);
+  color: var(--textWhite);
+}
+
+.PokeLightBox .modal-content img {
   margin: 10px;
   width: 60%;
 }
 
-.nonCapitalize {
+.PokeLightBox .typeCol {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.PokeLightBox .typeCol .nonCapitalize {
   text-transform: none;
 }
 
-.typeDiv {
+.PokeLightBox .typeCol .typeDiv {
   margin-bottom: 10px;
 }
 
-.abilityTitle {
+.PokeLightBox .typeCol .abilityTitle {
   margin: 10px 0;
 }
 
-.abilityTitle span {
-  background-color: #3a3a3a;
+.PokeLightBox .typeCol .abilityTitle span {
+  background-color: #242424;
 }
 
-.typeDiv span,
-.abilityTitle span {
+.PokeLightBox .typeCol .typeDiv span,
+.PokeLightBox .typeCol .abilityTitle span {
   margin: 5px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -94,31 +116,31 @@
   color: white;
 }
 
-.modal-body .container-fluid {
+.PokeLightBox .modal-body .container-fluid {
   max-width: 700px;
 }
 
-.statsCon .stat {
+.PokeLightBox .statsCon .stat {
   max-width: 700px;
   margin: 0 auto;
 }
 
-.statsCon .stat .statName {
+.PokeLightBox .statsCon .stat .statName {
   margin: 5px;
   font-size: 16px;
 }
 
-.statsCon .stat .statBar,
-.statsCon .stat .statWidth {
-  background-color: lightgray;
+.PokeLightBox .statsCon .stat .statBar,
+.PokeLightBox .statsCon .stat .statWidth {
+  background-color: var(--blueSaved);
   height: 15px;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.statsCon .stat .statBar .statWidth,
-.statsCon .stat .statWidth .statWidth {
-  background-color: #0bb1ce;
+.PokeLightBox .statsCon .stat .statBar .statWidth,
+.PokeLightBox .statsCon .stat .statWidth .statWidth {
+  background-color: var(--pinkSaved);
 }
 
 .normal {
@@ -199,40 +221,10 @@
     margin-bottom: 0;
   }
   .pokemonCon .card .imgCon {
-    margin: 0 auto;
-    background-color: var(--blueSaved);
-    border: 2px solid transparent;
-    text-align: center;
-    padding: .5rem;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    border-radius: 50%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-  .pokemonCon .card .imgCon img {
-    height: 100%;
-    width: 100%;
-  }
-  .pokemonCon .card .imgCon * {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    padding: 0.5rem;
   }
   .pokemonCon .card .pokeName {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 /*# sourceMappingURL=pokemon.css.map */

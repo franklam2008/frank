@@ -20,7 +20,7 @@ export default function Login() {
           loader={<Spinner className="" size="sm" animation="border" />}
         />
       </Col>
-      <Col lg={6} xs={12}>
+      <Col className="loginCon" lg={6} xs={12}>
         <div className="loginHeader">
           <MdLockOpen className="lockIcon" />
           <h4>Sign In</h4>

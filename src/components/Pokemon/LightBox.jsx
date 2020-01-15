@@ -12,7 +12,7 @@ export default function PokemonLightBox(props) {
 
   return (
     <Modal
-      className="capitalize lightBox"
+      className="capitalize PokeLightBox"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -20,39 +20,41 @@ export default function PokemonLightBox(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-        #{props.pokemon.id} - {props.pokemon.name}
+          #{props.pokemon.id} - {props.pokemon.name}
         </Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
         <div className="container-fluid">
           <Row>
-            <Col lg={4}>
-              {" "}
-              <div className="typeDiv">
-                {props.pokemon.types.map(x => (
-                  <span className={x.type.name} key={x.type.name}>
-                    {x.type.name}
-                  </span>
-                ))}
+            <Col className="typeCol" lg={4}>
+              <div>
+                <div className="typeDiv">
+                  {props.pokemon.types.map(x => (
+                    <span className={x.type.name} key={x.type.name}>
+                      {x.type.name}
+                    </span>
+                  ))}
+                </div>
+                <div className="specs">
+                  Weight: {(props.pokemon.weight / 10).toFixed(1)}{" "}
+                  <span className="nonCapitalize">kg</span>
+                </div>
+                <div className="specs">
+                  height: {(props.pokemon.height / 10).toFixed(1)}{" "}
+                  <span className="nonCapitalize">m</span>
+                </div>
               </div>
-              <div className="specs">
-                Weight: {(props.pokemon.weight / 10).toFixed(1)}{" "}
-                <span className="nonCapitalize">kg</span>
+              <div>
+                <div className="abilityTitle">
+                  <span>Ability</span>
+                </div>
+                <div className="abilityDiv">
+                  {props.pokemon.abilities.map(x => (
+                    <div key={x.ability.name}>{x.ability.name}</div>
+                  ))}
+                </div>
               </div>
-              <div className="specs">
-                height: {(props.pokemon.height / 10).toFixed(1)}{" "}
-                <span className="nonCapitalize">m</span>
-              </div>
-              <div className="abilityTitle">
-                {" "}
-                <span>Ability</span>
-              </div>
-              <div className="abilityDiv">
-                {props.pokemon.abilities.map(x => (
-                  <div key={x.ability.name}>{x.ability.name}</div>
-                ))}
-              </div>{" "}
             </Col>
             <Col className="text-center" lg={8}>
               <img src={imgUrl} alt={props.pokemon.name} />{" "}
@@ -77,7 +79,7 @@ export default function PokemonLightBox(props) {
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="dark" onClick={props.onHide}>
+        <Button variant="secondary" onClick={props.onHide}>
           Close
         </Button>
       </Modal.Footer>

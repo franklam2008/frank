@@ -27,7 +27,7 @@ export default function UserLightBox(props) {
         {state.login ? <Home authUser={state.authUser} /> : <Login />}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.onHide}>
+        <Button variant="dark" onClick={props.onHide}>
           Close
         </Button>
       </Modal.Footer>

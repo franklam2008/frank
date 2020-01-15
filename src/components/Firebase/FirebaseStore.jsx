@@ -52,6 +52,7 @@ function writeUserData(userId, name, email) {
       email: email
       // profile_picture : imageUrl
     });
+    
 }
 function reducer(state = defaultState, action = {}) {
   switch (action.type) {

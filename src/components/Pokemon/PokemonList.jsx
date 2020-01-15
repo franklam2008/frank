@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PokemonLightBox from "./LightBox.jsx";
 import axios from "axios";
-import { Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { Row, Col, Card, Spinner } from "react-bootstrap";
 import Img from "react-image";
 export default function PokemonList({ pokemon }) {
   const [selectedPokemon, setSelectedPokemon] = useState([]);

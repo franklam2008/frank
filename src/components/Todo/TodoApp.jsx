@@ -19,8 +19,6 @@ export default function TodoApp() {
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storedTodos){ setTodos(storedTodos)};
-    console.log(storedTodos);
-    console.log(todos);
     
   }, []);
 

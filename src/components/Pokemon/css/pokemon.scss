@@ -28,77 +28,92 @@
   * {
     align-self: center;
   }
- 
 }
-.pokemonCon .card .imgCon:before{
-	content: "";
-	display: block;
-	padding-top: 100%; 	/* ratio of 1:1*/
+.pokemonCon .card .imgCon:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* ratio of 1:1*/
 }
 .pokemonCon .card .imgCon:hover {
   background-color: var(--darkBlueSaved);
   border: 2px solid var(--pink);
-  box-shadow:none;
-
+  box-shadow: none;
 }
 .pokemonCon .card .pokeName {
   color: var(--textWhite);
   text-align: center;
   font-size: 1rem;
 }
-.modal-title {
-  padding-left: 50px;
-}
-.lightBox img {
-  margin: 10px;
-  width: 60%;
-}
 
-.nonCapitalize {
-  text-transform: none;
-}
-.typeDiv {
-  margin-bottom: 10px;
-}
-.abilityTitle {
-  margin: 10px 0;
-  span {
-    background-color: rgb(58, 58, 58);
+.PokeLightBox{
+  .modal-title {
+    padding-left: 50px;
   }
-}
-.typeDiv span,
-.abilityTitle span {
-  margin: 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: 800;
-  color: white;
-}
-.modal-body {
-  .container-fluid {
-    max-width: 700px;
+  .modal-header,.modal-footer{
+    border: none;
   }
-}
-.statsCon {
-  .stat {
-    max-width: 700px;
-    margin: 0 auto;
-    .statName {
-      margin: 5px;
-      font-size: 16px;
+  .modal-content{
+    background-color: var(--darkBlueSaved);
+    color: var(--textWhite);
+    img {
+      margin: 10px;
+      width: 60%;
     }
-    .statBar,
-    .statWidth {
-      background-color: lightgray;
-      height: 15px;
-      border-radius: 10px;
-      overflow: hidden;
+  }
+  .typeCol{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .nonCapitalize {
+      text-transform: none;
+    }
+    .typeDiv {
+      margin-bottom: 10px;
+    }
+    .abilityTitle {
+      margin: 10px 0;
+      span {
+        background-color: rgb(36, 36, 36);
+      }
+    }
+    .typeDiv span,
+    .abilityTitle span {
+      margin: 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: 800;
+      color: white;
+    }
+  }
+  .modal-body {
+    .container-fluid {
+      max-width: 700px;
+    }
+  }
+  .statsCon {
+    .stat {
+      max-width: 700px;
+      margin: 0 auto;
+      .statName {
+        margin: 5px;
+        font-size: 16px;
+      }
+      .statBar,
       .statWidth {
-        background-color: rgba($color: #0bb1ce, $alpha: 1);
+        background-color: var(--blueSaved);
+        height: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        .statWidth {
+          background-color: var(--pinkSaved);
+        }
       }
     }
   }
 }
+
+
 .normal {
   background-color: #a8a878;
 }
@@ -154,39 +169,17 @@
   background-color: #ffaec9;
 }
 @media only screen and (max-width: 600px) {
-  .pokemonCon{
-    .col-md-4{
+  .pokemonCon {
+    .col-md-4 {
       padding: 5px;
       margin-bottom: 0;
     }
   }
+
   .pokemonCon .card .imgCon {
-    margin: 0 auto;
-    background-color: var(--blueSaved);
-    border: 2px solid transparent;
-    text-align: center;
-    padding: .5rem;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    justify-content: center;
-    display: flex;
-    transition: all 0.3s;
-    margin-bottom: 5px;
-    cursor: pointer;
-    img {
-      height: 100%;
-      width: 100%;
-    }
-    * {
-      align-self: center;
-    }
-   
+    padding: 0.5rem;
   }
   .pokemonCon .card .pokeName {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }

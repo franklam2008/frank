@@ -16,15 +16,20 @@ export default function MovieItem({ movie }) {
           </Col>
           <Col md={7} className="">
             <div className="card-body">
-              <h5 className="card-title">{movie.title} <span className="score">
-                  <span>{movie.vote_average}</span>
-                </span></h5>
-              <p className="card-text">
-              {movie.overview
-                  .split(" ")
-                  .slice(0, 20)
-                  .join(" ") + "..."}
-              </p>
+              <div>
+                <h5 className="card-title">
+                  {movie.title}{" "}
+                  <span className="score">
+                    <span>{movie.vote_average}</span>
+                  </span>
+                </h5>
+                <p className="card-text">
+                  {movie.overview
+                    .split(" ")
+                    .slice(0, 20)
+                    .join(" ") + "..."}
+                </p>
+              </div>
               <div className="cardFooter">
                 <span className="date">{movie.release_date}</span>
                 <Button variant="outline-info">
@@ -38,11 +43,9 @@ export default function MovieItem({ movie }) {
                 </Button>
               </div>
             </div>
-            
           </Col>
         </Row>
       </Card>
-      
     </>
   );
 }

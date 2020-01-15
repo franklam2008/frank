@@ -30,6 +30,7 @@
 .movieCon .card-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   .score {
     margin-left: 5px;
     color: var(--subTextWhite);
