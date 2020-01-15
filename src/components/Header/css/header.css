@@ -7,10 +7,8 @@
   padding: 0;
   width: 80px;
   overflow: hidden;
-  background-color: #2d3338;
+  background-color: var(--blueSaved);
   position: fixed;
-  -webkit-box-shadow: -4px 0px 7px 9px #3f3f3f;
-          box-shadow: -4px 0px 7px 9px #3f3f3f;
   z-index: 1;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -64,17 +62,16 @@
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuItem:hover {
-  background-color: rgba(29, 29, 29, 0.705);
+  background-color: var(--darkBlueSaved);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem {
-  background-color: rgba(29, 29, 29, 0.705);
-  border-left: 2px solid #858585;
+  background-color: var(--darkBlueSaved);
+  border-left: 2px solid var(--pink);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink svg {
   font-size: 40px;
-  color: #00c4fb;
 }
 
 .menuMainIcon {
@@ -85,23 +82,18 @@
   font-size: 16px;
 }
 
-.activeLink .btn svg,
-.activeLink span {
-  color: #00cbff !important;
-}
-
 /* spin starts */
 .spin-it-once {
-  -webkit-animation: spin 1.2s;
+  -webkit-animation: spin 0.75s;
   /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 1.2s;
+  animation: spin 0.75s;
   /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
 .spin-infinite {
-  -webkit-animation: spin 2.0s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
   /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 2.0s linear infinite;
+  animation: spin 2s linear infinite;
   /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
@@ -165,9 +157,6 @@
 
 /* spin ends */
 @media only screen and (max-width: 600px) {
-  .menuMainIcon {
-    margin-bottom: 20px;
-  }
   .App .container-fluid .row #openCol {
     width: 160px;
   }
@@ -175,13 +164,16 @@
     width: 60px;
   }
   .App .container-fluid .row .sideBarMenu ul img {
-    margin-left: 5px;
-    padding-top: 10px;
-    width: 50px;
+    margin-left: 0px;
+    margin-top: 20px;
+    width: 60px;
   }
   .App .container-fluid .row .sideBarMenu ul .menuItem {
     padding: 15px 10px;
     padding-left: 10px;
+  }
+  .App .container-fluid .row .sideBarMenu ul span {
+    font-size: 1rem;
   }
   .App .container-fluid .row .sideBarMenu ul .btn {
     width: 100%;

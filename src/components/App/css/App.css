@@ -11,11 +11,11 @@
 }
 
 .backSideBar {
-  background-color: #f0f2f6;
+  background-color: var(--darkBlueSaved);
 }
 
 .mainCon {
-  background-color: #f0f2f6;
+  background-color: var(--darkBlueSaved);
   min-height: 100.1vh;
   width: 100%;
   -webkit-transition: all 1s;
@@ -23,14 +23,38 @@
 }
 
 .mainTitle {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 800;
   padding: 30px;
-  color: #343434;
+  color: var(--textWhite);
+}
+
+.mainTitle img {
+  width: 50px;
+  padding-right: 10px;
+}
+
+.mainTitle .subTitle {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .hide {
   opacity: 0;
+}
+
+.pageBtn {
+  background-color: var(--pinkSaved) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.pageBtn:hover {
+  background-color: #c94069 !important;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width: 600px) {

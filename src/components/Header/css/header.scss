@@ -8,9 +8,9 @@
       padding: 0;
       width: 80px;
       overflow: hidden;
-      background-color: rgb(45, 51, 56);
+      background-color: var(--blueSaved);
       position: fixed;
-      box-shadow: -4px 0px 7px 9px #3f3f3f;
+      // box-shadow: -4px 0px 7px 9px #2F4967;
       z-index: 1;
       transition: all 0.4s;
       ul {
@@ -50,17 +50,16 @@
           }
         }
         .menuItem:hover {
-          background-color: rgba(29, 29, 29, 0.705);
+          background-color: var(--darkBlueSaved);
         }
         a.activeLink {
           .menuItem {
-            background-color: rgba(29, 29, 29, 0.705);
-            border-left: 2px solid rgb(133, 133, 133);
+            background-color: var(--darkBlueSaved);
+            border-left: 2px solid var(--pink);
           }
           svg {
             // menu icon
             font-size: 40px;
-            color: rgb(0, 196, 251);
           }
         }
       }
@@ -73,19 +72,15 @@
 .tooltip-inner {
   font-size: 16px;
 }
-.activeLink .btn svg,
-.activeLink span {
-  color: rgb(0, 203, 255) !important;
-}
 
 /* spin starts */
-.spin-it-once{
-  -webkit-animation: spin 1.2s ; /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 1.2s ; /* Chrome, Firefox 16+, IE 10+, Opera */
+.spin-it-once {
+  -webkit-animation: spin 0.75s; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 0.75s; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
-.spin-infinite{
-  -webkit-animation: spin 2.0s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 2.0s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+.spin-infinite {
+  -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 @keyframes resize {
   0%,
@@ -97,34 +92,32 @@
   }
 }
 @-webkit-keyframes spin {
-    0%   {
-        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(0deg);  /* IE 9 */
-        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-    100% {
-        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(360deg);  /* IE 9 */
-        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-    }
+  0% {
+    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+  }
 }
 @keyframes spin {
-    0%   {
-        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(0deg);  /* IE 9 */
-        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-    100% {
-        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(360deg);  /* IE 9 */
-        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-    }
+  0% {
+    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+  }
 }
 /* spin ends */
 @media only screen and (max-width: 600px) {
-  .menuMainIcon {
-    margin-bottom: 20px;
-  }
+  
   .App {
     .container-fluid .row {
       #openCol {
@@ -136,13 +129,17 @@
         ul {
           img {
             //   menu img
-            margin-left: 5px;
-            padding-top: 10px;
-            width: 50px;
+            margin-left: 0px;
+            margin-top: 20px;
+            width: 60px;
           }
           .menuItem {
             padding: 15px 10px;
             padding-left: 10px;
+          }
+          span {
+            font-size: 1rem;
+          
           }
         }
         ul .btn {

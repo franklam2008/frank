@@ -1,33 +1,30 @@
 // *{color:black !important}
 .todoCon {
   .container {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--blueSaved);
     max-width: 800px;
     border-radius: 10px;
-      box-shadow: 7px 7px 5px 3px #9b9b9b;
-      
+    color: var(--textWhite);
     .title,
     .list {
-      border-bottom: 1px solid rgb(196, 196, 196);
+      border-bottom: 1px solid var(--lightBlueSaved);
       padding: 20px;
     }
     .title {
-      h5{
-        color:rgb(34, 34, 34)
+      
+      h6 {
+        color: var(--textWhite);
 
-      }
-      h6{
-        color:rgb(160, 160, 160)
       }
     }
     .list {
-      border-bottom: 1px solid rgb(196, 196, 196);
+      border-bottom: 1px solid var(--lightBlueSaved);
+
     }
     .footer {
       padding: 20px;
     }
-    .todoName{
-      
+    .todoName {
       margin-left: 15px;
     }
   }
@@ -43,12 +40,11 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  .addTodo{
+  .addTodo {
     margin-bottom: 15px;
   }
   .title {
-    
-    h6{
+    h6 {
       font-size: 14px;
     }
   }

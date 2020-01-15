@@ -1,27 +1,22 @@
 .todoCon .container {
-  background-color: white;
+  background-color: var(--blueSaved);
   max-width: 800px;
   border-radius: 10px;
-  -webkit-box-shadow: 7px 7px 5px 3px #9b9b9b;
-          box-shadow: 7px 7px 5px 3px #9b9b9b;
+  color: var(--textWhite);
 }
 
 .todoCon .container .title,
 .todoCon .container .list {
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid var(--lightBlueSaved);
   padding: 20px;
 }
 
-.todoCon .container .title h5 {
-  color: #222222;
-}
-
 .todoCon .container .title h6 {
-  color: #a0a0a0;
+  color: var(--textWhite);
 }
 
 .todoCon .container .list {
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid var(--lightBlueSaved);
 }
 
 .todoCon .container .footer {

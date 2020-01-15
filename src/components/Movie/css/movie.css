@@ -11,12 +11,15 @@
 .movieCon .inputError {
   margin-top: 100px;
   text-align: center;
-  color: red;
+  color: var(--pinkSaved);
 }
 
 .movieCon .card {
   margin-bottom: 20px;
   overflow: hidden;
+  background-color: var(--blueSaved);
+  color: var(--textWhite);
+  border-radius: 10px;
 }
 
 .movieCon .card .card-body {
@@ -44,30 +47,32 @@
 }
 
 .movieCon .card-title .score {
-  color: white;
-  background-color: #3ad474;
+  margin-left: 5px;
+  color: var(--subTextWhite);
+  background-color: var(--lightBlueSaved);
   border-radius: 50%;
   height: 40px;
   min-width: 40px;
   display: inline-block;
-  padding-top: 4px;
+  padding-top: 1px;
   font-size: 17px;
   text-align: center;
 }
 
 .movieCon .card-title .score span {
-  background: #353535;
-  padding-top: 6px;
+  background: var(--darkBlueSaved);
+  padding-top: 9px;
   border-radius: 50%;
-  height: 32px;
-  width: 32px;
-  color: white;
+  height: 38px;
+  width: 38px;
   display: inline-block;
 }
 
 .movieCon .movieList .card-text {
   overflow: hidden;
   margin: 0;
+  color: var(--subTextWhite);
+  font-size: 0.9rem;
 }
 
 .movieCon .movieList {

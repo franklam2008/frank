@@ -20,7 +20,7 @@ export default function PokemonLightBox(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.pokemon.name}
+        #{props.pokemon.id} - {props.pokemon.name}
         </Modal.Title>
       </Modal.Header>
 

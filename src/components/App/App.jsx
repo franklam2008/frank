@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route ,Redirect} from "react-router-dom";
 // pages
 import Header from "../Header/Header.jsx";
 import PokemonApp from "../Pokemon/PokemonApp.jsx";
@@ -39,7 +39,8 @@ function App() {
               </Col>
               <Col xs={10} lg={11} className="mainCon">
                 {/* Paths to different Pages */}
-                <Route exact path="/" component={Home} />
+                <Redirect exact from="/" to="/home" />
+                <Route path="/home" component={Home} />
                 <Route path="/Pokemon" component={PokemonApp} />
                 <Route path="/MovieList" component={MovieApp} />
                 <Route path="/Todo" component={TodoApp} />

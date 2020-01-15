@@ -1,24 +1,50 @@
 .pokemonCon .card {
-  height: 270px;
- 
+  background-color: var(--darkBlueSaved);
+  border: none;
+  margin-bottom: 20px;
 }
-.pokemonCon .card .card-header {
-  text-align: center;
-  color: rgb(52, 52, 52);
-  font-size: 1.2rem;
-  font-weight: 500;
-}
+
 .pokemonCon .card .imgCon {
+  margin: 0 auto;
+  background-color: var(--blueSaved);
+  border: 2px solid transparent;
+
   text-align: center;
-  height: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+  box-sizing: border-box;
   justify-content: center;
   display: flex;
+  transition: all 0.3s;
+  margin-bottom: 5px;
+  cursor: pointer;
+  img {
+    height: 100%;
+    width: 100%;
+  }
   * {
     align-self: center;
   }
+ 
 }
-.capitalize {
-  text-transform: capitalize;
+.pokemonCon .card .imgCon:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* ratio of 1:1*/
+}
+.pokemonCon .card .imgCon:hover {
+  background-color: var(--darkBlueSaved);
+  border: 2px solid var(--pink);
+  box-shadow:none;
+
+}
+.pokemonCon .card .pokeName {
+  color: var(--textWhite);
+  text-align: center;
 }
 .modal-title {
   padding-left: 50px;

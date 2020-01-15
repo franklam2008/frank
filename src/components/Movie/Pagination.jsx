@@ -20,8 +20,8 @@ export default function Pagination({
           {" "}
           {showPrev && (
             <Button
-              className=""
-              variant="warning"
+              
+              className="pageBtn"
               size="lg"
               onClick={() => changePageNum(currentPageUrl, false)}
             >
@@ -52,7 +52,8 @@ export default function Pagination({
           {" "}
           {showNext && (
             <Button
-              variant="warning"
+            className="pageBtn"
+
               size="lg"
               onClick={() => changePageNum(currentPageUrl, true)}
             >

@@ -10,8 +10,8 @@ export default function Pagination({ gotoNextPage, gotoPrevPage }) {
           {" "}
           {gotoPrevPage && (
             <Button
-              className="mt-3 mb-3"
-              variant="warning"
+              className="pageBtn mt-3 mb-3"
+              
               size="lg"
               onClick={gotoPrevPage}
             >
@@ -23,8 +23,8 @@ export default function Pagination({ gotoNextPage, gotoPrevPage }) {
           {" "}
           {gotoNextPage && (
             <Button
-              className="mt-3 mb-3"
-              variant="warning"
+              className="pageBtn mt-3 mb-3"
+              
               size="lg"
               onClick={gotoNextPage}
             >

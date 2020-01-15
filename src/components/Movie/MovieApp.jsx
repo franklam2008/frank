@@ -4,7 +4,7 @@ import MovieItem from "./MovieItem.jsx";
 import Pagination from "./Pagination.jsx";
 import { Col, Row, Spinner } from "react-bootstrap";
 import "./css/movie.css";
-
+import movieIcon from '../assets/img/movieIcon.png'
 export default function Movie() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,45 +20,49 @@ export default function Movie() {
   );
 
   useEffect(() => {
-
     let one = currentPageUrl;
-let two = changePageNum(currentPageUrl, true, null, true);
-// let three = "https://api.storyblok.com/v1/cdn/stories/vue?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt";
+    let two = changePageNum(currentPageUrl, true, null, true);
+    // let three = "https://api.storyblok.com/v1/cdn/stories/vue?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt";
 
-const requestOne = axios.get(one);
-const requestTwo = axios.get(two);
-// const requestThree = axios.get(three);
+    const requestOne = axios.get(one);
+    const requestTwo = axios.get(two);
+    // const requestThree = axios.get(three);
 
-axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-  const responseOne = responses[0]
-  const responseTwo = responses[1]
-  // if (responseOne.data.results.length !== 0) {
-  //   setMovies(responseOne.data.results);
-  //   setError(false);
-  //   setShowNext(true);
-  // } else {
-  //   setError(true);
-  //   setShowNext(false);
-  //   setShowPrev(false);
-  //   setMovies(responseOne.data.results);
-  // }
-  // if (responseTwo.data.results.length === 0) {
-  //   setShowNext(false);
-  // } else {
-  //   setShowNext(true);
-  // }
-  console.log(responseOne)
-  console.log(responseTwo)
-  
-  // const responesThree = responses[2]
-  // use/access the results 
-})).catch(errors => {
-  // react on errors.
-})
+    axios
+      .all([requestOne, requestTwo])
+      .then(
+        axios.spread((...responses) => {
+          const responseOne = responses[0];
+          const responseTwo = responses[1];
+          // if (responseOne.data.results.length !== 0) {
+          //   setMovies(responseOne.data.results);
+          //   setError(false);
+          //   setShowNext(true);
+          // } else {
+          //   setError(true);
+          //   setShowNext(false);
+          //   setShowPrev(false);
+          //   setMovies(responseOne.data.results);
+          // }
+          // if (responseTwo.data.results.length === 0) {
+          //   setShowNext(false);
+          // } else {
+          //   setShowNext(true);
+          // }
+          // console.log(responseOne)
+          // console.log(responseTwo)
+
+          // const responesThree = responses[2]
+          // use/access the results
+        })
+      )
+      .catch(errors => {
+        // react on errors.
+      });
 
     axios.get(currentPageUrl).then(response => {
-  console.log(response)
-  if (response.data.results.length !== 0) {
+      // console.log(response)
+      if (response.data.results.length !== 0) {
         setMovies(response.data.results);
         setError(false);
         setShowNext(true);
@@ -93,7 +97,9 @@ axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
     );
   return (
     <section className="movieCon">
-      <div className="mainTitle">Movies</div>
+      <div className="mainTitle">
+        <img src={movieIcon} alt="movie"/>
+        Movies</div>
       <Pagination
         inputShow={true}
         showPrev={showPrev}

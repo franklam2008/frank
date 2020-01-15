@@ -27,7 +27,7 @@ export default function MovieItem({ movie }) {
               </p>
               <div className="cardFooter">
                 <span className="date">{movie.release_date}</span>
-                <Button variant="info">
+                <Button variant="outline-info">
                   <a
                     href={"https://www.themoviedb.org/movie/" + movie.id}
                     rel="noopener noreferrer"

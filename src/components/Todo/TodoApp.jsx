@@ -18,36 +18,17 @@ export default function TodoApp() {
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storedTodos) setTodos(storedTodos);
-    console.log(storedTodos)
-
+    if(storedTodos.length===0){console.log('new')}
+    if(storedTodos.length===0){setTodos({id:'testID'})}
+    if (storedTodos){ setTodos(storedTodos)};
+    console.log(storedTodos);
+    console.log(todos);
+    
   }, []);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
-
-  function toggleTodo(id) {
-    const newTodos = [...todos];
-    const todo = newTodos.find(todo => todo.id === id);
-    todo.complete = !todo.complete;
-    setTodos(newTodos);
-  }
-
-  function handleClearTodos() {
-    const newTodos = todos.filter(todo => !todo.complete);
-    setTodos(newTodos);
-  }
-
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value;
-    if (name === "") return;
-
-    setTodos(prevTodos => {
-      return [...prevTodos, { id: uuidv4(), name: name, complete: false }];
-    });
-    todoNameRef.current.value = null;
-  }
 
   return (
     <div className="todoCon">
@@ -78,7 +59,7 @@ export default function TodoApp() {
                 type="text"
               />
               <InputGroup.Append>
-                <Button variant="outline-success" onClick={handleAddTodo}>
+                <Button className="pageBtn" onClick={handleAddTodo}>
                   Add Todo
                 </Button>
               </InputGroup.Append>
@@ -97,4 +78,25 @@ export default function TodoApp() {
       </Container>
     </div>
   );
+  function toggleTodo(id) {
+    const newTodos = [...todos];
+    const todo = newTodos.find(todo => todo.id === id);
+    todo.complete = !todo.complete;
+    setTodos(newTodos);
+  }
+
+  function handleClearTodos() {
+    const newTodos = todos.filter(todo => !todo.complete);
+    setTodos(newTodos);
+  }
+
+  function handleAddTodo(e) {
+    const name = todoNameRef.current.value;
+    if (name === "") return;
+
+    setTodos(prevTodos => {
+      return [...prevTodos, { id: uuidv4(), name: name, complete: false }];
+    });
+    todoNameRef.current.value = null;
+  }
 }
