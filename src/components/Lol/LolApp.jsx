@@ -1,13 +1,14 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import lol from "../assets/img/lol.png";
 import axios from "axios";
 import LolChamp from "./LolChamp";
 import { Row, Col, Spinner, Button, Form } from "react-bootstrap";
+import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import "./css/Lol.css";
 export default function LolApp() {
   const [champs, setChamps] = useState([]);
   const [loading, setLoading] = useState(true);
-const selectSort = useRef()
+  const selectSort = useRef();
   const url =
     "https://ddragon.leagueoflegends.com/cdn/10.1.1/data/en_US/champion.json";
 
@@ -19,6 +20,7 @@ const selectSort = useRef()
   }, []);
   function log() {
     console.log(champs);
+    
   }
   if (loading)
     return (
@@ -38,10 +40,10 @@ const selectSort = useRef()
         <Form.Label>Example select</Form.Label>
         <Form.Control as="select" ref={selectSort}>
           <option>Name</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+          <option>Type</option>
+          <option>HP</option>
+          <option>Attack</option>
+          <option>Mage</option>
         </Form.Control>
       </Form.Group>
       <Row>
