@@ -1,12 +1,13 @@
 .aboutCon {
+  color: var(--textWhite);
   .madeWith {
     color: var(--pink);
-        font-size: 21px;
-        font-weight: 700;
-    svg{
-    color: rgb(207, 1, 1);
-    font-size: 25px;
-        padding-bottom: 7.5px;
+    font-size: 21px;
+    font-weight: 700;
+    svg {
+      color: rgb(207, 1, 1);
+      font-size: 25px;
+      padding-bottom: 7.5px;
     }
   }
 }

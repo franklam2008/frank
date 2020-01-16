@@ -1,3 +1,7 @@
+.aboutCon {
+  color: var(--textWhite);
+}
+
 .aboutCon .madeWith {
   color: var(--pink);
   font-size: 21px;

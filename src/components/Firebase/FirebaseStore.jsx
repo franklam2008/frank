@@ -9,7 +9,7 @@ import fire from "../../config/Fire";
 const defaultState = {
   counter: 0,
   login: false,
-  authUser: null,
+  authUser: [],
   db: {}
 };
 
@@ -41,7 +41,7 @@ function reducer(state = defaultState, action = {}) {
       readDatabase(uid);
       return { ...state, login: true, authUser: action.payload };
     case "REMOVE_USER":
-      return { ...state, login: false, authUser: null };
+      return { ...state, login: false, authUser: [] };
     case "ADD_DB":
       return { ...state, db: action.payload };
     case "ADD_POKEMON":

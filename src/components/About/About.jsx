@@ -40,9 +40,8 @@ export default function About() {
       <p> Test Section</p>
       <h4 className="text-center">AuthUser</h4>
 
-
-      <p>{state.authUser.displayName}</p>
-      <p>{state.authUser.email}</p>
+      <p>{state.authUser.displayName??'No username'}</p>
+      <p>{state.authUser.email??"login"}</p>
 
       <h4 className="text-center"> Counter/test</h4>
       <div>{state.counter}</div>
