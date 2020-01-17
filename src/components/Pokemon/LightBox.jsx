@@ -1,9 +1,8 @@
 import { Modal, Button } from "react-bootstrap";
 import React from "react";
-import { Spinner, Col, Row } from "react-bootstrap";
+import {  Col, Row } from "react-bootstrap";
 
 export default function PokemonLightBox(props) {
-  if (!props.loaded) return <Spinner className="" animation="grow" />;
 
   const imgUrl =
     "https://pokeres.bastionbot.org/images/pokemon/" +

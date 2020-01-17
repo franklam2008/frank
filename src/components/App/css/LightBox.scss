@@ -1,0 +1,13 @@
+.modal{
+  .modal-title {
+    padding-left: 50px;
+  }
+  .modal-header,.modal-footer{
+    border: none;
+  }
+  .modal-content{
+    background-color: var(--darkBlueSaved);
+    color: var(--textWhite);
+   
+  }
+}

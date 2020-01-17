@@ -15,6 +15,7 @@ import TodoApp from "../Todo/TodoApp.jsx";
 import Counter from "../Store/counter.jsx";
 // css
 import "./css/App.css";
+import "./css/LightBox.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 //Store

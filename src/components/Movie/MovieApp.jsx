@@ -20,46 +20,7 @@ export default function Movie() {
   );
 
   useEffect(() => {
-    // let one = currentPageUrl;
-    // let two = changePageNum(currentPageUrl, true, null, true);
-    // let three = "https://api.storyblok.com/v1/cdn/stories/vue?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt";
-
-    // const requestOne = axios.get(one);
-    // const requestTwo = axios.get(two);
-    // const requestThree = axios.get(three);
-
-    // axios
-    //   .all([requestOne, requestTwo])
-    //   .then(
-    //     axios.spread((...responses) => {
-          // const responseOne = responses[0];
-          // const responseTwo = responses[1];
-          // if (responseOne.data.results.length !== 0) {
-          //   setMovies(responseOne.data.results);
-          //   setError(false);
-          //   setShowNext(true);
-          // } else {
-          //   setError(true);
-          //   setShowNext(false);
-          //   setShowPrev(false);
-          //   setMovies(responseOne.data.results);
-          // }
-          // if (responseTwo.data.results.length === 0) {
-          //   setShowNext(false);
-          // } else {
-          //   setShowNext(true);
-          // }
-          // console.log(responseOne)
-          // console.log(responseTwo)
-
-          // const responesThree = responses[2]
-          // use/access the results
-        // })
-      // )
-      // .catch(errors => {
-        // react on errors.
-      // });
-
+    
     axios.get(currentPageUrl).then(response => {
       // console.log(response)
       if (response.data.results.length !== 0) {

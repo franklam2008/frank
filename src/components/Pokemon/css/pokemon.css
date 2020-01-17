@@ -60,20 +60,11 @@
   font-size: 1rem;
 }
 
-.PokeLightBox .modal-title {
-  padding-left: 50px;
+.PokeLightBox .modal-body .container-fluid {
+  max-width: 700px;
 }
 
-.PokeLightBox .modal-header, .PokeLightBox .modal-footer {
-  border: none;
-}
-
-.PokeLightBox .modal-content {
-  background-color: var(--darkBlueSaved);
-  color: var(--textWhite);
-}
-
-.PokeLightBox .modal-content img {
+.PokeLightBox .modal-body img {
   margin: 10px;
   width: 60%;
 }
@@ -114,10 +105,6 @@
   border-radius: 5px;
   font-weight: 800;
   color: white;
-}
-
-.PokeLightBox .modal-body .container-fluid {
-  max-width: 700px;
 }
 
 .PokeLightBox .statsCon .stat {

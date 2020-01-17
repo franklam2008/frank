@@ -37,7 +37,7 @@
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuIconCon #menuCircle {
-  border-top-color: var(--pink);
+  border-top-color: var(--pinkSaved);
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuIconCon .menuCircle {
@@ -82,12 +82,12 @@
   display: -ms-flexbox;
   display: flex;
   padding-left: 20px;
-  border-left: 2px solid rgba(0, 0, 0, 0);
+  border-left: 3px solid rgba(0, 0, 0, 0);
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuItem svg {
   font-size: 40px;
-  color: whitesmoke;
+  color: #c7c7c7;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -98,11 +98,14 @@
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem {
   background-color: var(--darkBlueSaved);
-  border-left: 2px solid var(--pinkSaved);
+  border-left: 3px solid var(--pinkSaved);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink svg {
+  color: white;
   font-size: 40px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .menuMainIcon {
@@ -122,30 +125,6 @@
   /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 2s linear infinite;
   /* Chrome, Firefox 16+, IE 10+, Opera */
-}
-
-@-webkit-keyframes resize {
-  0%,
-  100% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  50% {
-    -webkit-transform: scale(0.85);
-            transform: scale(0.85);
-  }
-}
-
-@keyframes resize {
-  0%,
-  100% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  50% {
-    -webkit-transform: scale(0.85);
-            transform: scale(0.85);
-  }
 }
 
 @-webkit-keyframes spin {
@@ -191,9 +170,9 @@
     border-right: 2px solid var(--pinkSaved);
   }
   .App .container-fluid .row .sideBarMenu {
-    height: 80px;
+    height: 90px;
     background-color: rgba(0, 0, 0, 0);
-    width: 60px;
+    width: 65px;
   }
   .App .container-fluid .row .sideBarMenu ul .menuIconCon {
     padding: 15px 7px;
@@ -205,6 +184,8 @@
     border-radius: 50%;
     height: 56px;
     width: 56px;
+    -webkit-box-shadow: 0px 0px 5px 3px #181818;
+            box-shadow: 0px 0px 5px 3px #181818;
   }
   .App .container-fluid .row .sideBarMenu ul .menuIconCon svg {
     position: relative;

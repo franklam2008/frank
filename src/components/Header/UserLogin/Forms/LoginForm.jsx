@@ -27,7 +27,7 @@ export default function LoginForm({ setSignUpPage }) {
           />
         </Form.Group>
 
-        <Button variant="success" type="submit" block onClick={login}>
+        <Button variant="success" type="submit" block onClick={handleLogin}>
           Sign In
         </Button>
         <Button variant="primary" block onClick={() => setSignUpPage(true)}>
@@ -42,7 +42,9 @@ export default function LoginForm({ setSignUpPage }) {
             variant="outline-dark"
             type="submit"
             block
-            onClick={guestLogin}
+            onClick={() => {
+              login("guest@gmail.com", "123456");
+            }}
           >
             Guest
           </Button>
@@ -78,37 +80,22 @@ export default function LoginForm({ setSignUpPage }) {
       </Row>
     </section>
   );
-  function login(e) {
-    e.preventDefault();
-    const email = emailInput.current.value;
-    const password = passwordInput.current.value;
-    console.log(password, email);
+  function login(email, password) {
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(u => {
-        // console.log(u);
+        console.log("User Sign In...");
       })
       .catch(error => {
         setError(error.message);
         console.log(error);
       });
   }
-  function guestLogin() {
-    const email = "guest@gmail.com";
-    const password = "123456";
-    console.log(password, email);
-    console.log("123");
-
-    fire
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(u => {
-        // console.log(u);
-      })
-      .catch(error => {
-        setError(error.message);
-        console.log(error);
-      });
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = emailInput.current.value;
+    const password = passwordInput.current.value;
+    login(email, password);
   }
 }

@@ -46,15 +46,11 @@
 }
 
 .PokeLightBox{
-  .modal-title {
-    padding-left: 50px;
-  }
-  .modal-header,.modal-footer{
-    border: none;
-  }
-  .modal-content{
-    background-color: var(--darkBlueSaved);
-    color: var(--textWhite);
+
+  .modal-body {
+    .container-fluid {
+      max-width: 700px;
+    }
     img {
       margin: 10px;
       width: 60%;
@@ -86,11 +82,7 @@
       color: white;
     }
   }
-  .modal-body {
-    .container-fluid {
-      max-width: 700px;
-    }
-  }
+  
   .statsCon {
     .stat {
       max-width: 700px;

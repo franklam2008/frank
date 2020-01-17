@@ -8,14 +8,12 @@ export default function PokemonList({ pokemon }) {
   const [targetId, setTargetId] = useState("6");
 
   const [modalShow, setModalShow] = useState(false);
-  const [lightBoxDataLoaded, setLightBoxDataLoaded] = useState(false);
   const [detailClicked, setDetailClicked] = useState(false);
 
   useEffect(() => {
     var targetUrl = "https://pokeapi.co/api/v2/pokemon/" + targetId;
     axios.get(targetUrl).then(res => {
       setSelectedPokemon(res.data);
-      setLightBoxDataLoaded("true");
     });
   }, [targetId, detailClicked]);
 
@@ -53,10 +51,8 @@ export default function PokemonList({ pokemon }) {
           show={modalShow}
           onHide={() => {
             setModalShow(false);
-            setLightBoxDataLoaded(false);
           }}
           pokemon={selectedPokemon}
-          loaded={lightBoxDataLoaded}
         />
       ) : null}
     </section>

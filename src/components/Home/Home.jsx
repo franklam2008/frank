@@ -1,8 +1,10 @@
 import "./css/home.css";
 import React from "react";
 import macIcon from "../assets/img/macIcon.png";
-import { Col, Row, 
-  // Spinner 
+import {
+  Col,
+  Row
+  // Spinner
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -11,7 +13,7 @@ export default function Home() {
     <div className="homeCon">
       <div className="header">
         <div className="mainTitle">
-          <img src={macIcon} alt="movie" />
+          <img src={macIcon} alt="movie" draggable={false} />
           Dashboard
           <div className="subTitle">
             This is where you control all your systems and stuff.
@@ -19,8 +21,8 @@ export default function Home() {
         </div>
       </div>
       <section className="container-fluid">
-        <Row className="mb-5">
-          <Col>
+        <Row className="">
+          <Col >
             <div className="homeSectionCon movieCon">
               <h3>Movie List</h3>
               <img
@@ -31,7 +33,7 @@ export default function Home() {
             </div>
           </Col>
         </Row>
-        <Row className="mb-5">
+        <Row>
           <Col lg={8}>
             <div className="homeSectionCon pokeCon">
               <h3>Pokédex</h3>
@@ -40,7 +42,6 @@ export default function Home() {
                 alt="poke"
                 draggable={false}
               />
-              
             </div>
           </Col>
 

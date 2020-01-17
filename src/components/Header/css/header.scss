@@ -27,9 +27,10 @@
           padding: 15px 15px;
           display: flex;
           position: relative;
+
           cursor: pointer;
           #menuCircle {
-            border-top-color: var(--pink);
+            border-top-color: var(--pinkSaved);
           }
           .menuCircle {
             position: absolute;
@@ -67,11 +68,11 @@
           padding: 20px 10px;
           display: flex;
           padding-left: 20px;
-          border-left: 2px solid rgba(0, 0, 0, 0);
+          border-left: 3px solid rgba(0, 0, 0, 0);
           svg {
             // menu icon
             font-size: 40px;
-            color: rgb(245, 245, 245);
+            color: rgb(199, 199, 199);
             transition: all 0.4s;
           }
         }
@@ -81,11 +82,13 @@
         a.activeLink {
           .menuItem {
             background-color: var(--darkBlueSaved);
-            border-left: 2px solid var(--pinkSaved);
+            border-left: 3px solid var(--pinkSaved);
           }
           svg {
             // menu icon
+            color: rgb(255, 255, 255);
             font-size: 40px;
+            transform: scale(1.1);
           }
         }
       }
@@ -95,7 +98,6 @@
 .menuMainIcon {
   margin-bottom: 30px;
 }
-
 /* spin starts */
 .spin-it-once {
   -webkit-animation: spin 1s; /* Chrome, Opera 15+, Safari 5+ */
@@ -105,27 +107,8 @@
   -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
-@keyframes resize {
-  0%,
-  100% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(0.85);
-  }
-}
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(0deg); /* IE 9 */
-    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
-  }
-  100% {
-    -webkit-transform: rotate(1060deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(1060deg); /* IE 9 */
-    transform: rotate(1060deg); /* Firefox 16+, IE 10+, Opera */
-  }
-}
+
+
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
@@ -146,12 +129,12 @@
         width: 160px;
         height: 100vh;
         background-color: var(--blueSaved);
-        border-right: 2px solid  var(--pinkSaved);
+        border-right: 2px solid var(--pinkSaved);
       }
       .sideBarMenu {
-        height: 80px;
+        height: 90px;
         background-color: rgba(0, 0, 0, 0);
-        width: 60px;
+        width: 65px;
         ul .menuIconCon {
           padding: 15px 7px;
           .menuCircle {
@@ -161,7 +144,7 @@
             border-radius: 50%;
             height: 56px;
             width: 56px;
-            
+            box-shadow: 0px 0px 5px 3px rgb(24, 24, 24);
           }
           svg {
             // menu icon

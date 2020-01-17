@@ -63,13 +63,19 @@
   text-transform: capitalize;
 }
 
+
 @media only screen and (max-width: 600px) {
   .tooltip {
     opacity: 0 !important;
   }
   .mainTitle {
-    margin: 0 auto;
+  font-size: 1.5rem;
+  margin: 0 auto;
     text-align: center;
+    .subTitle {
+      font-size: .65rem;
+      
+    }
   }
   #mainConDark:after {
     
