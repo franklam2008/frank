@@ -8,6 +8,7 @@
   }
   .homeSectionCon{
     background-color: var(--blueSaved);
+    margin-bottom: 25px;
     border-radius: 20px;
     min-height: 200px;
     padding: 20px;
@@ -35,7 +36,5 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .homeSectionCon{
-    margin-bottom: 20px;
-  }
+  
 }
