@@ -8,7 +8,7 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
   if (champ.length < 1) {
     return <></>;
   }
-console.log(champ);
+  console.log(champ);
 
   return (
     <Modal
@@ -37,14 +37,15 @@ console.log(champ);
           <div className="champSpells">
             {champ.spells.map(spell => (
               <div key={spell.name}>
-                {spell.name}<br />
+                {spell.name}
+                <br />
                 <Img
-            draggable={false}
-            src={`https://ddragon.leagueoflegends.com/cdn/10.1.1/img/spell/${spell.id}.png`}
-            loader={<Spinner size="sm" className="" animation="border" />}
-            unloader={<p>Not Available</p>}
-          />
-                
+                  draggable={false}
+                  src={`https://ddragon.leagueoflegends.com/cdn/10.1.1/img/spell/${spell.id}.png`}
+                  loader={<Spinner size="sm" className="" animation="border" />}
+                  unloader={<p>Not Available</p>}
+                />
+
                 {spell.description}
               </div>
             ))}

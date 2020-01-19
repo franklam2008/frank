@@ -112,6 +112,11 @@ export default function LolApp() {
     console.log("selectedChamp", selectedChamp);
     console.log("selectedChampObj", selectedChampObj);
     console.log("lightBoxData", lightBoxData);
+    console.log("modalShow", modalShow);
+
+    // setModalShow(true);
+
+    
   }
   function handleInput(e) {
     // setSearch(true);
@@ -129,6 +134,6 @@ export default function LolApp() {
 
   }
   function sortChamps(){
-    
+
   }
 }
