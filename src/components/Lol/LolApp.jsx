@@ -99,7 +99,7 @@ export default function LolApp() {
         show={modalShow}
         onHide={() => {
           setModalShow(false);
-          setLightBoxData(false);
+          // setLightBoxData(false);
         }}
         champ={selectedChampObj}
         lightBoxData={lightBoxData}
@@ -133,7 +133,7 @@ export default function LolApp() {
     setFilteredChamps(filteredChamps);
 
   }
-  function sortChamps(){
+  // function sortChamps(){
 
-  }
+  // }
 }

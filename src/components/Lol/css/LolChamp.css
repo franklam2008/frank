@@ -41,4 +41,8 @@
   -webkit-transition: 0.7s ease-out;
   transition: 0.7s ease-out;
 }
+
+.lolChamp p {
+  font-weight: 700;
+}
 /*# sourceMappingURL=LolChamp.css.map */

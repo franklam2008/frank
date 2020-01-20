@@ -19,14 +19,14 @@
     border: none;
     width: 100%;
   }
- 
+  input:focus {
+    outline: none;
+  }
 }
 .searchBar:focus-within{
   border: 1px solid var(--pinkSaved);
 }
-input:focus {
-  outline: none;
-}
+
 .lolContent{
   margin-top: 50px;
 }

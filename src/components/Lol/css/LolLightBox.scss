@@ -1,0 +1,68 @@
+.LolChampLightBox {
+  .champTag {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+  .champInfo{
+      margin-left: 5px;
+      .statBar,
+      .statWidth {
+        background-color: var(--blueSaved);
+        height: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        .statWidth {
+          background-color: var(--pinkSaved);
+        }
+      }
+  }
+  .champSpells {
+    // border: 1px solid red;
+  }
+  .spellIconCol{
+      text-align: center;
+      .spellIconCon{
+        min-width: 64px;
+    
+          min-height: 64px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+  }
+  .spellDescriptionCon{
+    text-align: left;
+
+  }
+  
+}
+.Assassin {
+  background-color: rgb(110, 0, 0);
+}
+.Controller {
+  background-color: rgb(158, 148, 0);
+}
+.Fighter {
+  background-color: rgb(177, 0, 0);
+}
+.Mage {
+  background-color: rgb(0, 0, 177);
+}
+.Marksman {
+  background-color: rgb(134, 114, 0);
+}
+.Slayer {
+  background-color: rgb(207, 0, 114);
+}
+.Specialist {
+  background-color: rgb(189, 101, 0);
+}
+.Support {
+  background-color: rgb(141, 0, 206);
+}
+.Tank {
+  background-color: rgb(46, 46, 46);
+}

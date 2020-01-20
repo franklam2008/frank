@@ -38,7 +38,7 @@ export default function Pokemon() {
             "https://pokeres.bastionbot.org/images/pokemon/" + x.id + ".png";
         });
         setPokemon(res.data.results);
-        console.log(res.data.results);
+        // console.log(res.data.results);
         
       });
     return () => {

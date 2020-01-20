@@ -29,12 +29,12 @@
   width: 100%;
 }
 
-.searchBar:focus-within {
-  border: 1px solid var(--pinkSaved);
+.searchBar input:focus {
+  outline: none;
 }
 
-input:focus {
-  outline: none;
+.searchBar:focus-within {
+  border: 1px solid var(--pinkSaved);
 }
 
 .lolContent {

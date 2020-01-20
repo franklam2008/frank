@@ -1,0 +1,83 @@
+.LolChampLightBox .champTag {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.LolChampLightBox .champInfo {
+  margin-left: 5px;
+}
+
+.LolChampLightBox .champInfo .statBar,
+.LolChampLightBox .champInfo .statWidth {
+  background-color: var(--blueSaved);
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.LolChampLightBox .champInfo .statBar .statWidth,
+.LolChampLightBox .champInfo .statWidth .statWidth {
+  background-color: var(--pinkSaved);
+}
+
+.LolChampLightBox .spellIconCol {
+  text-align: center;
+}
+
+.LolChampLightBox .spellIconCol .spellIconCon {
+  min-width: 64px;
+  min-height: 64px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.LolChampLightBox .spellDescriptionCon {
+  text-align: left;
+}
+
+.Assassin {
+  background-color: #6e0000;
+}
+
+.Controller {
+  background-color: #9e9400;
+}
+
+.Fighter {
+  background-color: #b10000;
+}
+
+.Mage {
+  background-color: #0000b1;
+}
+
+.Marksman {
+  background-color: #867200;
+}
+
+.Slayer {
+  background-color: #cf0072;
+}
+
+.Specialist {
+  background-color: #bd6500;
+}
+
+.Support {
+  background-color: #8d00ce;
+}
+
+.Tank {
+  background-color: #2e2e2e;
+}
+/*# sourceMappingURL=LolLightBox.css.map */

@@ -10,36 +10,37 @@ export default function LoginForm({ setSignUpPage }) {
     <section>
       <Form>
         <Form.Group controlId="formBasicEmail">
-          <Form.Control
-            type="email"
-            ref={emailInput}
-            placeholder="Enter email"
-          />
+        <input className="inputSaved" type="email" ref={emailInput}
+            placeholder="Enter email"/>
+        
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-          <Form.Control
-            type="password"
-            ref={passwordInput}
-            placeholder="Password"
-          />
+        <input className="inputSaved" type="password" ref={passwordInput}
+            placeholder="Password"/>
+     
         </Form.Group>
-
-        <Button variant="success" type="submit" block onClick={handleLogin}>
-          Sign In
-        </Button>
-        <Button variant="primary" block onClick={() => setSignUpPage(true)}>
-          Sign Up
-        </Button>
+        <Row>
+          <Col>
+            <Button variant="success" type="submit" block onClick={handleLogin}>
+              Sign In
+            </Button>
+          </Col>
+          <Col>
+            <Button variant="primary" block onClick={() => setSignUpPage(true)}>
+              Sign Up
+            </Button>
+          </Col>
+        </Row>
       </Form>
       <span>{error}</span>
       <hr className="hr-text" data-content="Or Login with" />
       <Row className="mb-2">
         <Col lg={{ span: 6, offset: 3 }}>
           <Button
-            variant="outline-dark"
+            variant="outline-success"
             type="submit"
             block
             onClick={() => {
@@ -53,7 +54,7 @@ export default function LoginForm({ setSignUpPage }) {
       <Row>
         <Col lg={6} className="mb-2">
           <Button
-            variant="primary"
+            variant="light"
             type="submit"
             block
             disabled
@@ -66,7 +67,7 @@ export default function LoginForm({ setSignUpPage }) {
         </Col>
         <Col lg={6}>
           <Button
-            variant="light"
+            variant="outline-info"
             type="submit"
             block
             disabled

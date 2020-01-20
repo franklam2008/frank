@@ -1,18 +1,19 @@
 import { Modal, Button } from "react-bootstrap";
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Row, Col } from "react-bootstrap";
 import Img from "react-image";
+import "./css/LolLightBox.css";
 
 export default function LightBox({ champ, onHide, show, lightBoxData }) {
   //if champ= [] case
   if (champ.length < 1) {
     return <></>;
   }
-  console.log(champ);
+  // console.log(champ);
 
   return (
     <Modal
-      className="capitalize LolChampLightBox"
+      className="LolChampLightBox"
       show={show}
       onHide={onHide}
       size="lg"
@@ -27,32 +28,71 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
         </div>
       ) : (
         <Modal.Body>
-          <Img
-            draggable={false}
-            src={`https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/${champ.id}.png`}
-            loader={<Spinner size="sm" className="" animation="border" />}
-            unloader={<p>Not Available</p>}
-          />
-          <div className="champTitle">{champ.title}</div>
+          <Row className="mb-4 pr-3">
+            <Col lg={3}>
+              {/* icon */}
+              <Img
+                draggable={false}
+                src={`https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/${champ.id}.png`}
+                loader={<Spinner size="sm" className="" animation="border" />}
+                unloader={<p>Not Available</p>}
+              />
+              <div className="champTitle">{champ.title}</div>
+            </Col>
+            {/* tag */}
+            <Col lg={9}>
+              <div className="mb-2">
+                {champ.tags.map(tag => (
+                  <span className={tag + " champTag"} key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {/* info */}
+              {Object.keys(champ.info).map(item => (
+                <div className="champInfo" key={item}>
+                  {item}: <span>{champ.info[item]}</span>
+                  <div className="statBar">
+                    <div
+                      className="statWidth"
+                      style={{ width: (champ.info[item] / 10) * 100 + "%" }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </Col>
+          </Row>
+          {/* Spells */}
           <div className="champSpells">
             {champ.spells.map(spell => (
-              <div key={spell.name}>
-                {spell.name}
-                <br />
-                <Img
-                  draggable={false}
-                  src={`https://ddragon.leagueoflegends.com/cdn/10.1.1/img/spell/${spell.id}.png`}
-                  loader={<Spinner size="sm" className="" animation="border" />}
-                  unloader={<p>Not Available</p>}
-                />
+              <div className="spellIconCol" key={spell.id}>
+                <hr className="hr-text" data-content={spell.name} />
 
-                {spell.description}
+                <Row>
+                  <Col lg={2}>
+                    <div className="spellIconCon">
+                      <Img
+                        draggable={false}
+                        src={`https://ddragon.leagueoflegends.com/cdn/10.1.1/img/spell/${spell.id}.png`}
+                        loader={<Spinner size="sm" animation="border" />}
+                        unloader={<p>Not Available</p>}
+                      />
+                    </div>
+                    {/* <div>{spell.name}</div> */}
+                  </Col>
+                  <Col lg={10}>
+                    <div className="spellDescriptionCon">
+                      {/* {spell.description} */}
+
+                      <div
+                        dangerouslySetInnerHTML={{ __html: spell.description }}
+                      />
+                    </div>
+                  </Col>
+                </Row>
+
               </div>
-            ))}
-          </div>
-          <div className="champTag">
-            {champ.tags.map(tag => (
-              <div key={tag}>{tag}</div>
+              
             ))}
           </div>
         </Modal.Body>
