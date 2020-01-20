@@ -20,7 +20,8 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>{champ.name}</Modal.Header>
+      <Modal.Header closeButton>
+        <div  className="champTitle">{champ.name}</div></Modal.Header>
       {!lightBoxData ? (
         <div className="loadingScreen">
           <Spinner size="lg" className="" animation="border" />
@@ -37,7 +38,7 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
                 loader={<Spinner size="sm" className="" animation="border" />}
                 unloader={<p>Not Available</p>}
               />
-              <div className="champTitle">{champ.title}</div>
+              <div>{champ.title}</div>
             </Col>
             {/* tag */}
             <Col lg={9}>

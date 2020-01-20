@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button,Row,Col } from "react-bootstrap";
 import fire from "../../../../config/Fire";
 
 export default function SignUpForm({ setSignUpPage }) {
@@ -11,33 +11,39 @@ export default function SignUpForm({ setSignUpPage }) {
   return (
     <div>
       <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
+        <Form.Group controlId="formBasicEmail"> <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+          <input
+            className="inputSaved"
             type="email"
             ref={emailInput}
             placeholder="Enter email"
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+         
+         
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+          <input
+            className="inputSaved"
             type="password"
             ref={passwordInput}
             placeholder="Password"
           />
+      
         </Form.Group>
-        <Form.Group controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" ref={nameInput} placeholder="Enter Name" />
+        <Form.Group className="mb-4" controlId="formBasicName">
+          <input
+            className="inputSaved"
+            type="text" ref={nameInput} placeholder="Enter Name"
+          />
         </Form.Group>
-        <Button variant="success" type="submit" block onClick={signUp}>
+        <Row className="mb-4">
+          <Col><Button variant="success" type="submit" block onClick={signUp}>
           Submit
         </Button>
-        <Button
+          </Col>
+          <Col><Button
           variant="secondary"
           type="submit"
           block
@@ -45,6 +51,10 @@ export default function SignUpForm({ setSignUpPage }) {
         >
           Back
         </Button>
+          </Col>
+        </Row>
+        
+        
 
         <span>{error}</span>
       </Form>

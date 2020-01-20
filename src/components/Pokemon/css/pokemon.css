@@ -119,7 +119,7 @@
 
 .PokeLightBox .statsCon .stat .statBar,
 .PokeLightBox .statsCon .stat .statWidth {
-  background-color: var(--blueSaved);
+  background-color: var(--darkBlueSaved);
   height: 15px;
   border-radius: 10px;
   overflow: hidden;

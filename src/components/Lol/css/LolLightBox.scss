@@ -1,43 +1,51 @@
 .LolChampLightBox {
+  .champTitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
   .champTag {
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 5px;
   }
-  .champInfo{
-      margin-left: 5px;
-      .statBar,
+  .champInfo {
+    margin-left: 5px;
+    .statBar,
+    .statWidth {
+      background-color: var(--darkBlueSaved);
+      height: 10px;
+      border-radius: 10px;
+      overflow: hidden;
       .statWidth {
-        background-color: var(--blueSaved);
-        height: 10px;
-        border-radius: 10px;
-        overflow: hidden;
-        .statWidth {
-          background-color: var(--pinkSaved);
-        }
+        background-color: var(--pinkSaved);
       }
+    }
   }
   .champSpells {
     // border: 1px solid red;
   }
-  .spellIconCol{
-      text-align: center;
-      .spellIconCon{
-        min-width: 64px;
-    
-          min-height: 64px;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
-  }
-  .spellDescriptionCon{
-    text-align: left;
+  .spellIconCol {
+    text-align: center;
+    .spellIconCon {
+      min-width: 64px;
 
+      min-height: 64px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
-  
+  .spellDescriptionCon {
+    text-align: left;
+  }
+  .hr-text {
+    &:after {
+      color: #ffffff;
+      background-color: var(--blueSaved);
+    }
+  }
 }
 .Assassin {
   background-color: rgb(110, 0, 0);

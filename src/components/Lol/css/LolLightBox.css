@@ -1,3 +1,8 @@
+.LolChampLightBox .champTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .LolChampLightBox .champTag {
   color: white;
   padding: 5px 10px;
@@ -11,7 +16,7 @@
 
 .LolChampLightBox .champInfo .statBar,
 .LolChampLightBox .champInfo .statWidth {
-  background-color: var(--blueSaved);
+  background-color: var(--darkBlueSaved);
   height: 10px;
   border-radius: 10px;
   overflow: hidden;
@@ -43,6 +48,11 @@
 
 .LolChampLightBox .spellDescriptionCon {
   text-align: left;
+}
+
+.LolChampLightBox .hr-text:after {
+  color: #ffffff;
+  background-color: var(--blueSaved);
 }
 
 .Assassin {

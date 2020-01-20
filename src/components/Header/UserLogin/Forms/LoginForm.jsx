@@ -10,17 +10,24 @@ export default function LoginForm({ setSignUpPage }) {
     <section>
       <Form>
         <Form.Group controlId="formBasicEmail">
-        <input className="inputSaved" type="email" ref={emailInput}
-            placeholder="Enter email"/>
-        
+          <input
+            className="inputSaved"
+            type="email"
+            ref={emailInput}
+            placeholder="Enter email"
+          />
+
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-        <input className="inputSaved" type="password" ref={passwordInput}
-            placeholder="Password"/>
-     
+          <input
+            className="inputSaved"
+            type="password"
+            ref={passwordInput}
+            placeholder="Password"
+          />
         </Form.Group>
         <Row>
           <Col>
@@ -29,7 +36,11 @@ export default function LoginForm({ setSignUpPage }) {
             </Button>
           </Col>
           <Col>
-            <Button variant="primary" block onClick={() => setSignUpPage(true)}>
+            <Button
+              variant="outline-primary"
+              block
+              onClick={() => setSignUpPage(true)}
+            >
               Sign Up
             </Button>
           </Col>
@@ -37,8 +48,9 @@ export default function LoginForm({ setSignUpPage }) {
       </Form>
       <span>{error}</span>
       <hr className="hr-text" data-content="Or Login with" />
-      <Row className="mb-2">
-        <Col lg={{ span: 6, offset: 3 }}>
+
+      <Row>
+        <Col lg={6} className="mb-2">
           <Button
             variant="outline-success"
             type="submit"
@@ -49,12 +61,10 @@ export default function LoginForm({ setSignUpPage }) {
           >
             Guest
           </Button>
-        </Col>
-      </Row>
-      <Row>
+        </Col>{" "}
         <Col lg={6} className="mb-2">
           <Button
-            variant="light"
+            variant="outline-info"
             type="submit"
             block
             disabled
@@ -65,6 +75,19 @@ export default function LoginForm({ setSignUpPage }) {
             Facebook
           </Button>
         </Col>
+        <Col lg={6}>
+          <Button
+            variant="outline-info"
+            type="submit"
+            block
+            disabled
+            onClick={() => {
+              console.log("GitHub");
+            }}
+          >
+            GitHub
+          </Button>
+        </Col>{" "}
         <Col lg={6}>
           <Button
             variant="outline-info"
