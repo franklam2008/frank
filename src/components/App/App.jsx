@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
   Switch
 } from "react-router-dom";
 // pages
@@ -65,7 +64,6 @@ function App() {
                   <Route path="/lol" component={LolApp} />
                   <Route path="/about" component={About} />
                   <Route path="/counter" component={Counter} />
-                  <Route render={() => <Redirect to="/" />} />
                 </Switch>
               </Col>
             </Row>

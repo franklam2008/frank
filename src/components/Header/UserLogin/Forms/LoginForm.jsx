@@ -1,13 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import fire from "../../../../config/Fire";
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 export default function LoginForm({ setSignUpPage }) {
   const [error, setError] = useState("");
   const emailInput = useRef();
   const passwordInput = useRef();
-  // var provider = new fire.auth.GoogleAuthProvider();
 
   return (
     <section>
@@ -65,15 +64,25 @@ export default function LoginForm({ setSignUpPage }) {
             Guest
           </Button>
         </Col>{" "}
+        <Col lg={6}>
+          <Button
+            variant="outline-info"
+            type="submit"
+            block
+            // disabled
+            onClick={googleSignIn}
+          >
+            Google
+          </Button>
+        </Col>
         <Col lg={6} className="mb-2">
           <Button
             variant="outline-info"
             type="submit"
             block
             disabled
-            onClick={() => {
-              console.log("Facebook");
-            }}
+            onClick={facebookSignIn}
+
           >
             Facebook
           </Button>
@@ -91,17 +100,7 @@ export default function LoginForm({ setSignUpPage }) {
             GitHub
           </Button>
         </Col>{" "}
-        <Col lg={6}>
-          <Button
-            variant="outline-info"
-            type="submit"
-            block
-            // disabled
-            onClick={googleSignIn}
-          >
-            Google
-          </Button>
-        </Col>
+       
       </Row>
     </section>
   );
@@ -133,20 +132,41 @@ export default function LoginForm({ setSignUpPage }) {
       .signInWithPopup(provider)
       .then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
+        // var token = result.credential.accessToken;
         // The signed-in user info.
-        var user = result.user;
+        // var user = result.user;
         // ...
       })
       .catch(function(error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
         // The email of the user's account used.
-        var email = error.email;
+        // var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
+        // var credential = error.credential;
         // ...
       });
+  }
+  function facebookSignIn(){
+    console.log('Facebook Sign In');
+
+    // var provider = new firebase.auth.FacebookAuthProvider();
+    // firebase.auth().signInWithPopup(provider).then(function(result) {
+    //   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    //   var token = result.credential.accessToken;
+    //   // The signed-in user info.
+    //   var user = result.user;
+    //   // ...
+    // }).catch(function(error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
   }
 }
