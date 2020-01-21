@@ -1,10 +1,13 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import fire from "../../../../config/Fire";
+import firebase from 'firebase';
+
 export default function LoginForm({ setSignUpPage }) {
   const [error, setError] = useState("");
   const emailInput = useRef();
   const passwordInput = useRef();
+  // var provider = new fire.auth.GoogleAuthProvider();
 
   return (
     <section>
@@ -93,10 +96,8 @@ export default function LoginForm({ setSignUpPage }) {
             variant="outline-info"
             type="submit"
             block
-            disabled
-            onClick={() => {
-              console.log("Google");
-            }}
+            // disabled
+            onClick={googleSignIn}
           >
             Google
           </Button>
@@ -121,5 +122,31 @@ export default function LoginForm({ setSignUpPage }) {
     const email = emailInput.current.value;
     const password = passwordInput.current.value;
     login(email, password);
+  }
+  function googleSignIn() {
+    console.log('Google Sign In');
+    
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    fire
+      .auth()
+      .signInWithPopup(provider)
+      .then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+      })
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
   }
 }

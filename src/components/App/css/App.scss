@@ -1,3 +1,4 @@
+
 .spinner-border{//all images loading spinner 
   color:var(--pinkSaved) ;
 }
@@ -21,6 +22,7 @@
   min-height: 100.1vh;
   width: 100%;
   transition: all 1s;
+  position: relative;
 }
 
 .mainTitle {

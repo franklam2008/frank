@@ -13,6 +13,7 @@ import About from "../About/About.jsx";
 import Home from "../Home/Home.jsx";
 import TodoApp from "../Todo/TodoApp.jsx";
 import Counter from "../Store/counter.jsx";
+import ContactBtn from "../ContactBtn/ContactBtn.jsx";
 // css
 import "./css/App.css";
 import "./css/LightBox.css";
@@ -38,7 +39,7 @@ function App() {
         <div className="App">
           <div className="container-fluid">
             <Row>
-              <Col className="backSideBar" xs={0} sm={1} md={1}lg={1}></Col>
+              <Col className="backSideBar" xs={0} sm={1} md={1} lg={1}></Col>
               <Col
                 id={openCol ? "openCol" : undefined}
                 className="sideBarMenu"
@@ -48,11 +49,13 @@ function App() {
               </Col>
               <Col
                 xs={12}
-                md={11}sm={11}
+                md={11}
+                sm={11}
                 lg={11}
                 id={openCol ? "mainConDark" : " "}
                 className="mainCon"
               >
+                <ContactBtn />
                 <Switch>
                   {/* Paths to different Pages */}
                   <Route exact path="/" component={Home} />

@@ -35,6 +35,7 @@
   width: 100%;
   -webkit-transition: all 1s;
   transition: all 1s;
+  position: relative;
 }
 
 .mainTitle {

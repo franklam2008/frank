@@ -1,0 +1,40 @@
+.ContactBtnCon {
+  position: fixed;
+  bottom: 35px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--darkBlueSaved);
+  border: 2px solid var(--blueSaved);
+  border-radius: 50%;
+  color: var(--textWhite);
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.ContactBtnCon svg {
+  font-size: 35px;
+}
+
+.ContactBtnCon:hover {
+  border: 2px solid var(--pinkSaved);
+}
+
+@media only screen and (max-width: 600px) {
+  .ContactBtnCon {
+    top: 25px;
+    right: 10px;
+  }
+}
+/*# sourceMappingURL=ContactBtn.css.map */
