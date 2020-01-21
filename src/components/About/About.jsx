@@ -9,6 +9,7 @@ import { useStore } from "../Firebase/FirebaseStore.jsx";
 export default function About() {
   const { state, dispatch } = useStore();
   const dataInput = useRef();
+  const webInput = useRef();
 
   useEffect(() => {
     const db = fire.database();
@@ -35,13 +36,13 @@ export default function About() {
       </a>
 
       <p className="madeWith">
-        Made with <FaHeart className=""/> in Orlando, Florida 
+        Made with <FaHeart className="" /> in Orlando, Florida
       </p>
       <p> Test Section</p>
       <h4 className="text-center">AuthUser</h4>
 
-      <p>{state.authUser.displayName??'No username'}</p>
-      <p>{state.authUser.email??"login"}</p>
+      <p>{state.authUser.displayName ?? "No username"}</p>
+      <p>{state.authUser.email ?? "login"}</p>
 
       <h4 className="text-center"> Counter/test</h4>
       <div>{state.counter}</div>
@@ -69,11 +70,43 @@ export default function About() {
       </InputGroup>
 
       <p>{state.db.data}</p>
+
+      <InputGroup>
+        <FormControl
+          type="text"
+          ref={webInput}
+          placeholder={"webTest"}
+          aria-label="Search"
+          aria-describedby="basic-addon2"
+        />
+        <InputGroup.Append>
+          <Button variant="info" onClick={handleWebInput}>
+            Run
+          </Button>
+        </InputGroup.Append>
+      </InputGroup>
     </div>
   );
+  function handleWebInput() {
+    console.log("handleWebInput");
+
+    const input = webInput.current.value;
+
+    // async function loadCreators() {
+    //   const creators = await fetch("http://localhost:3000/creators");
+    // }
+    // loadCreators();
+    fetch("http://localhost:4000/creators", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+      // body: JSON.stringify({channelURL}
+    });
+  }
   function handleSearchInput(e) {
     const name = dataInput.current.value;
-    console.log(name);
+    console.log('name',name);
     fire
       .database()
       .ref("data")
