@@ -1,6 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
+import Img from "react-image";
+import { Spinner, Row, Col } from "react-bootstrap";
+
 //Firebase
 import fire from "../../config/Fire";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
@@ -12,6 +15,8 @@ export default function About() {
   const { state, dispatch } = useStore();
   const dataInput = useRef();
   const webInput = useRef();
+  const [webScrapData, setWebScrapData] = useState([]);
+  const [webData, setWebData] = useState(false);
 
   useEffect(() => {
     const db = fire.database();
@@ -25,7 +30,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="aboutCon">
+    <section className="aboutCon">
       <div className="mainTitle">About</div>
       <p>This is a ReactJS Application with Authentication from Firebase.</p>
       <p>Feel free to visit my personal Website.</p>
@@ -89,7 +94,25 @@ export default function About() {
       <Button variant="info" onClick={Post}>
         Post
       </Button>
-    </div>
+      <Row className="scrapersCon">
+        {webData
+          ? webScrapData.map(item => (
+              <Col lg={2}>
+                <div key={item.id}>
+                  <Img
+                    draggable={false}
+                    src={item.img}
+                    loader={
+                      <Spinner size="sm" className="" animation="border" />
+                    }
+                    unloader={<p>Not Available</p>}
+                  />
+                </div>
+              </Col>
+            ))
+          : null}
+      </Row>
+    </section>
   );
 
   function handleSearchInput(e) {
@@ -120,6 +143,8 @@ export default function About() {
 
     axios.get("http://localhost:4000/creators").then(response => {
       console.log(response.data);
+      setWebData(true);
+      setWebScrapData(response.data);
     });
   }
 
