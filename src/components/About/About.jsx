@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
-import "./css/about.css";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
-import fire from "../../config/Fire";
-import { FaHeart } from "react-icons/fa";
 import axios from "axios";
-
+//Firebase
+import fire from "../../config/Fire";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
+//css
+import { FaHeart } from "react-icons/fa";
+import "./css/about.css";
 
 export default function About() {
   const { state, dispatch } = useStore();
@@ -126,12 +127,10 @@ export default function About() {
     console.log("Post");
     const input = webInput.current.value;
 
-    axios
-      .post("http://localhost:4000/creators", {
-        firstName: "Fred",
-        lastName: "Flintstone",
-        input: input
-      })
-      
+    axios.post("http://localhost:4000/creators", {
+      firstName: "Fred",
+      lastName: "Flintstone",
+      input: input
+    });
   }
 }
