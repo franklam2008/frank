@@ -3,6 +3,7 @@ import "./css/about.css";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
 import fire from "../../config/Fire";
 import { FaHeart } from "react-icons/fa";
+import axios from "axios";
 
 import { useStore } from "../Firebase/FirebaseStore.jsx";
 
@@ -79,34 +80,20 @@ export default function About() {
           aria-label="Search"
           aria-describedby="basic-addon2"
         />
-        <InputGroup.Append>
-          <Button variant="info" onClick={handleWebInput}>
-            Run
-          </Button>
-        </InputGroup.Append>
+        <InputGroup.Append></InputGroup.Append>
       </InputGroup>
+      <Button variant="info" onClick={Get}>
+        Get
+      </Button>
+      <Button variant="info" onClick={Post}>
+        Post
+      </Button>
     </div>
   );
-  function handleWebInput() {
-    console.log("handleWebInput");
 
-    const input = webInput.current.value;
-
-    // async function loadCreators() {
-    //   const creators = await fetch("http://localhost:3000/creators");
-    // }
-    // loadCreators();
-    fetch("http://localhost:4000/creators", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-      // body: JSON.stringify({channelURL}
-    });
-  }
   function handleSearchInput(e) {
     const name = dataInput.current.value;
-    console.log('name',name);
+    console.log("name", name);
     fire
       .database()
       .ref("data")
@@ -125,5 +112,26 @@ export default function About() {
     if (target.charCode === 13) {
       handleSearchInput();
     }
+  }
+
+  function Get() {
+    console.log("Get");
+
+    axios.get("http://localhost:4000/creators").then(response => {
+      console.log(response.data);
+    });
+  }
+
+  function Post() {
+    console.log("Post");
+    const input = webInput.current.value;
+
+    axios
+      .post("http://localhost:4000/creators", {
+        firstName: "Fred",
+        lastName: "Flintstone",
+        input: input
+      })
+      
   }
 }

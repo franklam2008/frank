@@ -1,6 +1,10 @@
 .lolCon {
   color: var(--textWhite);
-  
+  .mainTitle{
+    // position: sticky;
+    // position: -webkit-sticky;
+    // top: 0; /* required */
+  }
 }
 .searchBar{
   margin: 0 auto;

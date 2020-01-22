@@ -36,7 +36,6 @@
   -webkit-transition: all 1s;
   transition: all 1s;
   position: relative;
-  overflow-x: hidden;
 }
 
 .mainTitle {
