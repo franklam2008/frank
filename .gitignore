@@ -8,10 +8,10 @@
 # testing
 /coverage
 
-src/config
-Fire.js
+# src/config
+# Fire.js
+# src/config/Fire.js
 
-src/config/Fire.js
 # production
 /build
 
