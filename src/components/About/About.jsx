@@ -41,6 +41,13 @@ export default function About() {
       >
         <p>ifranklam.com </p>
       </a>
+      <a
+        href="https://quirky-shirley-a7ad09.netlify.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <p>quirky-shirley-a7ad09</p>
+      </a>
 
       <p className="madeWith">
         Made with <FaHeart className="" /> in Orlando, Florida
@@ -93,7 +100,8 @@ export default function About() {
       </Button>
       <Button variant="info" onClick={Post}>
         Post
-      </Button><Button variant="info" onClick={Post5000}>
+      </Button>
+      <Button variant="info" onClick={Post5000}>
         Post50001
       </Button>
       <Row className="scrapersCon">
@@ -159,16 +167,15 @@ export default function About() {
       lastName: "Flintstone",
       input: input
     });
-  }function Post5000() {
+  }
+  function Post5000() {
     console.log("Post");
     const input = webInput.current.value;
 
-    axios.post("http://localhost:5000/airtable", {
-      firstName: "Fred",
-      lastName: "Flintstone",
-      input: input
-    });
+    // axios.post("http://localhost:5000/airtable", {
+    //   firstName: "Fred",
+    //   lastName: "Flintstone",
+    //   input: input
+    // });
   }
-  
-
 }
