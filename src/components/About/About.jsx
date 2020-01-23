@@ -93,6 +93,8 @@ export default function About() {
       </Button>
       <Button variant="info" onClick={Post}>
         Post
+      </Button><Button variant="info" onClick={Post5000}>
+        Post50001
       </Button>
       <Row className="scrapersCon">
         {webData
@@ -152,10 +154,21 @@ export default function About() {
     console.log("Post");
     const input = webInput.current.value;
 
-    axios.post("http://localhost:4000/creators", {
+    axios.post("http://localhost:4000/airtable", {
+      firstName: "Fred",
+      lastName: "Flintstone",
+      input: input
+    });
+  }function Post5000() {
+    console.log("Post");
+    const input = webInput.current.value;
+
+    axios.post("http://localhost:5000/airtable", {
       firstName: "Fred",
       lastName: "Flintstone",
       input: input
     });
   }
+  
+
 }
