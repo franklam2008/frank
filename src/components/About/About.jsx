@@ -3,7 +3,7 @@ import { Button, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
 import Img from "react-image";
 import { Spinner, Row, Col } from "react-bootstrap";
-
+import ReactPlayer from "react-player";
 //Firebase
 import fire from "../../config/Fire";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
@@ -107,8 +107,8 @@ export default function About() {
       <Row className="scrapersCon">
         {webData
           ? webScrapData.map(item => (
-              <Col lg={2}>
-                <div key={item.id}>
+              <Col key={item.id} lg={2}>
+                <div>
                   <Img
                     draggable={false}
                     src={item.img}
@@ -122,6 +122,23 @@ export default function About() {
             ))
           : null}
       </Row>
+      <div className="player-wrapper">
+        <ReactPlayer
+          className="react-player"
+          url="https://www.youtube.com/watch?v=i7MtYfUhfiQ"
+          width="100%"
+          height="100%"
+        />
+      </div>
+      <div className="player-wrapper">
+        <ReactPlayer
+          url="http://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
+          playing={false}
+          width="400px"
+          height="70px"
+          controls
+        />
+      </div>
     </section>
   );
 
