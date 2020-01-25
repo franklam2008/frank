@@ -4,7 +4,7 @@ import { AiOutlineMessage } from "react-icons/ai";
 import ContactLightBox from "./ContactLightBox.jsx";
 
 export default function ContactBtn() {
-    const [modalShow, setModalShow] = useState(true);
+    const [modalShow, setModalShow] = useState(false);
 
   return (
     <div className="ContactBtnCon" >

@@ -1,6 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import React, { useRef, useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form,} from "react-bootstrap";
 import axios from "axios";
 
 // import Img from "react-image";

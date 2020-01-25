@@ -26,6 +26,12 @@ export default function About() {
       //do sth
       dispatch({ type: "ADD_DB", payload: snapshot.val() });
     });
+    console.log("123");
+
+    let list = document.querySelectorAll(".player-wrapper");
+    let items = Array.from(list).forEach(elem => {
+      console.log(elem.id);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -48,16 +54,13 @@ export default function About() {
       >
         <p>quirky-shirley-a7ad09</p>
       </a>
-
       <p className="madeWith">
         Made with <FaHeart className="" /> in Orlando, Florida
       </p>
       <p> Test Section</p>
       <h4 className="text-center">AuthUser</h4>
-
       <p>{state.authUser.displayName ?? "No username"}</p>
       <p>{state.authUser.email ?? "login"}</p>
-
       <h4 className="text-center"> Counter/test</h4>
       <div>{state.counter}</div>
       <button onClick={() => dispatch({ type: "ADD1" })}>Add</button>
@@ -65,7 +68,6 @@ export default function About() {
       <button onClick={() => dispatch({ type: "CHECK_STATE" })}>
         log state
       </button>
-
       <h4 className="text-center"> Quick Snap Container</h4>
       <InputGroup>
         <FormControl
@@ -82,9 +84,7 @@ export default function About() {
           </Button>
         </InputGroup.Append>
       </InputGroup>
-
       <p>{state.db.data}</p>
-
       <InputGroup>
         <FormControl
           type="text"
@@ -122,17 +122,35 @@ export default function About() {
             ))
           : null}
       </Row>
-      <div className="player-wrapper">
+      {/* <div className="player-wrapper">
         <ReactPlayer
           className="react-player"
           url="https://www.youtube.com/watch?v=i7MtYfUhfiQ"
           width="100%"
           height="100%"
         />
-      </div>
-      <div className="player-wrapper">
+      </div> */}
+      <div id="test1" className="player-wrapper">
         <ReactPlayer
-          url="http://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
+          url="https://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
+          playing={false}
+          width="400px"
+          height="70px"
+          controls
+        />
+      </div>
+      <div id="test2" className="player-wrapper">
+        <ReactPlayer
+          url="https://hkcdn.hkfm.info/A000900-20200122.mp3"
+          playing={false}
+          width="400px"
+          height="70px"
+          controls
+        />
+      </div>{" "}
+      <div id="test3" className="player-wrapper">
+        <ReactPlayer
+          url="http://cdn.hkfm.info/wp-content/uploads/2020/01/A000900-20200121.mp3?_=9"
           playing={false}
           width="400px"
           height="70px"
@@ -179,7 +197,7 @@ export default function About() {
     console.log("Post");
     const input = webInput.current.value;
 
-    axios.post("http://localhost:4000/airtable", {
+    axios.post("http://localhost:4000/creators", {
       firstName: "Fred",
       lastName: "Flintstone",
       input: input
@@ -188,11 +206,7 @@ export default function About() {
   function Post5000() {
     console.log("Post");
     const input = webInput.current.value;
+   console.log("Post", input);
 
-    // axios.post("http://localhost:5000/airtable", {
-    //   firstName: "Fred",
-    //   lastName: "Flintstone",
-    //   input: input
-    // });
   }
 }
