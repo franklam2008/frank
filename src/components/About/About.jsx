@@ -17,6 +17,8 @@ export default function About() {
   const webInput = useRef();
   const [webScrapData, setWebScrapData] = useState([]);
   const [webData, setWebData] = useState(false);
+  const [youtube, setYoutube] = useState(false);
+  const [youtubeURL, setYoutubeURL] = useState('');
 
   useEffect(() => {
     const db = fire.database();
@@ -26,12 +28,8 @@ export default function About() {
       //do sth
       dispatch({ type: "ADD_DB", payload: snapshot.val() });
     });
-    console.log("123");
 
-    let list = document.querySelectorAll(".player-wrapper");
-    let items = Array.from(list).forEach(elem => {
-      console.log(elem.id);
-    });
+  
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -101,8 +99,8 @@ export default function About() {
       <Button variant="info" onClick={Post}>
         Post
       </Button>
-      <Button variant="info" onClick={Post5000}>
-        Post50001
+      <Button variant="info" onClick={YouTubeScrape}>
+        YouTube
       </Button>
       <Row className="scrapersCon">
         {webData
@@ -122,15 +120,16 @@ export default function About() {
             ))
           : null}
       </Row>
-      {/* <div className="player-wrapper">
+      {youtube?<div className="player-wrapper">
         <ReactPlayer
           className="react-player"
-          url="https://www.youtube.com/watch?v=i7MtYfUhfiQ"
+          url={youtubeURL}
           width="100%"
           height="100%"
+          playing
         />
-      </div> */}
-      <div id="test1" className="player-wrapper">
+      </div>:null}
+      <div className="player-wrapper">
         <ReactPlayer
           url="https://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
           playing={false}
@@ -139,7 +138,7 @@ export default function About() {
           controls
         />
       </div>
-      <div id="test2" className="player-wrapper">
+      <div  className="player-wrapper">
         <ReactPlayer
           url="https://hkcdn.hkfm.info/A000900-20200122.mp3"
           playing={false}
@@ -148,9 +147,9 @@ export default function About() {
           controls
         />
       </div>{" "}
-      <div id="test3" className="player-wrapper">
+      <div  className="player-wrapper">
         <ReactPlayer
-          url="http://cdn.hkfm.info/wp-content/uploads/2020/01/A000900-20200121.mp3?_=9"
+          url="https://cdn.hkfm.info/wp-content/uploads/2020/01/A000900-20200121.mp3?_=9"
           playing={false}
           width="400px"
           height="70px"
@@ -203,10 +202,19 @@ export default function About() {
       input: input
     });
   }
-  function Post5000() {
-    console.log("Post");
+  function YouTubeScrape() {
+    console.log("YouTube");
     const input = webInput.current.value;
-   console.log("Post", input);
+    console.log("Post", input);
 
+    axios.post("http://localhost:4000/youtube", {
+      firstName: "Fred",
+      lastName: "Flintstone",
+      input: input
+    }).then(response => {
+      console.log(response.data);
+      setYoutube(true);
+      setYoutubeURL(response.data.link);
+    });
   }
 }
