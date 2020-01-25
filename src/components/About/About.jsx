@@ -17,8 +17,8 @@ export default function About() {
   const webInput = useRef();
   const [webScrapData, setWebScrapData] = useState([]);
   const [webData, setWebData] = useState(false);
-  const [youtube, setYoutube] = useState(false);
   const [youtubeURL, setYoutubeURL] = useState('');
+  const [youtube, setYoutube] = useState(false);
 
   useEffect(() => {
     const db = fire.database();
@@ -124,9 +124,10 @@ export default function About() {
         <ReactPlayer
           className="react-player"
           url={youtubeURL}
-          width="100%"
-          height="100%"
+          width="500px"
+          height="500px"
           playing
+          controls
         />
       </div>:null}
       <div className="player-wrapper">
