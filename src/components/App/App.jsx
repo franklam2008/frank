@@ -12,7 +12,7 @@ import About from "../About/About.jsx";
 import Home from "../Home/Home.jsx";
 import TodoApp from "../Todo/TodoApp.jsx";
 import Counter from "../Store/counter.jsx";
-import ContactBtn from "../ContactBtn/ContactBtn.jsx";
+import ContactCon from "../ContactCon/ContactCon.jsx";
 // css
 import "./css/App.css";
 import "./css/LightBox.css";
@@ -54,7 +54,7 @@ function App() {
                 id={openCol ? "mainConDark" : " "}
                 className="mainCon"
               >
-                <ContactBtn />
+                <ContactCon />
                 <Switch>
                   {/* Paths to different Pages */}
                   <Route exact path="/" component={Home} />

@@ -17,7 +17,7 @@ export default function About() {
   const webInput = useRef();
   const [webScrapData, setWebScrapData] = useState([]);
   const [webData, setWebData] = useState(false);
-  const [youtubeURL, setYoutubeURL] = useState('');
+  const [youtubeURL, setYoutubeURL] = useState("");
   const [youtube, setYoutube] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,6 @@ export default function About() {
       dispatch({ type: "ADD_DB", payload: snapshot.val() });
     });
 
-  
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -120,16 +119,18 @@ export default function About() {
             ))
           : null}
       </Row>
-      {youtube?<div className="player-wrapper">
-        <ReactPlayer
-          className="react-player"
-          url={youtubeURL}
-          width="500px"
-          height="500px"
-          playing
-          controls
-        />
-      </div>:null}
+      {youtube ? (
+        <div className="player-wrapper">
+          <ReactPlayer
+            className="react-player"
+            url={youtubeURL}
+            width="500px"
+            height="500px"
+            playing
+            controls
+          />
+        </div>
+      ) : null}
       <div className="player-wrapper">
         <ReactPlayer
           url="https://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
@@ -139,7 +140,7 @@ export default function About() {
           controls
         />
       </div>
-      <div  className="player-wrapper">
+      <div className="player-wrapper">
         <ReactPlayer
           url="https://hkcdn.hkfm.info/A000900-20200122.mp3"
           playing={false}
@@ -148,7 +149,7 @@ export default function About() {
           controls
         />
       </div>{" "}
-      <div  className="player-wrapper">
+      <div className="player-wrapper">
         <ReactPlayer
           url="https://cdn.hkfm.info/wp-content/uploads/2020/01/A000900-20200121.mp3?_=9"
           playing={false}
@@ -208,14 +209,16 @@ export default function About() {
     const input = webInput.current.value;
     console.log("Post", input);
 
-    axios.post("http://localhost:4000/youtube", {
-      firstName: "Fred",
-      lastName: "Flintstone",
-      input: input
-    }).then(response => {
-      console.log(response.data);
-      setYoutube(true);
-      setYoutubeURL(response.data.link);
-    });
+    axios
+      .post("http://localhost:4000/youtube", {
+        firstName: "Fred",
+        lastName: "Flintstone",
+        input: input
+      })
+      .then(response => {
+        console.log(response.data);
+        setYoutube(true);
+        setYoutubeURL(response.data.link);
+      });
   }
 }
