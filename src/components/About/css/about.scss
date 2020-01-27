@@ -19,10 +19,15 @@
   .player-wrapper {
     position: relative;
   }
-   
-  .react-player {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .react-player{
+    width: auto;
+    height: auto;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .react-player{
+    max-width: 350px;
   }
 }

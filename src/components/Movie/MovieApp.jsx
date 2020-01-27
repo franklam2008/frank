@@ -4,8 +4,12 @@ import MovieItem from "./MovieItem.jsx";
 import Pagination from "./Pagination.jsx";
 import { Col, Row, Spinner } from "react-bootstrap";
 import "./css/movie.css";
-import movieIcon from '../assets/img/movieIcon.png'
+import movieIcon from "../assets/img/movieIcon.png";
+import { useStore } from "../Firebase/FirebaseStore.jsx";
+
 export default function Movie() {
+  const { state, dispatch } = useStore();
+
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showPrev, setShowPrev] = useState(false);
@@ -20,7 +24,6 @@ export default function Movie() {
   );
 
   useEffect(() => {
-    
     axios.get(currentPageUrl).then(response => {
       // console.log(response)
       if (response.data.results.length !== 0) {
@@ -59,8 +62,9 @@ export default function Movie() {
   return (
     <section className="movieCon">
       <div className="mainTitle">
-        <img src={movieIcon} alt="movie"/>
-        Movies</div>
+        <img src={movieIcon} alt="movie" />
+        Movies
+      </div>
       <Pagination
         inputShow={true}
         showPrev={showPrev}
@@ -78,7 +82,7 @@ export default function Movie() {
       <Row className="movieList mt-3">
         {movies.map(movie => (
           <Col key={movie.id} md={6} lg={6} xl={4}>
-            <MovieItem movie={movie} />
+            <MovieItem movie={movie} addMovie={() => addMovie(movie)} />
           </Col>
         ))}
       </Row>
@@ -98,7 +102,7 @@ export default function Movie() {
     let id = num || Number(url.substring(url.indexOf("&page=") + 6));
     add ? id++ : id--;
     if (check) return baseUrl + id;
-    id > 1 ? setShowPrev(true) : setShowPrev(false); // show prev btn
+    id > 1 ? setShowPrev(true) : setShowPrev(false); // show prev btn or not
     setCurrentPageUrl(baseUrl + id);
   }
 
@@ -117,6 +121,19 @@ export default function Movie() {
   function handleKeyPress(target) {
     if (target.charCode === 13) {
       handleSearchInput();
+    }
+  }
+  function addMovie(movie) {
+    // console.log(movie);
+    const targetId = movie.id;
+    let checkMovieInList = false;
+    console.log(movie);
+    
+    if (state.addedMovies !== []) {
+      checkMovieInList = state.addedMovies.some(movie => movie.id === targetId);
+    }
+    if (!checkMovieInList) {
+      dispatch({ type: "ADD_MOVIE", payload: movie });
     }
   }
 }

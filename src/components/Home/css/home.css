@@ -28,8 +28,30 @@
   text-decoration: underline;
 }
 
+.homeCon .movieCon {
+  overflow-x: hidden;
+}
+
+.homeCon .movieCon .movieWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-color: red yellow;
+}
+
+.homeCon .movieCon .movieWrapper::-webkit-scrollbar {
+  background-color: var(--blueSaved);
+}
+
+.homeCon .movieCon .movieWrapper::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: var(--darkBlueSaved);
+}
+
 .homeCon .movieCon img {
   max-height: 200px;
+  margin-right: 10px;
 }
 
 .homeCon .pokeCon img {

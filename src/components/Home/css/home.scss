@@ -24,9 +24,27 @@
     }
   }
   .movieCon{
+    .movieWrapper{
+      display: flex;
+      overflow-x: scroll;
+      scrollbar-color: red yellow;
+    }
+    .movieWrapper::-webkit-scrollbar {
+      // width: 12px;
+      background-color: var(--blueSaved);
+    
+    }
+    .movieWrapper::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: var(--darkBlueSaved);
+    
+    }    
     img{
       max-height: 200px;
+      margin-right: 10px;
+      
     }
+    overflow-x: hidden
   }
   .pokeCon{
     img{

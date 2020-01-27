@@ -124,8 +124,6 @@ export default function About() {
           <ReactPlayer
             className="react-player"
             url={youtubeURL}
-            width="500px"
-            height="500px"
             playing
             controls
           />

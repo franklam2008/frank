@@ -1,18 +1,26 @@
 import React from "react";
 import { Row, Col, Card, Button, Spinner } from "react-bootstrap";
 import Img from "react-image";
-export default function MovieItem({ movie }) {
+import { IoIosAddCircleOutline } from "react-icons/io";
+
+export default function MovieItem({ movie ,addMovie}) {
   return (
     <>
       <Card className="mb-3" style={{ maxWidth: "540px" }}>
         <Row className="no-gutters">
-          <Col md={5} className=" imgCon">
+          <Col md={5} className="imgCon" onClick={addMovie}>
             <Img
-              variant="top"
+                draggable={false}
+                variant="top" 
+                alt="movie"
               src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
               loader={<Spinner size="sm" className="" animation="border" />}
               unloader={<p>Not Available</p>}
             />
+            <div className="addCon">
+            <IoIosAddCircleOutline />
+            <p>Add to bookmark</p>
+            </div>
           </Col>
           <Col md={7} className="">
             <div className="card-body">

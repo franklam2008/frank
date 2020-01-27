@@ -1,14 +1,13 @@
 import "./css/home.css";
 import React from "react";
+import { useStore } from "../Firebase/FirebaseStore.jsx";
+import Img from "react-image";
 import macIcon from "../assets/img/macIcon.png";
-import {
-  Col,
-  Row
-  // Spinner
-} from "react-bootstrap";
+import { Col, Row, Spinner } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 export default function Home() {
+  const { state, dispatch } = useStore();
   return (
     <div className="homeCon">
       <div className="header">
@@ -22,14 +21,22 @@ export default function Home() {
       </div>
       <section className="container-fluid">
         <Row className="">
-          <Col >
+          <Col>
             <div className="homeSectionCon movieCon">
               <h3>Movie List</h3>
-              <img
-                src="https://image.tmdb.org/t/p/w500//udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
-                alt="Joker"
-                draggable={false}
-              />
+              <div className="movieWrapper">
+              {state.addedMovies.map(movie => (
+                <Img
+                  draggable={false}
+                  variant="top" alt="movie"
+                  key={movie.id}
+                  src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                  loader={<Spinner size="sm" className="" animation="border" />}
+                  unloader={<p>Not Available</p>}
+                />
+              ))}
+              </div>
+              
             </div>
           </Col>
         </Row>

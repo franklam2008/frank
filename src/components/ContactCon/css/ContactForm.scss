@@ -4,7 +4,7 @@
   padding: 20px 30px;
   max-width: 450px;
   border-radius: 10px;
-  svg{
+  svg {
     position: absolute;
     top: 30px;
     right: 35px;
@@ -17,7 +17,6 @@
     margin: 0 auto;
     border-color: var(--pinkSaved);
     margin-bottom: 10px;
-   
   }
 
   #formCheckbox {
@@ -64,8 +63,10 @@
     background-color: var(--blueSaved);
     color: white;
     padding: 10px 10px;
-    max-width: 350px;}
-  .ContactBtn{
+    max-width: 300px;
+  }
+  .ContactBtn {
     right: 10px;
+    bottom: 15px;
   }
 }

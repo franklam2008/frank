@@ -11,7 +11,8 @@ const defaultState = {
   login: false,
   authUser: [],
   db: [],
-  data:[]
+  data: [],
+  addedMovies: []
 };
 
 const UserContext = createContext(null);
@@ -31,16 +32,16 @@ export function UserProvider({ children }) {
           .child(authUser.uid);
         dbRef.on("value", snapshot => {
           //do sth
-          const data = snapshot.val()
-        dispatch({ type: "ADD_DB", payload: data });
-        console.log('data',data);
+          const data = snapshot.val();
+          dispatch({ type: "ADD_DB", payload: data });
+          console.log("data", data);
         });
       } else {
         dispatch({ type: "REMOVE_USER" });
       }
     });
   }, []);
-  
+
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 
@@ -58,6 +59,8 @@ function reducer(state = defaultState, action = {}) {
       return { ...state, db: action.payload };
     case "ADD_POKEMON":
       return { ...state, db: action.payload };
+    case "ADD_MOVIE":
+      return { ...state, addedMovies: [...state.addedMovies, action.payload] };
     case "MINUS1":
       return { ...state, counter: state.counter - 1 };
     case "ADD1":

@@ -27,7 +27,7 @@ export default function PopoverForm() {
           type="email"
           ref={emailInput}
           placeholder="Enter email"
-          defaultValue="email@example.com"
+          // defaultValue="corlohk@yahoo.com.hk"
         />
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
@@ -36,7 +36,7 @@ export default function PopoverForm() {
           type="tel"
           ref={phoneInput}
           placeholder="Phone Number"
-          defaultValue="3332222323"
+          // defaultValue="3529999579"
         />
       </Form.Group>{" "}
       <Form.Group controlId="formBasicPassword">
@@ -45,7 +45,7 @@ export default function PopoverForm() {
           type="text"
           ref={messageInput}
           placeholder="Message"
-          defaultValue="Hello World!"
+          // defaultValue="Testing String"
         />
       </Form.Group>
       <Form.Group id="formCheckbox"controlId="formBasicCheckbox">
@@ -77,6 +77,8 @@ export default function PopoverForm() {
     axios.post("http://localhost:5000/submit", input).then(res => {
       console.log(res);
       setFormMsg(res.data);
-    });
+    }).catch(
+      setFormMsg("Connected Error")
+    );
   }
 }
