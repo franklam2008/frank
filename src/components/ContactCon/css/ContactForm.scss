@@ -1,0 +1,67 @@
+#contact-form {
+  background-color: var(--blueSaved);
+  color: white;
+  padding: 20px 30px;
+  max-width: 450px;
+  border-radius: 10px;
+  svg{
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    cursor: pointer;
+  }
+  .popover-header {
+    background-color: var(--blueSaved);
+    text-align: center;
+    width: 130px;
+    margin: 0 auto;
+    border-color: var(--pinkSaved);
+    margin-bottom: 10px;
+   
+  }
+
+  #formCheckbox {
+    color: var(--subTextWhite);
+  }
+
+  span {
+    color: var(--pinkSaved);
+    margin-left: 10px;
+  }
+
+  .arrow::after {
+    border-top-color: var(--blueSaved);
+  }
+}
+
+.ContactBtn {
+  position: fixed;
+  bottom: 35px;
+  right: 30px;
+  //size
+  width: 60px;
+  height: 60px;
+  background-color: var(--darkBlueSaved);
+  border: 2px solid var(--blueSaved);
+  border-radius: 50%;
+  color: var(--textWhite);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  svg {
+    font-size: 35px;
+  }
+}
+.ContactBtn:hover {
+  border: 2px solid var(--pinkSaved);
+}
+
+@media only screen and (max-width: 600px) {
+  .ContactBtnCon {
+    top: 25px;
+    right: 10px;
+  }
+}

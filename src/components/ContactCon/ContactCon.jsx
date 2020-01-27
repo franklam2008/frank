@@ -1,23 +1,37 @@
 import React,{useState} from "react";
-import "./css/ContactBtn.css";
+import "./css/ContactForm.css";
 import { AiOutlineMessage } from "react-icons/ai";
-import ContactLightBox from "./ContactLightBox.jsx";
+import { FaTimes } from "react-icons/fa";
+import PopoverForm from "./PopoverForm.jsx";
 
+import { OverlayTrigger, Popover } from "react-bootstrap";
 export default function ContactCon() {
-    const [modalShow, setModalShow] = useState(false);
-
+  const [closeForm, setCloseForm] = useState(false);
   return (
-    <div className="ContactBtnCon" >
-      <AiOutlineMessage onClick={()=>{setModalShow(true)}}/>
-      <ContactLightBox
-        show={modalShow}
-        onHide={() => {
-          setModalShow(false);
-          // setLightBoxData(false);
-        }}
-        // champ={selectedChampObj}
-        // lightBoxData={lightBoxData}
-      />
+    <div className="ContactCon">
+      <OverlayTrigger
+        trigger="click"
+        key="top"
+        placement="top"
+        onHide={closeForm}
+        overlay={
+          <Popover id="contact-form">
+              <FaTimes onClick={()=>{setCloseForm(true)}}/>
+
+            <Popover.Title as="h3">
+
+              Contact Form
+            </Popover.Title>
+            <Popover.Content>
+              <PopoverForm />
+            </Popover.Content>
+          </Popover>
+        }
+      >
+        <div className="ContactBtn">
+          <AiOutlineMessage />
+        </div>
+      </OverlayTrigger>
     </div>
   );
 }

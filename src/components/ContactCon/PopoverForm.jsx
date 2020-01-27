@@ -1,0 +1,82 @@
+import React, { useState, useRef } from "react";
+import axios from "axios";
+
+import { Form, Button } from "react-bootstrap";
+
+export default function PopoverForm() {
+  const [formMsg, setFormMsg] = useState("");
+  const emailInput = useRef();
+  const checkInput = useRef();
+  const nameInput = useRef();
+  const phoneInput = useRef();
+  const messageInput = useRef();
+  return (
+    <Form>
+      <Form.Group controlId="formBasicPassword">
+        <input
+          className="inputSaved"
+          type="text"
+          ref={nameInput}
+          placeholder="Name"
+          // defaultValue="Frank"
+        />
+      </Form.Group>
+      <Form.Group controlId="formBasicEmail">
+        <input
+          className="inputSaved"
+          type="email"
+          ref={emailInput}
+          placeholder="Enter email"
+          defaultValue="email@example.com"
+        />
+      </Form.Group>
+      <Form.Group controlId="formBasicPassword">
+        <input
+          className="inputSaved"
+          type="tel"
+          ref={phoneInput}
+          placeholder="Phone Number"
+          defaultValue="3332222323"
+        />
+      </Form.Group>{" "}
+      <Form.Group controlId="formBasicPassword">
+        <input
+          className="inputSaved"
+          type="text"
+          ref={messageInput}
+          placeholder="Message"
+          defaultValue="Hello World!"
+        />
+      </Form.Group>
+      <Form.Group id="formCheckbox"controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" ref={checkInput} label="Send me a SMS &amp; Email" />
+        <Form.Text>
+        We'll never share your information with anyone else and send you a SMS and Email via Twilio and SendGrid API.
+      </Form.Text>
+      </Form.Group>
+      
+      <Button variant="success" type="submit" onClick={handleForm}>
+        Submit
+      </Button>
+      <span>{formMsg}</span>
+    </Form>
+  );
+  function handleForm(e) {
+    e.preventDefault();
+    const input = {
+      name: nameInput.current.value,
+      email: emailInput.current.value,
+      phone: phoneInput.current.value,
+      message: messageInput.current.value,
+      checkbox:checkInput.current.checked
+    };
+    
+    sendForm(input);
+  }
+  function sendForm(input) {
+    axios.post("http://localhost:5000/submit", input).then(res => {
+      console.log(res);
+      setFormMsg(res.data);
+    });
+  }
+}

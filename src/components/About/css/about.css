@@ -17,4 +17,14 @@
 .aboutCon .scrapersCon img {
   width: 100px;
 }
+
+.aboutCon .player-wrapper {
+  position: relative;
+}
+
+.aboutCon .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /*# sourceMappingURL=about.css.map */
