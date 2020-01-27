@@ -48,13 +48,17 @@ export default function PopoverForm() {
           // defaultValue="Testing String"
         />
       </Form.Group>
-      <Form.Group id="formCheckbox"controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" ref={checkInput} label="Send me a SMS &amp; Email" />
+      <Form.Group id="formCheckbox" controlId="formBasicCheckbox">
+        <Form.Check
+          type="checkbox"
+          ref={checkInput}
+          label="Send me a SMS &amp; Email"
+        />
         <Form.Text>
-        We'll never share your information with anyone else and send you a SMS and Email via Twilio and SendGrid API.
-      </Form.Text>
+          We'll never share your information with anyone else and send you a SMS
+          and Email via Twilio and SendGrid API.
+        </Form.Text>
       </Form.Group>
-      
       <Button variant="success" type="submit" onClick={handleForm}>
         Submit
       </Button>
@@ -68,17 +72,18 @@ export default function PopoverForm() {
       email: emailInput.current.value,
       phone: phoneInput.current.value,
       message: messageInput.current.value,
-      checkbox:checkInput.current.checked
+      checkbox: checkInput.current.checked
     };
-    
+
     sendForm(input);
   }
   function sendForm(input) {
-    axios.post("http://localhost:5000/submit", input).then(res => {
-      console.log(res);
-      setFormMsg(res.data);
-    }).catch(
-      setFormMsg("Connected Error")
-    );
+    axios
+      .post("http://localhost:5000/submit", input)
+      .then(res => {
+        console.log(res);
+        setFormMsg(res.data);
+      })
+      .catch(setFormMsg("Connected Error"));
   }
 }
