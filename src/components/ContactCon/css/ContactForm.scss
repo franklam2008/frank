@@ -60,8 +60,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .ContactBtnCon {
-    top: 25px;
+  #contact-form {
+    background-color: var(--blueSaved);
+    color: white;
+    padding: 10px 10px;
+    max-width: 350px;}
+  .ContactBtn{
     right: 10px;
   }
 }

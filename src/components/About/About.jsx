@@ -135,7 +135,7 @@ export default function About() {
         <ReactPlayer
           url="https://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
           playing={false}
-          width="400px"
+          width="300px"
           height="70px"
           controls
         />
@@ -144,7 +144,7 @@ export default function About() {
         <ReactPlayer
           url="https://hkcdn.hkfm.info/A000900-20200122.mp3"
           playing={false}
-          width="400px"
+          width="300px"
           height="70px"
           controls
         />
@@ -153,7 +153,7 @@ export default function About() {
         <ReactPlayer
           url="https://cdn.hkfm.info/wp-content/uploads/2020/01/A000900-20200121.mp3?_=9"
           playing={false}
-          width="400px"
+          width="300px"
           height="70px"
           controls
         />

@@ -1,37 +1,44 @@
-import React,{useState} from "react";
+import React, { useState, useRef } from "react";
 import "./css/ContactForm.css";
 import { AiOutlineMessage } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
 import PopoverForm from "./PopoverForm.jsx";
 
-import { OverlayTrigger, Popover } from "react-bootstrap";
+import {
+  Popover,
+  ButtonToolbar,
+  Overlay
+} from "react-bootstrap";
 export default function ContactCon() {
-  const [closeForm, setCloseForm] = useState(false);
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+  const handleClick = event => {
+    setTarget(event.target);
+    setShow(!show);
+  };
   return (
-    <div className="ContactCon">
-      <OverlayTrigger
-        trigger="click"
-        key="top"
+    <ButtonToolbar ref={ref}>
+      <div className="ContactBtn" onClick={handleClick}>
+        <AiOutlineMessage />
+      </div>
+      <Overlay
+        show={show}
+        target={target}
+        onHide={() => {setShow(false)}}
+        rootClose
         placement="top"
-        onHide={closeForm}
-        overlay={
-          <Popover id="contact-form">
-              <FaTimes onClick={()=>{setCloseForm(true)}}/>
-
-            <Popover.Title as="h3">
-
-              Contact Form
-            </Popover.Title>
-            <Popover.Content>
-              <PopoverForm />
-            </Popover.Content>
-          </Popover>
-        }
+        container={ref.current}
+        containerPadding={20}
       >
-        <div className="ContactBtn">
-          <AiOutlineMessage />
-        </div>
-      </OverlayTrigger>
-    </div>
+        <Popover id="contact-form">
+      <FaTimes onClick={() => {setShow(false)}}/>
+          <Popover.Title as="h3">Contact Form</Popover.Title>
+          <Popover.Content>
+            <PopoverForm />
+          </Popover.Content>
+        </Popover>
+      </Overlay>
+    </ButtonToolbar>
   );
 }
