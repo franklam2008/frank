@@ -161,13 +161,12 @@ export default function About() {
 
   function handleSearchInput(e) {
     const name = dataInput.current.value;
-    console.log("name", name);
-    fire
-      .database()
-      .ref("data")
-      .set({
-        data: name
-      });
+    // fire
+    //   .database()
+    //   .ref("data")
+    //   .set({
+    //     data: name
+    //   });
     if (name === "") return;
     dispatch({
       type: "ADD_DB",

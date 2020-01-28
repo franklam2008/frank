@@ -1,11 +1,6 @@
 import React, { createContext, useReducer, useContext, useEffect } from "react";
 import fire from "../../config/Fire";
 
-// const noUser = {
-//   //dom will return error when reading authUser.email when authUser = null
-//   displayName: null,
-//   email: null
-// };
 const defaultState = {
   counter: 0,
   login: false,
@@ -25,17 +20,17 @@ export function UserProvider({ children }) {
     fire.auth().onAuthStateChanged(authUser => {
       if (authUser) {
         dispatch({ type: "ADD_USER", payload: authUser });
-        const db = fire.database();
-        const dbRef = db
-          .ref()
-          .child("users")
-          .child(authUser.uid);
-        dbRef.on("value", snapshot => {
-          //do sth
-          const data = snapshot.val();
-          dispatch({ type: "ADD_DB", payload: data });
-          console.log("data", data);
-        });
+        // const db = fire.database();
+        // const dbRef = db
+        //   .ref()
+        //   .child("users")
+        //   .child(authUser.uid);
+        // dbRef.on("value", snapshot => {
+        //   //do sth
+        //   const data = snapshot.val();
+        //   dispatch({ type: "ADD_DB", payload: data });
+        //   console.log("data", data);
+        // });
       } else {
         dispatch({ type: "REMOVE_USER" });
       }
@@ -51,7 +46,7 @@ function reducer(state = defaultState, action = {}) {
   switch (action.type) {
     case "ADD_USER":
       const { uid, displayName, email } = action.payload;
-      writeUserData(uid, displayName, email);
+      newUserData(uid, displayName, email);
       return { ...state, login: true, authUser: action.payload };
     case "REMOVE_USER":
       return { ...state, login: false, authUser: [] };
@@ -59,12 +54,15 @@ function reducer(state = defaultState, action = {}) {
       return { ...state, db: action.payload };
     case "ADD_POKEMON":
       return { ...state, db: action.payload };
+      //movie
     case "ADD_MOVIE":
       return { ...state, addedMovies: [...state.addedMovies, action.payload] };
+      //counter
     case "MINUS1":
       return { ...state, counter: state.counter - 1 };
     case "ADD1":
       return { ...state, counter: state.counter + 1 };
+      //log
     case "CHECK_STATE":
       console.log("stateNow", state);
       return { ...state };
@@ -72,7 +70,7 @@ function reducer(state = defaultState, action = {}) {
       return state;
   }
 }
-function writeUserData(userId, name, email) {
+function newUserData(userId, name, email) {
   fire
     .database()
     .ref("users/" + userId)
