@@ -11,13 +11,14 @@ export default function PopoverForm() {
   const phoneInput = useRef();
   const messageInput = useRef();
   return (
-    <Form>
+    <Form onSubmit={handleForm}>
       <Form.Group controlId="formBasicPassword">
         <input
           className="inputSaved"
           type="text"
           ref={nameInput}
           placeholder="Name"
+          required
           // defaultValue="Frank"
         />
       </Form.Group>
@@ -27,6 +28,7 @@ export default function PopoverForm() {
           type="email"
           ref={emailInput}
           placeholder="Enter email"
+          required
           // defaultValue="corlohk@yahoo.com.hk"
         />
       </Form.Group>
@@ -36,15 +38,17 @@ export default function PopoverForm() {
           type="tel"
           ref={phoneInput}
           placeholder="Phone Number"
+          required
           // defaultValue="3529999579"
         />
-      </Form.Group>{" "}
+      </Form.Group>
       <Form.Group controlId="formBasicPassword">
         <input
           className="inputSaved"
           type="text"
           ref={messageInput}
           placeholder="Message"
+          required
           // defaultValue="Testing String"
         />
       </Form.Group>
@@ -55,14 +59,17 @@ export default function PopoverForm() {
           label="Send me a SMS &amp; Email"
         />
         <Form.Text>
-          We'll never share your information with anyone else and send you a SMS
+          We'll never share your information with anyone else saving it Airtable and send you a SMS
           and Email via Twilio and SendGrid API.
         </Form.Text>
       </Form.Group>
-      <Button variant="success" type="submit" onClick={handleForm}>
+      <Button variant="success" type="submit"
+      // onClick={handleForm}
+      >
         Submit
       </Button>
       <span>{formMsg}</span>
+      
     </Form>
   );
   function handleForm(e) {
@@ -79,7 +86,9 @@ export default function PopoverForm() {
   }
   function sendForm(input) {
     axios
-      .post("http://localhost:5000/submit", input)
+      // .post("http://localhost:5000/submit", input)
+      .post("https://blooming-beach-60325.herokuapp.com/submit", input)
+
       .then(res => {
         console.log(res);
         setFormMsg(res.data);
