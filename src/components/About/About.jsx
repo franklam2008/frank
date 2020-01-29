@@ -1,8 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Button, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
 import Img from "react-image";
-import { Spinner, Row, Col } from "react-bootstrap";
+import {
+  Button,
+  InputGroup,
+  FormControl,
+  Spinner,
+  Row,
+  Col
+} from "react-bootstrap";
 import ReactPlayer from "react-player";
 //Firebase
 import fire from "../../config/Fire";
@@ -19,7 +25,8 @@ export default function About() {
   const [webData, setWebData] = useState(false);
   const [youtubeURL, setYoutubeURL] = useState("");
   const [youtube, setYoutube] = useState(false);
-
+  const [radioScrapData, setRadioScrapData] = useState([]);
+  const [radioData, setRadioData] = useState(false);
   useEffect(() => {
     const db = fire.database();
     const dbRef = db.ref().child("data");
@@ -65,6 +72,7 @@ export default function About() {
       <button onClick={() => dispatch({ type: "CHECK_STATE" })}>
         log state
       </button>
+      <button onClick={test}>Test</button>
       <h4 className="text-center"> Quick Snap Container</h4>
       <InputGroup>
         <FormControl
@@ -102,7 +110,7 @@ export default function About() {
         YouTube
       </Button>
       <Button variant="info" onClick={HkfmScrape}>
-      Hkfm
+        Hkfm
       </Button>
       <Row className="scrapersCon">
         {webData
@@ -132,33 +140,24 @@ export default function About() {
           />
         </div>
       ) : null}
-      <div className="player-wrapper">
-        <ReactPlayer
-          url="https://hkcdn.hkfm.info/A000900-20200123.mp3?_=1"
-          playing={false}
-          width="300px"
-          height="70px"
-          controls
-        />
-      </div>
-      <div className="player-wrapper">
-        <ReactPlayer
-          url="https://hkcdn.hkfm.info/A000900-20200122.mp3"
-          playing={false}
-          width="300px"
-          height="70px"
-          controls
-        />
-      </div>{" "}
-      <div className="player-wrapper">
-        <ReactPlayer
-          url="https://cdn.hkfm.info/wp-content/uploads/2020/01/A000900-20200121.mp3?_=9"
-          playing={false}
-          width="300px"
-          height="70px"
-          controls
-        />
-      </div>
+      <Row>
+        {radioScrapData.length > 2 && radioData
+          ? radioScrapData.map(post => (
+              <Col lg={3} key={post.id}>
+                <div className="player-wrapper">
+                  <a href={post.directLink} rel="noopener noreferrer"target="_blank"><h4>{post.name}</h4></a>
+                  <ReactPlayer
+                    url={post.fileURL}
+                    playing={false}
+                    width="300px"
+                    height="70px"
+                    controls
+                  />
+                </div>
+              </Col>
+            ))
+          : null}
+      </Row>
     </section>
   );
 
@@ -211,8 +210,7 @@ export default function About() {
 
     axios
       // .post("http://localhost:4000/youtube", {
-        .post("https://secure-peak-92770.herokuapp.com/youtube", {
-        
+      .post("https://secure-peak-92770.herokuapp.com/youtube", {
         firstName: "Fred",
         lastName: "Flintstone",
         input: input
@@ -223,23 +221,29 @@ export default function About() {
         setYoutubeURL(response.data.link);
       });
   }
-  
+
   function HkfmScrape() {
     console.log("Hkfm");
     const input = webInput.current.value;
     console.log("Post", input);
 
     axios
-      .post("http://localhost:4000/hkfm", {
-        // .post("https://secure-peak-92770.herokuapp.com/youtube", {
-        
-        firstName: "Fred",
-        lastName: "Flintstone",
-        input: input
-      })
+      .post("http://localhost:4000/hkfm", 
+        // .post("https://secure-peak-92770.herokuapp.com/hkfm", 
+        input
+      )
       .then(response => {
         console.log(response.data);
-       
+        setRadioData(true);
+        setRadioScrapData(response.data);
+        for (var i in response.data) {
+          // champObj = response.data.data[i];
+          setRadioScrapData(response.data[i]);
+        }
       });
+  }
+  function test() {
+    console.log(radioScrapData);
+    console.log(radioData);
   }
 }
