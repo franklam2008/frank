@@ -101,6 +101,9 @@ export default function About() {
       <Button variant="info" onClick={YouTubeScrape}>
         YouTube
       </Button>
+      <Button variant="info" onClick={HkfmScrape}>
+      Hkfm
+      </Button>
       <Row className="scrapersCon">
         {webData
           ? webScrapData.map(item => (
@@ -208,7 +211,7 @@ export default function About() {
 
     axios
       // .post("http://localhost:4000/youtube", {
-        .post("https://warm-atoll-81142.herokuapp.com/youtube", {
+        .post("https://secure-peak-92770.herokuapp.com/youtube", {
         
         firstName: "Fred",
         lastName: "Flintstone",
@@ -218,6 +221,25 @@ export default function About() {
         console.log(response.data);
         setYoutube(true);
         setYoutubeURL(response.data.link);
+      });
+  }
+  
+  function HkfmScrape() {
+    console.log("Hkfm");
+    const input = webInput.current.value;
+    console.log("Post", input);
+
+    axios
+      .post("http://localhost:4000/hkfm", {
+        // .post("https://secure-peak-92770.herokuapp.com/youtube", {
+        
+        firstName: "Fred",
+        lastName: "Flintstone",
+        input: input
+      })
+      .then(response => {
+        console.log(response.data);
+       
       });
   }
 }
