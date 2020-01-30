@@ -9,6 +9,7 @@ import { IoIosMenu } from "react-icons/io";
 import {
   MdLocalMovies,
   MdFormatListBulleted,
+  MdHeadset,
   MdDashboard
 } from "react-icons/md";
 import "./css/header.css";
@@ -58,6 +59,12 @@ export default function Header({ openCol, setOpenCol }) {
             name: "Todo",
             icon: MdFormatListBulleted,
             link: "todo"
+          },
+
+          {
+            name: "Media",
+            icon: MdHeadset,
+            link: "media"
           },
           {
             name: "About",

@@ -10,24 +10,7 @@
       padding-bottom: 7.5px;
     }
   }
-  .scrapersCon{
-    img{
-      width:100px;
-    }
-  }
-  //test
-  .player-wrapper {
-    position: relative;
-  }
-  .react-player{
-    width: auto;
-    height: auto;
-  }
+ 
   
 }
 
-@media only screen and (max-width: 600px) {
-  .react-player{
-    max-width: 350px;
-  }
-}

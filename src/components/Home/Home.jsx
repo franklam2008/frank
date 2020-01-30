@@ -7,7 +7,7 @@ import { Col, Row, Spinner } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 export default function Home() {
-  const { state, dispatch } = useStore();
+  const { state} = useStore();
   return (
     <div className="homeCon">
       <div className="header">

@@ -11,7 +11,7 @@ import MovieApp from "../Movie/MovieApp.jsx";
 import About from "../About/About.jsx";
 import Home from "../Home/Home.jsx";
 import TodoApp from "../Todo/TodoApp.jsx";
-import Counter from "../Store/counter.jsx";
+import MediaApp from "../Media/MediaApp.jsx";
 import ContactCon from "../ContactCon/ContactCon.jsx";
 // css
 import "./css/App.css";
@@ -61,9 +61,9 @@ function App() {
                   <Route path="/pokemon" component={PokemonApp} />
                   <Route path="/movieList" component={MovieApp} />
                   <Route path="/todo" component={TodoApp} />
+                  <Route path="/media" component={MediaApp} />
                   <Route path="/lol" component={LolApp} />
                   <Route path="/about" component={About} />
-                  <Route path="/counter" component={Counter} />
                 </Switch>
               </Col>
             </Row>

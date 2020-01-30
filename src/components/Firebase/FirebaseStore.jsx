@@ -43,10 +43,13 @@ export function UserProvider({ children }) {
 export const useStore = () => useContext(UserContext);
 
 function reducer(state = defaultState, action = {}) {
+  const { uid, displayName, email } = action.payload;
+
   switch (action.type) {
     case "ADD_USER":
-      const { uid, displayName, email } = action.payload;
       newUserData(uid, displayName, email);
+      return { ...state, login: true, authUser: action.payload };
+    case "LOGIN_USER":
       return { ...state, login: true, authUser: action.payload };
     case "REMOVE_USER":
       return { ...state, login: false, authUser: [] };
@@ -54,15 +57,15 @@ function reducer(state = defaultState, action = {}) {
       return { ...state, db: action.payload };
     case "ADD_POKEMON":
       return { ...state, db: action.payload };
-      //movie
+    //movie
     case "ADD_MOVIE":
       return { ...state, addedMovies: [...state.addedMovies, action.payload] };
-      //counter
+    //counter
     case "MINUS1":
       return { ...state, counter: state.counter - 1 };
     case "ADD1":
       return { ...state, counter: state.counter + 1 };
-      //log
+    //log
     case "CHECK_STATE":
       console.log("stateNow", state);
       return { ...state };
@@ -76,6 +79,7 @@ function newUserData(userId, name, email) {
     .ref("users/" + userId)
     .update({
       username: name,
-      email: email
+      email: email,
+      test: "123"
     });
 }

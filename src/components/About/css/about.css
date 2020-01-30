@@ -13,23 +13,4 @@
   font-size: 25px;
   padding-bottom: 7.5px;
 }
-
-.aboutCon .scrapersCon img {
-  width: 100px;
-}
-
-.aboutCon .player-wrapper {
-  position: relative;
-}
-
-.aboutCon .react-player {
-  width: auto;
-  height: auto;
-}
-
-@media only screen and (max-width: 600px) {
-  .react-player {
-    max-width: 350px;
-  }
-}
 /*# sourceMappingURL=about.css.map */
