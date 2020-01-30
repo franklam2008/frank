@@ -104,8 +104,6 @@
 .App .container-fluid .row .sideBarMenu ul a.activeLink svg {
   color: white;
   font-size: 40px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink span {

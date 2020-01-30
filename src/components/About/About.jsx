@@ -117,14 +117,20 @@ export default function About() {
           ? webScrapData.map(item => (
               <Col key={item.id} lg={2}>
                 <div>
-                  <Img
-                    draggable={false}
-                    src={item.img}
-                    loader={
-                      <Spinner size="sm" className="" animation="border" />
-                    }
-                    unloader={<p>Not Available</p>}
-                  />
+                  <a
+                    href={item.ytURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Img
+                      draggable={false}
+                      src={item.img}
+                      loader={
+                        <Spinner size="sm" className="" animation="border" />
+                      }
+                      unloader={<p>Not Available</p>}
+                    />
+                  </a>
                 </div>
               </Col>
             ))
@@ -145,7 +151,13 @@ export default function About() {
           ? radioScrapData.map(post => (
               <Col lg={3} key={post.id}>
                 <div className="player-wrapper">
-                  <a href={post.directLink} rel="noopener noreferrer"target="_blank"><h4>{post.name}</h4></a>
+                  <a
+                    href={post.directLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <h4>{post.name}</h4>
+                  </a>
                   <ReactPlayer
                     url={post.fileURL}
                     playing={false}
@@ -197,7 +209,7 @@ export default function About() {
     console.log("Post");
     const input = webInput.current.value;
 
-    axios.post("http://localhost:4000/creators", {
+    axios.post("http://localhost:5000/creators", {
       firstName: "Fred",
       lastName: "Flintstone",
       input: input
@@ -209,8 +221,11 @@ export default function About() {
     console.log("Post", input);
 
     axios
-      // .post("http://localhost:4000/youtube", {
-      .post("https://secure-peak-92770.herokuapp.com/youtube", {
+      .post("http://localhost:5000/youtube", {
+        // .post("http://localhost:5000/youtube", {
+        // .post("https://franklam-app.herokuapp.com/youtube", {
+
+        // .post("https://secure-peak-92770.herokuapp.com/youtube", {
         firstName: "Fred",
         lastName: "Flintstone",
         input: input
@@ -219,7 +234,8 @@ export default function About() {
         console.log(response.data);
         setYoutube(true);
         setYoutubeURL(response.data.link);
-      });
+      })
+      .catch(error => console.log(error));
   }
 
   function HkfmScrape() {
@@ -228,8 +244,9 @@ export default function About() {
     console.log("Post", input);
 
     axios
-      .post("http://localhost:4000/hkfm", 
-        // .post("https://secure-peak-92770.herokuapp.com/hkfm", 
+      .get(
+        "http://localhost:5000/hkfm",
+        // .post("https://secure-peak-92770.herokuapp.com/hkfm",
         input
       )
       .then(response => {
