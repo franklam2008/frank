@@ -30,7 +30,7 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
       ) : (
         <Modal.Body>
           <Row className="mb-4 pr-3">
-            <Col lg={3}>
+            <Col lg={3}className="lolIconCon">
               {/* icon */}
               <Img
                 draggable={false}

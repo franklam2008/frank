@@ -1,15 +1,16 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import fire from "../../../../config/Fire";
+import fire from "../../config/Fire";
 import firebase from 'firebase/app';
 
 export default function LoginForm({ setSignUpPage }) {
+
   const [error, setError] = useState("");
   const emailInput = useRef();
   const passwordInput = useRef();
 
   return (
-    <section>
+    <section className="loginForm">
       <Form>
         <Form.Group controlId="formBasicEmail">
           <input
@@ -48,11 +49,11 @@ export default function LoginForm({ setSignUpPage }) {
           </Col>
         </Row>
       </Form>
-      <span>{error}</span>
+      <span className="form-error">{error}</span>
       <hr className="hr-text" data-content="Or Login with" />
 
       <Row>
-        <Col lg={6} className="mb-2">
+        <Col lg={6}>
           <Button
             variant="outline-success"
             type="submit"
@@ -75,7 +76,7 @@ export default function LoginForm({ setSignUpPage }) {
             Google
           </Button>
         </Col>
-        <Col lg={6} className="mb-2">
+        <Col lg={6}>
           <Button
             variant="outline-info"
             type="submit"
@@ -104,6 +105,7 @@ export default function LoginForm({ setSignUpPage }) {
       </Row>
     </section>
   );
+
   function login(email, password) {
     fire
       .auth()
@@ -115,13 +117,20 @@ export default function LoginForm({ setSignUpPage }) {
         setError(error.message);
         console.log(error);
       });
+     
   }
+
+  
   function handleLogin(e) {
     e.preventDefault();
     const email = emailInput.current.value;
     const password = passwordInput.current.value;
     login(email, password);
   }
+
+
+
+  
   function googleSignIn() {
     console.log('Google Sign In');
     
@@ -148,6 +157,8 @@ export default function LoginForm({ setSignUpPage }) {
         // ...
       });
   }
+
+
   function facebookSignIn(){
     console.log('Facebook Sign In');
 

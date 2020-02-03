@@ -33,7 +33,58 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  margin-bottom: 10px;
   cursor: pointer;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: 1;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .circle {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .line {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--textWhite);
+  border-radius: 8px;
+  -webkit-transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .top {
+  top: 18%;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .middle {
+  top: 48%;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .bottom {
+  top: 78%;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .icon.close .top {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 48%;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .icon.close .middle,
+.App .container-fluid .row .sideBarMenu ul .menuIconCon #menuWrapper .icon.close .bottom {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 48%;
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuIconCon #menuCircle {
@@ -48,7 +99,7 @@
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  border: 10px solid transparent;
+  border: 3px solid transparent;
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuIconCon svg {
@@ -58,15 +109,14 @@
   border-radius: 50%;
   font-size: 50px;
   background-color: var(--blueSaved);
-  color: whitesmoke;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
 
 .App .container-fluid .row .sideBarMenu ul span {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
-  color: #c7c7c7;
+  color: var(--subTextWhite);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   -ms-flex-item-align: center;
@@ -82,14 +132,30 @@
   display: -ms-flexbox;
   display: flex;
   padding-left: 20px;
-  border-left: 3px solid rgba(0, 0, 0, 0);
+  position: relative;
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuItem svg {
   font-size: 40px;
-  color: #c7c7c7;
+  color: var(--subTextWhite);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.App .container-fluid .row .sideBarMenu ul .menuItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--pinkSaved);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
 }
 
 .App .container-fluid .row .sideBarMenu ul .menuItem:hover {
@@ -98,16 +164,20 @@
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem {
   background-color: var(--darkBlueSaved);
-  border-left: 2px solid var(--pinkSaved);
+}
+
+.App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink svg {
-  color: white;
+  color: var(--textWhite);
   font-size: 40px;
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink span {
-  color: white;
+  color: var(--lightBlueSaved);
 }
 
 .menuMainIcon {
@@ -186,7 +256,8 @@
     border-radius: 50%;
     height: 56px;
     width: 56px;
-    border: 4px solid rgba(34, 34, 34, 0.918);
+    border: 2px solid var(--blueSaved);
+    background-color: var(--darkBlueSaved);
   }
   .App .container-fluid .row .sideBarMenu ul .menuIconCon svg {
     position: relative;

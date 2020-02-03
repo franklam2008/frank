@@ -1,0 +1,132 @@
+.homeCon {
+  position: relative;
+  min-height: 200px;
+}
+
+.homeCon .header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 30px;
+}
+
+.homeCon .header .custom-control {
+  color: var(--textWhite);
+}
+
+.homeCon .homeSectionCon {
+  background-color: var(--darkerBlueSaved);
+  margin-bottom: 25px;
+  border-radius: 10px;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.homeCon .homeSectionCon a {
+  padding: 0;
+}
+
+.homeCon .homeSectionCon h3 {
+  color: var(--textWhite);
+  font-size: 1.2rem;
+}
+
+.homeCon .homeSectionCon h3:hover {
+  text-decoration: underline;
+}
+
+.homeCon .movieCon {
+  overflow-x: hidden;
+}
+
+.homeCon .movieCon .movieWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-color: red yellow;
+}
+
+.homeCon .movieCon .movieWrapper::-webkit-scrollbar {
+  background-color: var(--blueSaved);
+}
+
+.homeCon .movieCon .movieWrapper::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: var(--darkBlueSaved);
+}
+
+.homeCon .movieCon img {
+  max-height: 200px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.homeCon .pokeCon img {
+  max-height: 80px;
+}
+
+.homeCon .radioCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 200px;
+}
+
+.homeCon .radioCon .radioWrapper {
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+.homeCon .radioCon .radioWrapper .player-wrapper {
+  height: 100%;
+  scroll-snap-align: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.homeCon .radioCon .radioWrapper .player-wrapper h4 {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--textWhite);
+}
+
+.homeCon .radioCon .radioWrapper .player-wrapper audio {
+  color: red !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .homeCon .header .mainTitle {
+    margin-right: 10px;
+  }
+  .homeCon .header .custom-control {
+    color: var(--textWhite);
+  }
+  .homeCon .header .custom-control .custom-control-label {
+    font-size: 0px;
+  }
+}
+/*# sourceMappingURL=Dashboard.css.map */

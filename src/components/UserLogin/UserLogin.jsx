@@ -4,7 +4,7 @@ import { Tooltip, OverlayTrigger } from "react-bootstrap";
 import "./css/userLogin.css";
 import "./css/userBtn.css";
 import UserLightBox from "./UserLightBox.jsx";
-import { useStore } from "../../Firebase/FirebaseStore.jsx";
+import { useStore } from "../Firebase/FirebaseStore.jsx";
 
 export default function UserLogin({ openCol }) {
   const { state } = useStore();

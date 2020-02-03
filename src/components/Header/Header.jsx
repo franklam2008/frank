@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import UserLogin from "./UserLogin/UserLogin.jsx";
+import UserLogin from "../UserLogin/UserLogin.jsx";
 import { NavLink } from "react-router-dom";
 import { Tooltip, OverlayTrigger } from "react-bootstrap";
 //css & icon & Img
 import { GiGlassBall, GiCrossedSwords } from "react-icons/gi";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { IoIosMenu } from "react-icons/io";
 import {
   MdLocalMovies,
   MdFormatListBulleted,
@@ -26,11 +25,20 @@ export default function Header({ openCol, setOpenCol }) {
             spin_once();
           }}
         >
-          <IoIosMenu />
+          {/* <IoIosMenu /> */}
+          <div id="menuWrapper">
+            <div  className={openCol?"close circle icon":"circle icon"}>
+              <span className="line top"></span>
+              <span className="line middle"></span>
+              <span className="line bottom"></span>
+            </div>
+          </div>
           <div
             id={spinOnce ? "menuCircle" : " "}
             className={spinOnce ? "spin-it-once menuCircle" : "menuCircle"}
-          ></div>
+          >
+            
+          </div>
         </div>
 
         {[

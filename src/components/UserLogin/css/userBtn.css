@@ -17,8 +17,8 @@
   padding: 4px;
   border-radius: 50%;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#6675ff), to(#4499fa));
-  background: linear-gradient(to right, #6675ff, #4499fa);
+  background: -webkit-gradient(linear, left top, right top, from(var(--pinkSaved)), to(var(--pinkSaved)));
+  background: linear-gradient(to right, var(--pinkSaved), var(--pinkSaved));
   -webkit-box-shadow: 3px 3px 7px 1px #181818;
           box-shadow: 3px 3px 7px 1px #181818;
   -webkit-transition: all 0.4s;
@@ -44,8 +44,8 @@
 }
 
 .signUp-btn:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#4499fa), to(#6675ff));
-  background: linear-gradient(to right, #4499fa, #6675ff);
+  background: -webkit-gradient(linear, left top, right top, from(var(--pinkSaved)), to(var(--pinkSaved)));
+  background: linear-gradient(to right, var(--pinkSaved), var(--pinkSaved));
   -webkit-transform: translate(2px, 2px);
           transform: translate(2px, 2px);
   -webkit-box-shadow: 0px 0px 0px 0px #222;

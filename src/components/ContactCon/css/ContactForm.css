@@ -1,6 +1,6 @@
 #contact-form {
   background-color: var(--blueSaved);
-  color: white;
+  color: var(--textWhite);
   padding: 20px 30px;
   max-width: 450px;
   border-radius: 10px;
@@ -71,7 +71,6 @@
 @media only screen and (max-width: 600px) {
   #contact-form {
     background-color: var(--blueSaved);
-    color: white;
     padding: 10px 10px;
     max-width: 300px;
   }

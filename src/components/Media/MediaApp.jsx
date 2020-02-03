@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import Img from "react-image";
 import {
@@ -11,8 +11,10 @@ import {
 } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import "./css/mediaApp.css";
-import fire from "../../config/Fire";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
+import { IoMdRefresh } from "react-icons/io";
+import fire from "../../config/Fire";
+var db = fire.firestore();
 
 export default function MediaApp() {
   const { state, dispatch } = useStore();
@@ -21,16 +23,67 @@ export default function MediaApp() {
   const [webData, setWebData] = useState(false);
   const [youtubeURL, setYoutubeURL] = useState("");
   const [youtube, setYoutube] = useState(false);
-  const [radioScrapData, setRadioScrapData] = useState([]);
-  const [radioData, setRadioData] = useState(false);
-  useEffect(() => {
-    // Get();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
+  function test() {
+    console.log("test");
+    console.log(state.addedMovies);
+    console.log(state.authUser);
+    switchColor(
+      "#304863",
+      "#364F6B",
+      "#3E5B7B",
+      "#43dde6",
+      "#fc5185",
+      "#f8f8f8",
+      "#b9b9b9"
+    );
+  }
+  function write() {
+    console.log("write");
+    document.documentElement.style.setProperty("--darkBlueSaved", "#FF0000");
+    // --darkerBlueSaved: #304863;
+    // --darkBlueSaved: #364F6B;
+    // --blueSaved: #3E5B7B;
+    // --lightBlueSaved: #43dde6;
+    // --pinkSaved: rgb(252 ,81,133);
+    // --textWhite: rgb(248, 248, 248);
+    // --subTextWhite: rgb(185, 185, 185);
+    //white
+    switchColor(
+      "#FFFFFF",
+      "#f2f2f2",
+      "#E5E3E1",
+      "#FF2710",
+      "#FF7711",
+      "#393e46",
+      "#303a52"
+    );
+  }
+  function switchColor(darker, dark, normal,  light,special, text, lightText) {
+    document.documentElement.style.setProperty("--darkerBlueSaved", darker);
+    document.documentElement.style.setProperty("--darkBlueSaved", dark);
+    document.documentElement.style.setProperty("--blueSaved", normal);
+    document.documentElement.style.setProperty("--lightBlueSaved", light);
+    document.documentElement.style.setProperty("--pinkSaved", special);
+    document.documentElement.style.setProperty("--textWhite", text);
+    document.documentElement.style.setProperty("--subTextWhite", lightText);
+  }
+  function read() {
+    console.log("read");
+    db.collection("users")
+      .doc(state.authUser.uid)
+      .update({
+        movie: state.addedMovies
+      })
+      .catch(error => {
+        console.error("Error adding document: ", error);
+      });
+  }
   return (
     <section className="mediaAppCon">
       <button onClick={test}>Test</button>
+      <button onClick={write}>Write</button>
+      <button onClick={read}>Read</button>
 
       <InputGroup>
         <FormControl
@@ -52,8 +105,10 @@ export default function MediaApp() {
         YouTube
       </Button>
       <Button variant="info" onClick={HkfmScrape}>
-        Hkfm
+        Hkfm <IoMdRefresh />
       </Button>
+
+      {/* youtuber Channel */}
       <Row className="scrapersCon">
         {webData
           ? webScrapData.map(item => (
@@ -78,6 +133,8 @@ export default function MediaApp() {
             ))
           : null}
       </Row>
+
+      {/* youtube */}
       {youtube ? (
         <div className="player-wrapper">
           <ReactPlayer
@@ -88,47 +145,28 @@ export default function MediaApp() {
           />
         </div>
       ) : null}
-      <Row>
-        {radioScrapData.length > 2 && radioData
-          ? radioScrapData.map(post => (
-              <Col lg={3} key={post.id}>
-                <div className="player-wrapper">
-                  <a
-                    href={post.directLink}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <h4>{post.name}</h4>
-                  </a>
-                  <ReactPlayer
-                    url={post.fileURL}
-                    playing={false}
-                    width="300px"
-                    height="70px"
-                    controls
-                  />
-                </div>
-              </Col>
-            ))
-          : null}
-      </Row>
     </section>
   );
   function Get() {
     console.log("Get");
 
-    axios.get("http://localhost:4000/creators").then(response => {
-      console.log(response.data);
-      setWebData(true);
-      setWebScrapData(response.data);
-    });
+    // axios.get("http://localhost:4000/creators").then(response => {
+    axios
+      .get("http://secure-peak-92770.herokuapp.com/creators")
+      .then(response => {
+        console.log(response.data);
+        setWebData(true);
+        setWebScrapData(response.data);
+        dispatch({ type: "LOAD_YOUTUBECHANNELS", payload: response.data });
+      });
   }
 
   function Post() {
     console.log("Post");
     const input = webInput.current.value;
 
-    axios.post("http://localhost:4000/creators", {
+    // axios.post("http://localhost:4000/creators", {
+    axios.post("http://secure-peak-92770.herokuapp.com/creators", {
       firstName: "Fred",
       lastName: "Flintstone",
       input: input
@@ -140,10 +178,8 @@ export default function MediaApp() {
     console.log("Post", input);
 
     axios
-      .post("http://localhost:4000/youtube", {
-        // .post("https://franklam-app.herokuapp.com/youtube", {
-
-        // .post("https://secure-peak-92770.herokuapp.com/youtube", {
+      // .post("http://localhost:4000/youtube", {
+      .post("https://secure-peak-92770.herokuapp.com/youtube", {
         firstName: "Fred",
         lastName: "Flintstone",
         input: input
@@ -162,19 +198,13 @@ export default function MediaApp() {
     console.log("Post", input);
 
     axios
-      .post(
-        "http://localhost:4000/hkfm",
-        // .post("https://secure-peak-92770.herokuapp.com/hkfm",
-        input
-      )
+      // .post(
+      //   "http://localhost:4000/hkfm",
+      .post("https://secure-peak-92770.herokuapp.com/hkfm", input)
       .then(response => {
         console.log(response.data);
-        setRadioData(true);
-        setRadioScrapData(response.data);
+
+        dispatch({ type: "LOAD_RADIO", payload: response.data });
       });
-  }
-  function test() {
-    console.log(radioScrapData);
-    console.log(radioData);
   }
 }

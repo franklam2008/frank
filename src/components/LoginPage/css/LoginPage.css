@@ -1,0 +1,74 @@
+.loginPage {
+  background-color: var(--blueSaved);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginPage .loginCon {
+  background-color: var(--darkBlueSaved);
+  padding: 30px 70px;
+  border-radius: 5px;
+  max-width: 500px;
+}
+
+.loginPage .loginCon .loginHeader {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginPage .loginCon .loginHeader .lockIcon {
+  font-size: 20px;
+  color: var(--textWhite);
+}
+
+.loginPage .loginCon .loginHeader span {
+  color: var(--subTextWhite);
+  margin-left: 10px;
+}
+
+.loginPage .loginCon .loginImgCol {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.loginPage .loginCon .loginImgCol .loginImg {
+  max-width: 250px;
+}
+
+.loginPage .loginCon .loginForm .form-error {
+  color: var(--pinkSaved);
+}
+
+.loginPage .loginCon .loginForm .btn {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .loginPage .loginCon {
+    padding: 40px 30px;
+    border-radius: 0px;
+    height: 100vh;
+  }
+  .loginPage .loginCon .loginForm .btn {
+    margin-bottom: 10px;
+  }
+}
+/*# sourceMappingURL=LoginPage.css.map */

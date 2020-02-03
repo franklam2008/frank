@@ -12,7 +12,7 @@
   padding: 4px;
   border-radius: 50%;
   display: inline-block;
-  background: linear-gradient(to right, rgb(102, 117, 255), rgb(68, 153, 250));
+  background: linear-gradient(to right, var(--pinkSaved), var(--pinkSaved));
   box-shadow: 3px 3px 7px 1px rgb(24, 24, 24);
   transition: all 0.4s;
   cursor: pointer;
@@ -32,7 +32,7 @@
   }
 }
 .signUp-btn:hover {
-  background: linear-gradient(to right, rgb(68, 153, 250), rgb(102, 117, 255));
+  background: linear-gradient(to right, var(--pinkSaved), var(--pinkSaved));
   transform: translate(2px, 2px);
   box-shadow: 0px 0px 0px 0px #222;
 }

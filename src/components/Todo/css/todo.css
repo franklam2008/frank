@@ -1,5 +1,5 @@
 .todoCon .container {
-  background-color: var(--blueSaved);
+  background-color: var(--darkerBlueSaved);
   max-width: 800px;
   border-radius: 10px;
   color: var(--textWhite);

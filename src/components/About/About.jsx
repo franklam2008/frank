@@ -1,16 +1,7 @@
-import React, { useRef, useEffect} from "react";
-// import axios from "axios";
-// import Img from "react-image";
-import {
-  Button,
-  InputGroup,
-  FormControl,
-  // Spinner,
-  // Row,
-  // Col
-} from "react-bootstrap";
+import React, { useRef } from "react";
+
+import { Button, InputGroup, FormControl } from "react-bootstrap";
 //Firebase
-import fire from "../../config/Fire";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
 //css
 import { FaHeart } from "react-icons/fa";
@@ -19,19 +10,6 @@ import "./css/about.css";
 export default function About() {
   const { state, dispatch } = useStore();
   const dataInput = useRef();
-
-  useEffect(() => {
-    const db = fire.database();
-    const dbRef = db.ref().child("data");
-
-    dbRef.on("value", snapshot => {
-      //do sth
-      dispatch({ type: "ADD_DB", payload: snapshot.val() });
-    });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <section className="aboutCon">
       <div className="mainTitle">About</div>
@@ -81,29 +59,24 @@ export default function About() {
           </Button>
         </InputGroup.Append>
       </InputGroup>
-      <p>{state.db.data}</p>
+      <p>{state.data}</p>
     </section>
   );
 
   function handleSearchInput(e) {
     const name = dataInput.current.value;
-    fire
-      .database()
-      .ref("data")
-      .set({
-        data: name
-      });
+
     if (name === "") return;
     dispatch({
-      type: "ADD_DB",
-      payload: {
-        data: name
-      }
+      type: "ADD_DATA",
+      payload: name
     });
+    return;
   }
   function handleKeyPress(target) {
     if (target.charCode === 13) {
       handleSearchInput();
     }
+    return;
   }
 }

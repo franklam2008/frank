@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import fire from "../../../config/Fire";
+import fire from "../../config/Fire";
 import { Button } from "react-bootstrap";
 import { TiHomeOutline } from "react-icons/ti";
 import { IoIosSearch } from "react-icons/io";

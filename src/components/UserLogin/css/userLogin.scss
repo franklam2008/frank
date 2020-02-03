@@ -2,29 +2,7 @@
   .modal-body {
   margin:  0 auto;
     max-width: 700px;
-    .loginImgCol {
-      text-align: center;
-      align-self: center;
-      .loginImg {
-        width: 100%;
-      }
-    }
-    .loginCon {
-      background-color: var(--darkBlueSaved);
-      padding: 20px 30px;
-      border: 1.5px solid rgba(223, 223, 223, 0.637);
-      border-radius: 20px;
-      .loginHeader {
-        text-align: center;
-        margin: 0;
-        padding-bottom: 20px;
-        .lockIcon {
-          font-size: 25px;
 
-          color: rgb(192, 192, 192);
-        }
-      }
-    }
   }
 
   .btn {

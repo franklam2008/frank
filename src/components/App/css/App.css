@@ -1,3 +1,8 @@
+.container-fluid {
+  padding: 0;
+  background-color: 0;
+}
+
 .spinner-border {
   color: var(--pinkSaved);
 }
@@ -33,13 +38,11 @@
   background-color: var(--darkBlueSaved);
   min-height: 100.1vh;
   width: 100%;
-  -webkit-transition: all 1s;
-  transition: all 1s;
   position: relative;
 }
 
 .mainTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
   padding: 30px;
   color: var(--textWhite);
@@ -142,10 +145,16 @@
   .tooltip {
     opacity: 0 !important;
   }
+  .mainCon {
+    padding-top: 10px;
+  }
   .mainTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 0 auto;
     text-align: center;
+  }
+  .mainTitle img {
+    width: 45px;
   }
   .mainTitle .subTitle {
     font-size: 0.65rem;

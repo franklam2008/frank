@@ -3,9 +3,9 @@ import { Row,Col, Spinner } from "react-bootstrap";
 import Img from "react-image";
 
 import { MdLockOpen } from "react-icons/md";
-import LoginForm from "./Forms/LoginForm.jsx";
-import SignUpForm from "./Forms/SignUpForm.jsx";
-import login from "../../assets/img/login.png";
+import LoginForm from "../Forms/LoginForm.jsx";
+import SignUpForm from "../Forms/SignUpForm.jsx";
+import login from "../assets/img/login.png";
 export default function Login() {
   const [signUpPage, setSignUpPage] = useState(false);
 

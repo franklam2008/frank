@@ -27,8 +27,47 @@
           padding: 15px 15px;
           display: flex;
           position: relative;
-
+          margin-bottom: 10px;
           cursor: pointer;
+          #menuWrapper {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-left: 10px;
+            z-index: 1;
+            .circle {
+              width: 30px;
+              height: 30px;
+              position: relative;
+            }
+            .line {
+              position: absolute;
+              height: 3px;
+              width: 100%;
+              background: var(--textWhite);
+              border-radius: 8px;
+              transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+            }
+            .top {
+              top: 18%;
+            }
+            .middle {
+              top: 48%;
+            }
+            .bottom {
+              top: 78%;
+            }
+            .icon.close .top {
+              transform: rotate(45deg);
+              top: 48%;
+            }
+            .icon.close .middle,
+            .icon.close .bottom {
+              transform: rotate(-45deg);
+              top: 48%;
+            }
+          }
           #menuCircle {
             border-top-color: var(--pinkSaved);
           }
@@ -39,9 +78,8 @@
             border-radius: 50%;
             height: 56px;
             width: 56px;
-
             border-radius: 50%;
-            border: 10px solid transparent;
+            border: 3px solid transparent;
           }
           svg {
             // menu icon
@@ -51,15 +89,13 @@
             border-radius: 50%;
             font-size: 50px;
             background-color: var(--blueSaved);
-            color: rgb(245, 245, 245);
             transition: all 0.4s;
           }
         }
         span {
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 500;
-          color: rgb(199, 199, 199);
-
+          color: var(--subTextWhite);
           transition: all 0.4s;
           align-self: center;
           padding-left: 10px;
@@ -69,13 +105,24 @@
           padding: 20px 10px;
           display: flex;
           padding-left: 20px;
-          border-left: 3px solid rgba(0, 0, 0, 0);
+          position: relative;
           svg {
             // menu icon
             font-size: 40px;
-            color: rgb(199, 199, 199);
+            color: var(--subTextWhite);
             transition: all 0.4s;
           }
+        }
+        .menuItem::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 3px;
+          background-color: var(--pinkSaved);
+          transition: transform 300ms ease-in-out;
+          transform: scaleY(0);
         }
         .menuItem:hover {
           background-color: var(--darkBlueSaved);
@@ -83,16 +130,17 @@
         a.activeLink {
           .menuItem {
             background-color: var(--darkBlueSaved);
-            border-left: 2px solid var(--pinkSaved);
+          }
+          .menuItem::before {
+            transform: scaleY(1);
           }
           svg {
             // menu icon
-            color: rgb(255, 255, 255);
+            color: var(--textWhite);
             font-size: 40px;
           }
-          span{
-            color: rgb(255, 255, 255);
-
+          span {
+            color: var(--lightBlueSaved);
           }
         }
       }
@@ -111,7 +159,6 @@
   -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
-
 
 @keyframes spin {
   0% {
@@ -148,7 +195,8 @@
             border-radius: 50%;
             height: 56px;
             width: 56px;
-            border: 4px solid rgba(34, 34, 34, 0.918);
+            border: 2px solid var(--blueSaved);
+            background-color: var(--darkBlueSaved);
           }
           svg {
             // menu icon

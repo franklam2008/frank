@@ -7,12 +7,12 @@ import Home from "./Home";
 //css
 import { Modal, Button } from "react-bootstrap";
 //Store
-import { useStore } from "../../Firebase/FirebaseStore.jsx";
+import { useStore } from "../Firebase/FirebaseStore.jsx";
 
 
 export default function UserLightBox(props) {
   const { state } = useStore();
-
+  
   return (
     <Modal
       {...props}
@@ -33,4 +33,5 @@ export default function UserLightBox(props) {
       </Modal.Footer>
     </Modal>
   );
+
 }

@@ -3,35 +3,6 @@
   max-width: 700px;
 }
 
-.userLoginCon .modal-body .loginImgCol {
-  text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.userLoginCon .modal-body .loginImgCol .loginImg {
-  width: 100%;
-}
-
-.userLoginCon .modal-body .loginCon {
-  background-color: var(--darkBlueSaved);
-  padding: 20px 30px;
-  border: 1.5px solid rgba(223, 223, 223, 0.637);
-  border-radius: 20px;
-}
-
-.userLoginCon .modal-body .loginCon .loginHeader {
-  text-align: center;
-  margin: 0;
-  padding-bottom: 20px;
-}
-
-.userLoginCon .modal-body .loginCon .loginHeader .lockIcon {
-  font-size: 25px;
-  color: silver;
-}
-
 .userLoginCon .btn {
   -webkit-box-shadow: 1px 1px 1.5px 0.5px rgba(56, 56, 56, 0.288);
           box-shadow: 1px 1px 1.5px 0.5px rgba(56, 56, 56, 0.288);

@@ -1,0 +1,98 @@
+.homeCon {
+  position: relative;
+  min-height: 200px;
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+    .custom-control{
+      color:var(--textWhite);
+    }
+  }
+  .homeSectionCon {
+    background-color: var(--darkerBlueSaved);
+    margin-bottom: 25px;
+    border-radius: 10px;
+    min-height: 200px;
+    padding: 20px;
+    a {
+      padding: 0;
+    }
+    h3 {
+      color: var(--textWhite);
+      font-size: 1.2rem;
+    }
+    h3:hover {
+      text-decoration: underline;
+    }
+  }
+  .movieCon {
+    .movieWrapper {
+      display: flex;
+      overflow-x: scroll;
+      scrollbar-color: red yellow;
+    }
+    .movieWrapper::-webkit-scrollbar {
+      // width: 12px;
+      background-color: var(--blueSaved);
+    }
+    .movieWrapper::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: var(--darkBlueSaved);
+    }
+    img {
+      max-height: 200px;
+      margin-right: 10px;
+      border-radius: 3px;
+    }
+    overflow-x: hidden;
+  }
+  .pokeCon {
+    img {
+      max-height: 80px;
+    }
+  }
+  .radioCon {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    .radioWrapper {
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      .player-wrapper {
+        height: 100%;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h4{
+          font-size: 1rem;
+          text-align: center;
+          color: var(--textWhite);
+        }
+        audio{
+          color:red !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homeCon {
+
+    .header {
+      .mainTitle{
+        margin-right: 10px;
+      }
+    .custom-control{
+        color:var(--textWhite);
+        .custom-control-label{
+          font-size: 0px;
+        }
+      }
+    }}
+}

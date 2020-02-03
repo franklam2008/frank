@@ -6,7 +6,7 @@
 
 .pokemonCon .card .imgCon {
   margin: 0 auto;
-  background-color: var(--blueSaved);
+  background-color: var(--darkerBlueSaved);
   border: 2px solid transparent;
   text-align: center;
   padding: 2rem;
@@ -35,7 +35,6 @@
   padding-top: 100%; /* ratio of 1:1*/
 }
 .pokemonCon .card .imgCon:hover {
-  background-color: var(--darkBlueSaved);
   border: 2px solid var(--pink);
   box-shadow: none;
 }

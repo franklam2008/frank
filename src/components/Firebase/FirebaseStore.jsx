@@ -1,5 +1,4 @@
-import React, { createContext, useReducer, useContext, useEffect } from "react";
-import fire from "../../config/Fire";
+import React, { createContext, useReducer, useContext } from "react";
 
 const defaultState = {
   counter: 0,
@@ -7,7 +6,10 @@ const defaultState = {
   authUser: [],
   db: [],
   data: [],
-  addedMovies: []
+  addedMovies: [],
+  radio: [],
+  youTubeVideo:[],
+  youTubeChannels: []
 };
 
 const UserContext = createContext(null);
@@ -16,50 +18,32 @@ export function UserProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const value = { state, dispatch };
 
-  useEffect(() => {
-    fire.auth().onAuthStateChanged(authUser => {
-      if (authUser) {
-        dispatch({ type: "ADD_USER", payload: authUser });
-        // const db = fire.database();
-        // const dbRef = db
-        //   .ref()
-        //   .child("users")
-        //   .child(authUser.uid);
-        // dbRef.on("value", snapshot => {
-        //   //do sth
-        //   const data = snapshot.val();
-        //   dispatch({ type: "ADD_DB", payload: data });
-        //   console.log("data", data);
-        // });
-      } else {
-        dispatch({ type: "REMOVE_USER" });
-      }
-    });
-  }, []);
-
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 
 export const useStore = () => useContext(UserContext);
 
 function reducer(state = defaultState, action = {}) {
-  const { uid, displayName, email } = action.payload;
-
   switch (action.type) {
-    case "ADD_USER":
-      newUserData(uid, displayName, email);
-      return { ...state, login: true, authUser: action.payload };
     case "LOGIN_USER":
       return { ...state, login: true, authUser: action.payload };
     case "REMOVE_USER":
       return { ...state, login: false, authUser: [] };
-    case "ADD_DB":
-      return { ...state, db: action.payload };
+    case "ADD_DATA":
+      return { ...state, data: action.payload };
     case "ADD_POKEMON":
       return { ...state, db: action.payload };
-    //movie
+    //movies
     case "ADD_MOVIE":
       return { ...state, addedMovies: [...state.addedMovies, action.payload] };
+    case "LOAD_MOVIES":
+      return { ...state, addedMovies: action.payload };
+    //radio
+    case "LOAD_RADIO":
+      return { ...state, radio: action.payload };
+    //YouTubeChannels
+    case "LOAD_YOUTUBECHANNELS":
+      return { ...state, youTubeChannels: action.payload };
     //counter
     case "MINUS1":
       return { ...state, counter: state.counter - 1 };
@@ -69,17 +53,8 @@ function reducer(state = defaultState, action = {}) {
     case "CHECK_STATE":
       console.log("stateNow", state);
       return { ...state };
+    //default
     default:
       return state;
   }
-}
-function newUserData(userId, name, email) {
-  fire
-    .database()
-    .ref("users/" + userId)
-    .update({
-      username: name,
-      email: email,
-      test: "123"
-    });
 }
