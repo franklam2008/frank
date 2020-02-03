@@ -13,7 +13,7 @@ import ContactCon from "../ContactCon/ContactCon.jsx";
 import "./css/App.css";
 import "./css/LightBox.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Row, Col } from "react-bootstrap";
+import { Container,Row, Col } from "react-bootstrap";
 //Store
 import FirebaseFunc from "../Firebase/Firebase.jsx";
 import LoginPage from "../LoginPage/LoginPage.jsx";
@@ -32,9 +32,10 @@ function App() {
   return (
     <Router>
       <UserProvider>
+     
         <div className="App">
-          <div className="container-fluid">
-            <FirebaseFunc
+        <Container fluid>
+          <FirebaseFunc
             login={login}
                 setLoading={setLoading}
                 setLogin={setLogin}
@@ -77,7 +78,7 @@ function App() {
                 loading={loading}
               />
             )}
-          </div>
+          </Container>
         </div>
       </UserProvider>
     </Router>

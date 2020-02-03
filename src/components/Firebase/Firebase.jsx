@@ -3,7 +3,7 @@ import fire from "../../config/Fire";
 import { useStore } from "./FirebaseStore.jsx";
 var db = fire.firestore();
 
-function FirebaseFunc({ setLogin, login, setLoading}) {
+function FirebaseFunc({ setLogin, login, setLoading }) {
   const { state, dispatch } = useStore();
   const [readyToUpdate, setReadyToUpdate] = useState(false);
 
@@ -17,7 +17,6 @@ function FirebaseFunc({ setLogin, login, setLoading}) {
         loadUserData(authUser); //load saved user data once
         setLogin(true);
         setLoading(false);
-        
       } else {
         dispatch({ type: "REMOVE_USER" });
         setLogin(false);
@@ -65,26 +64,7 @@ function FirebaseFunc({ setLogin, login, setLoading}) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
-  //Added youTubeChannels to Firestore
 
-  // useEffect(() => {
-  //   if (!state.login) {
-  //     return;
-  //   } else if (state.addedMovies.length > 1) {
-  //     return;
-  //   } else {
-  //     console.log("updatedYouTubeChannels");
-  //     db.collection("users")
-  //       .doc(state.authUser.uid)
-  //       .update({
-  //         youTubeChannels: state.youTubeChannels
-  //       })
-  //       .catch(error => {
-  //         console.error("Error adding document: ", error);
-  //       });
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [state.youTubeChannels]);
   //Public Data to Firestore
   useEffect(() => {
     if (state.radio === undefined) {
@@ -149,3 +129,23 @@ export default FirebaseFunc;
 //   .catch(error => {
 //     console.log("Error getting document:", error);
 //   });
+//Added youTubeChannels to Firestore
+
+// useEffect(() => {
+//   if (!state.login) {
+//     return;
+//   } else if (state.addedMovies.length > 1) {
+//     return;
+//   } else {
+//     console.log("updatedYouTubeChannels");
+//     db.collection("users")
+//       .doc(state.authUser.uid)
+//       .update({
+//         youTubeChannels: state.youTubeChannels
+//       })
+//       .catch(error => {
+//         console.error("Error adding document: ", error);
+//       });
+//   }
+//   // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, [state.youTubeChannels]);

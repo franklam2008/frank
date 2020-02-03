@@ -52,7 +52,7 @@
 .movieCon .card-title .score {
   margin-left: 5px;
   color: var(--subTextWhite);
-  background-color: var(--lightBlueSaved);
+  background-color: var(--pinkSaved);
   border-radius: 50%;
   height: 40px;
   min-width: 40px;
