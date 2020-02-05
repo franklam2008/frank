@@ -59,11 +59,14 @@
               top: 78%;
             }
             .icon.close .top {
+              background: var(--pinkSaved);
               transform: rotate(45deg);
               top: 48%;
             }
             .icon.close .middle,
             .icon.close .bottom {
+              background: var(--pinkSaved);
+
               transform: rotate(-45deg);
               top: 48%;
             }
@@ -140,7 +143,7 @@
             font-size: 40px;
           }
           span {
-            color: var(--lightBlueSaved);
+            color: var(--textWhite);
           }
         }
       }

@@ -1,6 +1,5 @@
-// console.log("123");
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+console.log("123");
+
 // module.exports = {
 //   useOutsideAlerter: function() {
 //     console.log("clicked");
@@ -10,3 +9,6 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 //     console.log("clicked");
 //   }
 // };
+export function testtest(){
+    console.log("123");
+}

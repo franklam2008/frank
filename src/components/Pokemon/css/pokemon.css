@@ -48,7 +48,7 @@
 }
 
 .pokemonCon .card .imgCon:hover {
-  border: 2px solid var(--pink);
+  border: 2px solid var(--pinkSaved);
   -webkit-box-shadow: none;
           box-shadow: none;
 }

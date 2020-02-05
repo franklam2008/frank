@@ -7,9 +7,16 @@
     justify-content: space-between;
     align-items: center;
     padding-right: 30px;
-    .custom-control{
-      color:var(--textWhite);
+    .colorSwitchCol{
+      .custom-control {
+        color: var(--textWhite);
+      }
+      .custom-control-label:before{
+        background-color: var(--darkerBlueSaved);
+        border-color: var(--subTextWhite);
+      }
     }
+    
   }
   .homeSectionCon {
     background-color: var(--darkerBlueSaved);
@@ -32,16 +39,13 @@
     .movieWrapper {
       display: flex;
       overflow-x: scroll;
-      scrollbar-color: red yellow;
+      transition: 1s ease-in-out;
     }
     .movieWrapper::-webkit-scrollbar {
-      // width: 12px;
-      background-color: var(--blueSaved);
+      width: 0;
+      height: 0;
     }
-    .movieWrapper::-webkit-scrollbar-thumb {
-      border-radius: 2px;
-      background-color: var(--darkBlueSaved);
-    }
+    
     img {
       max-height: 200px;
       margin-right: 10px;
@@ -49,9 +53,44 @@
     }
     overflow-x: hidden;
   }
-  .pokeCon {
-    img {
-      max-height: 80px;
+  .btnLeft,
+  .btnRight {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+
+    z-index: 2;
+    outline: transparent;
+    svg{
+      color:var(--textWhite)
+    }
+  }
+  .btnLeft{
+    top: 45%;
+    left:10px;
+  }
+  .btnRight{
+    top: 45%;
+    right:10px;
+  }
+  .coronaCon {
+      color: var(--textWhite);
+      h3{
+      margin-bottom: 20px;
+     span{
+       font-size: .8rem;
+     }
+    }
+    .coronaCat{
+      float: left;
+      width: 50%;
+      text-transform:capitalize;
+    }
+    .deaths{
+      color: rgb(192, 1, 1);
+    }
+    .recovered{
+      color: green
     }
   }
   .radioCon {
@@ -59,8 +98,8 @@
     flex-direction: column;
     height: 200px;
     .radioWrapper {
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
+      overflow-x: scroll;
+
       .player-wrapper {
         height: 100%;
         scroll-snap-align: start;
@@ -69,31 +108,35 @@
         align-items: center;
         justify-content: center;
         overflow-x: hidden;
-        h4{
+        h4 {
           font-size: 1rem;
           text-align: center;
           color: var(--textWhite);
         }
-        audio{
-          color:red !important;
+        audio {
+          color: red !important;
         }
       }
+    }
+    .radioWrapper::-webkit-scrollbar {
+      width: 0;
+      height: 0;
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .homeCon {
-
     .header {
-      .mainTitle{
+      .mainTitle {
         margin-right: 10px;
       }
-    .custom-control{
-        color:var(--textWhite);
-        .custom-control-label{
+      .custom-control {
+        color: var(--textWhite);
+        .custom-control-label {
           font-size: 0px;
         }
       }
-    }}
+    }
+  }
 }

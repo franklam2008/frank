@@ -59,17 +59,18 @@ export default function PopoverForm() {
           label="Send me a SMS &amp; Email"
         />
         <Form.Text>
-          We'll never share your information with anyone else saving it Airtable and send you a SMS
-          and Email via Twilio and SendGrid API.
+          We'll never share your information with anyone else saving it Airtable
+          and send you a SMS and Email via Twilio and SendGrid API.
         </Form.Text>
       </Form.Group>
-      <Button variant="success" type="submit"
-      // onClick={handleForm}
+      <Button
+        variant="success"
+        type="submit"
+        // onClick={handleForm}
       >
         Submit
       </Button>
       <span>{formMsg}</span>
-      
     </Form>
   );
   function handleForm(e) {
@@ -86,9 +87,9 @@ export default function PopoverForm() {
   }
   function sendForm(input) {
     axios
-      // .post("http://localhost:4000/submit", input)
-      
-      .post("https://secure-peak-92770.herokuapp.com/submit", input)
+      .post("http://localhost:4000/submit", input)
+
+      // .post("https://secure-peak-92770.herokuapp.com/submit", input)
 
       .then(res => {
         console.log(res);

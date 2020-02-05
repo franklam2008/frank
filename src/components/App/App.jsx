@@ -14,6 +14,9 @@ import "./css/App.css";
 import "./css/LightBox.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container,Row, Col } from "react-bootstrap";
+//JS
+import {testtest} from "./AppEventListener";
+
 //Store
 import FirebaseFunc from "../Firebase/Firebase.jsx";
 import LoginPage from "../LoginPage/LoginPage.jsx";
@@ -28,7 +31,7 @@ function App() {
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
-
+  testtest()
   return (
     <Router>
       <UserProvider>

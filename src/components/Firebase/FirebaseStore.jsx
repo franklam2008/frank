@@ -1,15 +1,18 @@
 import React, { createContext, useReducer, useContext } from "react";
 
+//state
 const defaultState = {
   counter: 0,
   login: false,
   authUser: [],
+  darkMode: null,
   db: [],
   data: [],
   addedMovies: [],
   radio: [],
-  youTubeVideo:[],
-  youTubeChannels: []
+  youTubeVideo: [],
+  youTubeChannels: [],
+  corona: []
 };
 
 const UserContext = createContext(null);
@@ -23,6 +26,7 @@ export function UserProvider({ children }) {
 
 export const useStore = () => useContext(UserContext);
 
+//reducer - function to pass data to State
 function reducer(state = defaultState, action = {}) {
   switch (action.type) {
     case "LOGIN_USER":
@@ -41,6 +45,11 @@ function reducer(state = defaultState, action = {}) {
     //radio
     case "LOAD_RADIO":
       return { ...state, radio: action.payload };
+    //corona
+    case "LOAD_CORONA":
+      return { ...state, corona: action.payload }; //corona
+    case "DARKMODE":
+      return { ...state, darkMode: action.payload };
     //YouTubeChannels
     case "LOAD_YOUTUBECHANNELS":
       return { ...state, youTubeChannels: action.payload };

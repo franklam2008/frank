@@ -16,7 +16,6 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
         dispatch({ type: "LOGIN_USER", payload: { displayName, email, uid } });
         loadUserData(authUser); //load saved user data once
         setLogin(true);
-        setLoading(false);
       } else {
         dispatch({ type: "REMOVE_USER" });
         setLogin(false);
@@ -26,6 +25,7 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
     //doc log from firestore
     var tempArr = [];
     var docRef = db.collection("public");
+    //radio
     docRef
       .doc("radio-morning")
       .get()
@@ -43,6 +43,21 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
         console.log("Error getting document:", error);
       });
     dispatch({ type: "LOAD_RADIO", payload: tempArr });
+    //corona
+    docRef
+      .doc("corona")
+      .get()
+      .then(doc => {
+        if (doc.exists) {
+          dispatch({ type: "LOAD_CORONA", payload: doc.data() });
+
+        } else {
+          console.log("No such document!"); // doc.data() will be undefined in this case
+        }
+      })
+      .catch(error => {
+        console.log("Error getting document:", error);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -104,7 +119,13 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
               payload: youTubeChannels
             });
           }
+          if (doc.data().hasOwnProperty("darkMode")) {
+            const { darkMode } = doc.data();
+            dispatch({ type: "DARKMODE", payload: darkMode });
+          }
           setReadyToUpdate(true);
+          setLoading(false);
+
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }

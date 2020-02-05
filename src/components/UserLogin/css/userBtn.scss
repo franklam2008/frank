@@ -13,7 +13,7 @@
   border-radius: 50%;
   display: inline-block;
   background: linear-gradient(to right, var(--pinkSaved), var(--pinkSaved));
-  box-shadow: 3px 3px 7px 1px rgb(24, 24, 24);
+  box-shadow: 2px 2px 5px 1px rgb(100, 100, 100);
   transition: all 0.4s;
   cursor: pointer;
   div {
@@ -43,7 +43,7 @@
     height: 50px;
     width: 50px;
     padding: 3px;
-    box-shadow: 3px 3px 5px 2px rgb(24, 24, 24);
+    box-shadow: 2px 2px 5px 1px rgb(100, 100, 100);
 
     div {
       height: 44px;

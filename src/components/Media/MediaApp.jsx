@@ -13,8 +13,6 @@ import ReactPlayer from "react-player";
 import "./css/mediaApp.css";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
 import { IoMdRefresh } from "react-icons/io";
-import fire from "../../config/Fire";
-var db = fire.firestore();
 
 export default function MediaApp() {
   const { state, dispatch } = useStore();
@@ -23,61 +21,32 @@ export default function MediaApp() {
   const [webData, setWebData] = useState(false);
   const [youtubeURL, setYoutubeURL] = useState("");
   const [youtube, setYoutube] = useState(false);
-
   function test() {
     console.log("test");
     console.log(state.addedMovies);
     console.log(state.authUser);
-    switchColor(
-      "#304863",
-      "#364F6B",
-      "#3E5B7B",
-      "#43dde6",
-      "#fc5185",
-      "#f8f8f8",
-      "#b9b9b9"
-    );
+   
   }
   function write() {
     console.log("write");
-    document.documentElement.style.setProperty("--darkBlueSaved", "#FF0000");
-    // --darkerBlueSaved: #304863;
-    // --darkBlueSaved: #364F6B;
-    // --blueSaved: #3E5B7B;
-    // --lightBlueSaved: #43dde6;
-    // --pinkSaved: rgb(252 ,81,133);
-    // --textWhite: rgb(248, 248, 248);
-    // --subTextWhite: rgb(185, 185, 185);
-    //white
-    switchColor(
-      "#FFFFFF",
-      "#f2f2f2",
-      "#E5E3E1",
-      "#FF2710",
-      "#FF7711",
-      "#393e46",
-      "#303a52"
-    );
+    axios
+      .post("http://localhost:4000/test")
+      
+      // .post("https://secure-peak-92770.herokuapp.com/submit", input)
+
+      .then(res => {
+        console.log(res);
+      })
+      .catch(
+        e=> console.log(e)
+        
+      );
   }
-  function switchColor(darker, dark, normal,  light,special, text, lightText) {
-    document.documentElement.style.setProperty("--darkerBlueSaved", darker);
-    document.documentElement.style.setProperty("--darkBlueSaved", dark);
-    document.documentElement.style.setProperty("--blueSaved", normal);
-    document.documentElement.style.setProperty("--lightBlueSaved", light);
-    document.documentElement.style.setProperty("--pinkSaved", special);
-    document.documentElement.style.setProperty("--textWhite", text);
-    document.documentElement.style.setProperty("--subTextWhite", lightText);
-  }
+ 
+
   function read() {
     console.log("read");
-    db.collection("users")
-      .doc(state.authUser.uid)
-      .update({
-        movie: state.addedMovies
-      })
-      .catch(error => {
-        console.error("Error adding document: ", error);
-      });
+   
   }
   return (
     <section className="mediaAppCon">
