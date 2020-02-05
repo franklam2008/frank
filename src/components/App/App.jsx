@@ -31,7 +31,6 @@ function App() {
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
-  testtest()
   return (
     <Router>
       <UserProvider>

@@ -1,4 +1,3 @@
-console.log("123");
 
 // module.exports = {
 //   useOutsideAlerter: function() {
@@ -9,6 +8,6 @@ console.log("123");
 //     console.log("clicked");
 //   }
 // };
-export function testtest(){
-    console.log("123");
-}
+// export function testtest(){
+//     console.log("123");
+// }
