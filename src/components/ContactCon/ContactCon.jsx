@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./css/ContactForm.css";
 import { AiOutlineMessage } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
-import PopoverForm from "./PopoverForm.jsx";
+import PopoverForm from "../Forms/PopoverForm.jsx";
 
 import { Popover, ButtonToolbar, Overlay } from "react-bootstrap";
 export default function ContactCon() {
