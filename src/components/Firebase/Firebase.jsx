@@ -23,7 +23,7 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
     });
     //load public data once
     //doc log from firestore
-    var tempArr = [];
+
     var docRef = db.collection("public");
     //radio
     docRef
@@ -31,10 +31,7 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
       .get()
       .then(doc => {
         if (doc.exists) {
-          const obj = doc.data();
-          for (var i in obj) {
-            tempArr.unshift(obj[i]);
-          }
+          dispatch({ type: "LOAD_RADIO", payload: doc.data()["radio"] });
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
@@ -42,7 +39,6 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
       .catch(error => {
         console.log("Error getting document:", error);
       });
-    dispatch({ type: "LOAD_RADIO", payload: tempArr });
     //corona
     docRef
       .doc("corona")
@@ -50,7 +46,6 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
       .then(doc => {
         if (doc.exists) {
           dispatch({ type: "LOAD_CORONA", payload: doc.data() });
-
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
@@ -125,7 +120,6 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
           }
           setReadyToUpdate(true);
           setLoading(false);
-
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
@@ -150,8 +144,8 @@ export default FirebaseFunc;
 //   .catch(error => {
 //     console.log("Error getting document:", error);
 //   });
-//Added youTubeChannels to Firestore
 
+//Added youTubeChannels to Firestore
 // useEffect(() => {
 //   if (!state.login) {
 //     return;
