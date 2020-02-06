@@ -42,13 +42,13 @@ export default function SignUpForm({ setSignUpPage }) {
         </Form.Group>
         <Row className="mb-4">
           <Col>
-            <Button variant="success" type="submit" block onClick={signUp}>
+            <Button variant="warning" type="submit" block onClick={signUp}>
               Submit
             </Button>
           </Col>
           <Col>
             <Button
-              variant="secondary"
+              variant="outline-secondary"
               type="submit"
               block
               onClick={() => setSignUpPage(false)}

@@ -34,13 +34,13 @@ export default function LoginForm({ setSignUpPage }) {
         </Form.Group>
         <Row>
           <Col>
-            <Button variant="success" type="submit" block onClick={handleLogin}>
+            <Button variant="warning" type="submit" block onClick={handleLogin}>
               Sign In
             </Button>
           </Col>
           <Col>
             <Button
-              variant="outline-primary"
+              variant="outline-secondary"
               block
               onClick={() => setSignUpPage(true)}
             >
@@ -55,7 +55,7 @@ export default function LoginForm({ setSignUpPage }) {
       <Row>
         <Col lg={6}>
           <Button
-            variant="outline-success"
+            variant="outline-secondary"
             type="submit"
             block
             onClick={() => {
@@ -67,7 +67,7 @@ export default function LoginForm({ setSignUpPage }) {
         </Col>{" "}
         <Col lg={6}>
           <Button
-            variant="outline-info"
+            variant="outline-secondary"
             type="submit"
             block
             // disabled
@@ -78,7 +78,7 @@ export default function LoginForm({ setSignUpPage }) {
         </Col>
         <Col lg={6}>
           <Button
-            variant="outline-info"
+            variant="outline-secondary"
             type="submit"
             block
             disabled
@@ -90,7 +90,7 @@ export default function LoginForm({ setSignUpPage }) {
         </Col>
         <Col lg={6}>
           <Button
-            variant="outline-info"
+            variant="outline-secondary"
             type="submit"
             block
             disabled

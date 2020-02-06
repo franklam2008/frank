@@ -26,19 +26,19 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
 
     var docRef = db.collection("public");
     //radio
-    // docRef
-    //   .doc("radio-morning")
-    //   .get()
-    //   .then(doc => {
-    //     if (doc.exists) {
-    //       dispatch({ type: "LOAD_RADIO", payload: doc.data()["radio"] });
-    //     } else {
-    //       console.log("No such document!"); // doc.data() will be undefined in this case
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.log("Error getting document:", error);
-    //   });
+    docRef
+      .doc("radio-morning")
+      .get()
+      .then(doc => {
+        if (doc.exists) {
+          dispatch({ type: "LOAD_RADIO", payload: doc.data()["radio"] });
+        } else {
+          console.log("No such document!"); // doc.data() will be undefined in this case
+        }
+      })
+      .catch(error => {
+        console.log("Error getting document:", error);
+      });
     //corona
     docRef
       .doc("corona")

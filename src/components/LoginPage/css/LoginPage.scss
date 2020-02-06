@@ -1,15 +1,19 @@
 .loginPage {
   //   background-color: var(--darkBlueSaved);
-  background-color: var(--blueSaved);
+  // background-color: var(--pinkSaved);
+
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   .loginCon {
-    background-color: var(--darkBlueSaved);
-    //   background-color: var(--blueSaved);
+    border: 1px solid rgb(138, 138, 138);
+    background-color: rgba(247, 247, 247, 0.829);
+    box-shadow: 9px 12px 0 0px rgba(117, 117, 117, 0.377);
+    padding: 30px 60px;
     padding: 30px 70px;
-    border-radius: 5px;
+    border-radius: 2px;
     max-width: 500px;
     .loginHeader {
       padding-bottom: 20px;
@@ -41,6 +45,19 @@
       }
     }
   }
+}
+.loginPage::after {
+  content: "";
+  background-image: url("../../assets/img/bg.jpg");
+  background-size: cover;
+  background-position: right;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 @media only screen and (max-width: 600px) {
   .loginPage {
