@@ -92,7 +92,7 @@ export default function LightBox({ show, onHide }) {
     sendForm(input);
   }
   function sendForm(input) {
-    axios.post("http://localhost:5000/submit", input).then(res => {
+    axios.post("https://localhost:5000/submit", input).then(res => {
       console.log(res);
       setFormMsg(res.data);
     });

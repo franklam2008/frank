@@ -96,7 +96,7 @@ export default function Home() {
             </div>
           </Col>
           {/* radio */}
-          <Col lg={4}>
+          {/* <Col lg={4}>
             <div className="homeSectionCon radioCon">
               <h3>Radio</h3>
               <div className="radioWrapper">
@@ -126,7 +126,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-          </Col>
+          </Col> */}
         </Row>
 
         <Row>

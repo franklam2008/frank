@@ -30,7 +30,7 @@ export default function MediaApp() {
   function write() {
     console.log("write");
     axios
-      .post("http://localhost:4000/test")
+      .post("https://localhost:4000/test")
       
       // .post("https://secure-peak-92770.herokuapp.com/submit", input)
 
@@ -117,9 +117,9 @@ export default function MediaApp() {
   function Get() {
     console.log("Get");
 
-    // axios.get("http://localhost:4000/creators").then(response => {
+    // axios.get("https://localhost:4000/creators").then(response => {
     axios
-      .get("http://secure-peak-92770.herokuapp.com/creators")
+      .get("https://secure-peak-92770.herokuapp.com/creators")
       .then(response => {
         console.log(response.data);
         setWebData(true);
@@ -132,8 +132,8 @@ export default function MediaApp() {
     console.log("Post");
     const input = webInput.current.value;
 
-    // axios.post("http://localhost:4000/creators", {
-    axios.post("http://secure-peak-92770.herokuapp.com/creators", {
+    // axios.post("https://localhost:4000/creators", {
+    axios.post("https://secure-peak-92770.herokuapp.com/creators", {
       firstName: "Fred",
       lastName: "Flintstone",
       input: input
@@ -145,7 +145,7 @@ export default function MediaApp() {
     console.log("Post", input);
 
     axios
-      // .post("http://localhost:4000/youtube", {
+      // .post("https://localhost:4000/youtube", {
       .post("https://secure-peak-92770.herokuapp.com/youtube", {
         firstName: "Fred",
         lastName: "Flintstone",
