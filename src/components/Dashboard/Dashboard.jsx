@@ -9,9 +9,10 @@ import ReactPlayer from "react-player";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 export default function Home() {
-  const { state , dispatch} = useStore();
+  const { state, dispatch } = useStore();
   const colorSwitch = useRef();
-  useEffect(() => {//update darkMode from store
+  useEffect(() => {
+    //update darkMode from store
     colorSwitchFunc(state.darkMode);
     document.getElementById("custom-switch").checked = state.darkMode;
   }, [state.darkMode]);
@@ -76,15 +77,25 @@ export default function Home() {
         <Row>
           <Col lg={8}>
             <div className="homeSectionCon coronaCon">
-              <a
-                href="https://www.google.com/search?q=coronavirus"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h3>
-                  Corona <span>(update every 3 hours)</span>
-                </h3>{" "}
-              </a>
+              <h3>
+                <a
+                  href="https://www.google.com/search?q=coronavirus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Corona
+                </a>{" "}
+                <span>
+                  (update every 3 hours)  
+                  <a
+                    href="https://www.worldometers.info/coronavirus/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                     Source
+                  </a>{" "}
+                </span>
+              </h3>{" "}
               <h6> Date: {getCurrentDate()}</h6>
               {Object.entries(state.corona).map(x => (
                 <div key={x[0]} className="coronaCat">

@@ -1,8 +1,8 @@
-import { Modal, Button } from "react-bootstrap";
 import React from "react";
-import { Spinner, Row, Col } from "react-bootstrap";
+import { Modal, Button, Spinner, Row, Col } from "react-bootstrap";
 import Img from "react-image";
 import "./css/LolLightBox.css";
+import { IoMdArrowForward } from "react-icons/io";
 
 export default function LightBox({ champ, onHide, show, lightBoxData }) {
   //if champ= [] case
@@ -21,7 +21,18 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
       centered
     >
       <Modal.Header closeButton>
-        <div  className="champTitle">{champ.name}</div></Modal.Header>
+        <div className="champTitle">
+          {champ.name}
+          <a
+            className="guide"
+            href={`https://champion.gg/champion/${champ.name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Guide<IoMdArrowForward/>
+          </a>
+        </div>
+      </Modal.Header>
       {!lightBoxData ? (
         <div className="loadingScreen">
           <Spinner size="lg" className="" animation="border" />
@@ -30,7 +41,7 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
       ) : (
         <Modal.Body>
           <Row className="mb-4 pr-3">
-            <Col lg={3}className="lolIconCon">
+            <Col lg={3} className="lolIconCon">
               {/* icon */}
               <Img
                 draggable={false}
@@ -91,9 +102,7 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
                     </div>
                   </Col>
                 </Row>
-
               </div>
-              
             ))}
           </div>
         </Modal.Body>

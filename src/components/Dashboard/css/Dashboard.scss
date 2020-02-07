@@ -31,9 +31,7 @@
       color: var(--textWhite);
       font-size: 1.2rem;
     }
-    h3:hover {
-      text-decoration: underline;
-    }
+   
   }
   .movieCon {
     .movieWrapper {
@@ -74,17 +72,23 @@
     right:10px;
   }
   .coronaCon {
+    color: var(--textWhite);
+    a{
       color: var(--textWhite);
+
+    }
       h3{
       margin-bottom: 20px;
      span{
-       font-size: .8rem;
+      font-size: .8rem;
      }
     }
     .coronaCat{
       float: left;
       width: 50%;
       text-transform:capitalize;
+      text-align: center;
+
     }
     .deaths{
       color: rgb(192, 1, 1);

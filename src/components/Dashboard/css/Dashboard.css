@@ -43,10 +43,6 @@
   font-size: 1.2rem;
 }
 
-.homeCon .homeSectionCon h3:hover {
-  text-decoration: underline;
-}
-
 .homeCon .movieCon {
   overflow-x: hidden;
 }
@@ -99,6 +95,10 @@
   color: var(--textWhite);
 }
 
+.homeCon .coronaCon a {
+  color: var(--textWhite);
+}
+
 .homeCon .coronaCon h3 {
   margin-bottom: 20px;
 }
@@ -111,6 +111,7 @@
   float: left;
   width: 50%;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .homeCon .coronaCon .deaths {

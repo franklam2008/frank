@@ -9,6 +9,11 @@
   .champTitle{
     font-size: 1.5rem;
     font-weight: 700;
+    .guide{
+      color: var(--textWhite);
+    font-size: 1rem;
+    margin-left: 20px;
+    }
   }
   .champTag {
     color: white;
