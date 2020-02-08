@@ -1,9 +1,18 @@
 import "./css/Dashboard.css";
-import React, { useRef, useEffect } from "react";
+import axios from "axios";
+import React, { useState, useRef, useEffect } from "react";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
 import Img from "react-image";
 import macIcon from "../assets/img/macIcon.png";
-import { Col, Row, Spinner, Form } from "react-bootstrap";
+import {
+  Col,
+  Row,
+  Spinner,
+  Form,
+  InputGroup,
+  Button,
+  FormControl
+} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
@@ -11,6 +20,10 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 export default function Home() {
   const { state, dispatch } = useStore();
   const colorSwitch = useRef();
+  const webInput = useRef();
+
+  const [youtubeURL, setYoutubeURL] = useState("");
+  const [youtube, setYoutube] = useState(false);
   useEffect(() => {
     document.getElementById("custom-switch").checked = state.darkMode;
   }, [state.darkMode]);
@@ -84,13 +97,13 @@ export default function Home() {
                   Live Corona Data
                 </a>
                 <span>
-                  (update every 30 mins)  
+                  (update every 30 mins)
                   <a
                     href="https://www.worldometers.info/coronavirus/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                     Source
+                    Source
                   </a>
                 </span>
               </h3>
@@ -155,6 +168,30 @@ export default function Home() {
           <Col>
             <div className="homeSectionCon">
               <h3>YouTube Player</h3>
+              <InputGroup>
+                <FormControl
+                  type="text"
+                  ref={webInput}
+                  placeholder={"webTest"}
+                  aria-label="Search"
+                  aria-describedby="basic-addon2"
+                />
+                <InputGroup.Append></InputGroup.Append>
+              </InputGroup>
+              <Button variant="info" onClick={YouTubeScrape}>
+                YouTube
+              </Button>
+              {/* youtube */}
+              {youtube ? (
+                <div className="player-wrapper">
+                  <ReactPlayer
+                    className="react-player"
+                    url={youtubeURL}
+                    playing
+                    controls
+                  />
+                </div>
+              ) : null}
             </div>
           </Col>
         </Row>
@@ -165,7 +202,6 @@ export default function Home() {
     let colorCheck = colorSwitch.current.checked;
     dispatch({ type: "DARKMODE", payload: colorCheck });
   }
-  
   function right() {
     document.getElementById("container").scrollLeft += 150;
   }
@@ -182,5 +218,21 @@ export default function Home() {
     return `${year}${separator}${
       month < 10 ? `0${month}` : `${month}`
     }${separator}${date < 10 ? `0${date}` : `${date}`}`;
+  }
+  function YouTubeScrape() {
+    console.log("YouTube");
+    const input = webInput.current.value;
+    console.log("Post", input);
+    axios
+      .post(`http://localhost:4000/youtube/${input}`, {
+      // .get("http://localhost:4000/youtube", {
+      // .post("https://secure-peak-92770.herokuapp.com/youtube", {
+        input: input
+      })
+      .then(response => {
+        setYoutube(true);
+        setYoutubeURL(response.data.link);
+      })
+      .catch(error => console.log(error));
   }
 }

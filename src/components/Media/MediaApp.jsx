@@ -9,7 +9,6 @@ import {
   Row,
   Col
 } from "react-bootstrap";
-import ReactPlayer from "react-player";
 import "./css/mediaApp.css";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
 export default function MediaApp() {
@@ -17,8 +16,7 @@ export default function MediaApp() {
   const webInput = useRef();
   const [webScrapData, setWebScrapData] = useState([]);
   const [webData, setWebData] = useState(false);
-  const [youtubeURL, setYoutubeURL] = useState("");
-  const [youtube, setYoutube] = useState(false);
+ 
 
   function test() {
     console.log("test");
@@ -56,9 +54,7 @@ export default function MediaApp() {
       <Button variant="info" onClick={Post}>
         Post
       </Button>
-      <Button variant="info" onClick={YouTubeScrape}>
-        YouTube
-      </Button>
+   
      
 
       {/* youtuber Channel */}
@@ -87,17 +83,7 @@ export default function MediaApp() {
           : null}
       </Row>
 
-      {/* youtube */}
-      {youtube ? (
-        <div className="player-wrapper">
-          <ReactPlayer
-            className="react-player"
-            url={youtubeURL}
-            playing
-            controls
-          />
-        </div>
-      ) : null}
+      
     </section>
   );
   function Get() {
@@ -118,32 +104,11 @@ export default function MediaApp() {
     console.log("Post");
     const input = webInput.current.value;
 
-    // axios.post("https://localhost:4000/creators", {
+    // axios.post("http://localhost:4000/creators", {
     axios.post("https://secure-peak-92770.herokuapp.com/creators", {
       firstName: "Fred",
       lastName: "Flintstone",
       input: input
     });
   }
-  function YouTubeScrape() {
-    console.log("YouTube");
-    const input = webInput.current.value;
-    console.log("Post", input);
-
-    axios
-      // .post("https://localhost:4000/youtube", {
-      .post("https://secure-peak-92770.herokuapp.com/youtube", {
-        firstName: "Fred",
-        lastName: "Flintstone",
-        input: input
-      })
-      .then(response => {
-        console.log(response.data);
-        setYoutube(true);
-        setYoutubeURL(response.data.link);
-      })
-      .catch(error => console.log(error));
-  }
-
-  
 }
