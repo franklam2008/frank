@@ -26,7 +26,8 @@ export default function MovieItem({ movie ,addMovie}) {
             <div className="card-body">
               <div>
                 <h5 className="card-title">
-                  {movie.title}{" "}
+                  {movie.title.split("(")
+                    .slice(0, 1)}
                   <span className="score">
                     <span>{movie.vote_average}</span>
                   </span>

@@ -12,8 +12,6 @@ export default function Home() {
   const { state, dispatch } = useStore();
   const colorSwitch = useRef();
   useEffect(() => {
-    //update darkMode from store
-    colorSwitchFunc(state.darkMode);
     document.getElementById("custom-switch").checked = state.darkMode;
   }, [state.darkMode]);
   return (
@@ -83,19 +81,19 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Corona
-                </a>{" "}
+                  Live Corona Data
+                </a>
                 <span>
-                  (update every 3 hours)  
+                  (update every 30 mins)  
                   <a
                     href="https://www.worldometers.info/coronavirus/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                      Source
-                  </a>{" "}
+                  </a>
                 </span>
-              </h3>{" "}
+              </h3>
               <h6> Date: {getCurrentDate()}</h6>
               {Object.entries(state.corona).map(x => (
                 <div key={x[0]} className="coronaCat">
@@ -160,7 +158,6 @@ export default function Home() {
             </div>
           </Col>
         </Row>
-        <button onClick={test}>test</button>
       </section>
     </div>
   );
@@ -168,51 +165,20 @@ export default function Home() {
     let colorCheck = colorSwitch.current.checked;
     dispatch({ type: "DARKMODE", payload: colorCheck });
   }
-  function colorSwitchFunc(boolean) {
-    let colors = [];
-    if (boolean) {
-      colors = {
-        //dark
-        darkerBlueSaved: "#393e46",
-        darkBlueSaved: "#222831",
-        blueSaved: "#393e46",
-        lightBlueSaved: "#caccd1",
-        pinkSaved: "#f6c90e",
-        textWhite: "#f3f4f7",
-        subTextWhite: "#caccd1"
-      };
-    } else {
-      colors = {
-        //light
-        darkerBlueSaved: "#FFFFFF",
-        darkBlueSaved: "#f2f2f2",
-        blueSaved: "#E5E3E1",
-        lightBlueSaved: "#FF2710",
-        pinkSaved: "#FF7711",
-        textWhite: "#393e46",
-        subTextWhite: "#303a52"
-      };
-    }
-    Object.entries(colors).forEach(color =>
-      document.documentElement.style.setProperty("--" + color[0], color[1])
-    );
-  }
+  
   function right() {
     document.getElementById("container").scrollLeft += 150;
   }
   function left() {
     document.getElementById("container").scrollLeft -= 150;
   }
-  function test() {
-    console.log("test");
-  }
+
   function getCurrentDate() {
     const separator = "-";
     let newDate = new Date();
     let date = newDate.getDate();
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
-
     return `${year}${separator}${
       month < 10 ? `0${month}` : `${month}`
     }${separator}${date < 10 ? `0${date}` : `${date}`}`;

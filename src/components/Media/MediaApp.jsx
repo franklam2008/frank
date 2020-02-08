@@ -12,35 +12,21 @@ import {
 import ReactPlayer from "react-player";
 import "./css/mediaApp.css";
 import { useStore } from "../Firebase/FirebaseStore.jsx";
-
-
 export default function MediaApp() {
-  const { state, dispatch } = useStore();
+  const {  dispatch } = useStore();
   const webInput = useRef();
   const [webScrapData, setWebScrapData] = useState([]);
   const [webData, setWebData] = useState(false);
   const [youtubeURL, setYoutubeURL] = useState("");
   const [youtube, setYoutube] = useState(false);
+
   function test() {
     console.log("test");
-    console.log(state.addedMovies);
-    console.log(state.authUser);
    
   }
   function write() {
     console.log("write");
-    axios
-      .post("https://localhost:4000/test")
-      
-      // .post("https://secure-peak-92770.herokuapp.com/submit", input)
-
-      .then(res => {
-        console.log(res);
-      })
-      .catch(
-        e=> console.log(e)
-        
-      );
+   
   }
  
 
@@ -53,7 +39,7 @@ export default function MediaApp() {
       <button onClick={test}>Test</button>
       <button onClick={write}>Write</button>
       <button onClick={read}>Read</button>
-
+      
       <InputGroup>
         <FormControl
           type="text"

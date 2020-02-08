@@ -35,7 +35,7 @@ export default function ContactCon() {
               setShow(false);
             }}
           />
-          <Popover.Title as="h3">Contact Form</Popover.Title>
+          <Popover.Title as="h3">Contact Us</Popover.Title>
           <Popover.Content>
             <PopoverForm />
           </Popover.Content>

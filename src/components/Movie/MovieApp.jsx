@@ -86,13 +86,7 @@ export default function Movie() {
           </Col>
         ))}
       </Row>
-      <Pagination
-        inputShow={false}
-        showPrev={showPrev}
-        showNext={showNext}
-        changePageNum={changePageNum}
-        currentPageUrl={currentPageUrl}
-      ></Pagination>
+     
     </section>
   );
 

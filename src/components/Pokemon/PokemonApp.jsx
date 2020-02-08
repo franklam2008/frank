@@ -64,10 +64,7 @@ export default function Pokemon() {
       ) : (
         <PokemonList pokemon={pokemon}></PokemonList>
       )}
-      <Pagination
-        gotoNextPage={nextPageUrl ? gotoNextPage : null}
-        gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
-      ></Pagination>
+      
     </section>
   );
 

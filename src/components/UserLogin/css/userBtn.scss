@@ -13,7 +13,7 @@
   border-radius: 50%;
   display: inline-block;
   background: linear-gradient(to right, var(--pinkSaved), var(--pinkSaved));
-  box-shadow: 2px 2px 5px 1px rgb(100, 100, 100);
+  box-shadow: 2px 2px 5px 1px rgba($color: #000000, $alpha: .3);
   transition: all 0.4s;
   cursor: pointer;
   div {

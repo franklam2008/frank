@@ -8,12 +8,12 @@
   align-items: center;
   position: relative;
   .loginCon {
-    border: 1px solid rgb(138, 138, 138);
-    background-color: rgba(247, 247, 247, 0.829);
-    box-shadow: 9px 12px 0 0px rgba(117, 117, 117, 0.377);
+    border: .5px solid rgba($color: #000000, $alpha: .2);
+    background-color: rgba(247, 247, 247, 0.7);
+    box-shadow: 6px 9px 3px 0px rgba(117, 117, 117, 0.377);
     padding: 30px 60px;
     padding: 30px 70px;
-    border-radius: 2px;
+    border-radius: 5px;
     max-width: 500px;
     .loginHeader {
       padding-bottom: 20px;

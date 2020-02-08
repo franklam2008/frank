@@ -13,13 +13,13 @@
 }
 
 .loginPage .loginCon {
-  border: 1px solid #8a8a8a;
-  background-color: rgba(247, 247, 247, 0.829);
-  -webkit-box-shadow: 9px 12px 0 0px rgba(117, 117, 117, 0.377);
-          box-shadow: 9px 12px 0 0px rgba(117, 117, 117, 0.377);
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(247, 247, 247, 0.7);
+  -webkit-box-shadow: 6px 9px 3px 0px rgba(117, 117, 117, 0.377);
+          box-shadow: 6px 9px 3px 0px rgba(117, 117, 117, 0.377);
   padding: 30px 60px;
   padding: 30px 70px;
-  border-radius: 2px;
+  border-radius: 5px;
   max-width: 500px;
 }
 

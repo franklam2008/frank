@@ -93,6 +93,10 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
         });
     }
   }, [state.radio, state.data]);
+  //update dark mode
+  useEffect(() => {
+    colorSwitchFunc(state.darkMode);
+  }, [state.darkMode]);
   return <> </>;
 
   //User data once to local
@@ -128,6 +132,35 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
         console.log("Error getting document:", error);
       });
     return;
+  }
+  function colorSwitchFunc(boolean) {
+    let colors = [];
+    if (boolean) {
+      colors = {
+        //dark
+        darkerBlueSaved: "#393e46",
+        darkBlueSaved: "#222831",
+        blueSaved: "#393e46",
+        lightBlueSaved: "#caccd1",
+        pinkSaved: "#f6c90e",
+        textWhite: "#f3f4f7",
+        subTextWhite: "#caccd1"
+      };
+    } else {
+      colors = {
+        //light
+        darkerBlueSaved: "#FFFFFF",
+        darkBlueSaved: "#f2f2f2",
+        blueSaved: "#E5E3E1",
+        lightBlueSaved: "#FF2710",
+        pinkSaved: "#FF7711",
+        textWhite: "#393e46",
+        subTextWhite: "#303a52"
+      };
+    }
+    Object.entries(colors).forEach(color =>
+      document.documentElement.style.setProperty("--" + color[0], color[1])
+    );
   }
 }
 
