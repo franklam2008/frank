@@ -7,7 +7,6 @@ import MovieApp from "../Movie/MovieApp.jsx";
 import About from "../About/About.jsx";
 import Dashboard from "../Dashboard/Dashboard.jsx";
 import TodoApp from "../Todo/TodoApp.jsx";
-import MediaApp from "../Media/MediaApp.jsx";
 import ContactCon from "../ContactCon/ContactCon.jsx";
 // css
 import "./css/App.css";
@@ -27,7 +26,6 @@ function App() {
   const [openCol, setOpenCol] = useState(false);
   const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(true);
-
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
   return (
@@ -66,7 +64,6 @@ function App() {
                     <Route path="/pokemon" component={PokemonApp} />
                     <Route path="/movieList" component={MovieApp} />
                     <Route path="/todo" component={TodoApp} />
-                    <Route path="/media" component={MediaApp} />
                     <Route path="/lol" component={LolApp} />
                     <Route path="/about" component={About} />
                   </Switch>

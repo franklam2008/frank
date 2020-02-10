@@ -108,7 +108,17 @@
   }
   a {
     color: var(--subTextWhite);
-    text-decoration: none;
+    background-image: linear-gradient(
+      90deg,
+      var(--pinkSaved),
+      var(--lightBlueSaved)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  a:hover{
+    border-bottom: .02px solid var(--textWhite);
+
   }
 }
 

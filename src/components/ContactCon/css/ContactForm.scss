@@ -53,10 +53,12 @@
   svg {
     font-size: 35px;
   }
+  &:hover {
+    border: 2px solid var(--pinkSaved);
+
+  }
 }
-.ContactBtn:hover {
-  border: 2px solid var(--pinkSaved);
-}
+
 
 @media only screen and (max-width: 600px) {
   #contact-form {

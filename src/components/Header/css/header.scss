@@ -1,3 +1,6 @@
+@function vh($quantity) {
+  @return calc(var(--vh, 1vh) * #{$quantity});
+}
 .App {
   .container-fluid .row {
     #openCol {
@@ -14,7 +17,7 @@
       z-index: 5;
       transition: all 0.4s;
       ul {
-        height: calc(var(--vh, 1vh) * 100);
+        height: vh(100);
         justify-content: space-between;
         padding: 30px 0px;
         li {
@@ -98,6 +101,7 @@
         span {
           font-size: 16px;
           font-weight: 500;
+          font-family: "Montserrat", sans-serif;
           color: var(--subTextWhite);
           transition: all 0.4s;
           align-self: center;
@@ -115,6 +119,9 @@
             color: var(--subTextWhite);
             transition: all 0.4s;
           }
+          &:hover {
+            background-color: var(--darkBlueSaved);
+          }
         }
         .menuItem::before {
           content: "";
@@ -127,9 +134,7 @@
           transition: transform 300ms ease-in-out;
           transform: scaleY(0);
         }
-        .menuItem:hover {
-          background-color: var(--darkBlueSaved);
-        }
+
         a.activeLink {
           .menuItem {
             background-color: var(--darkBlueSaved);

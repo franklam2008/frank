@@ -66,7 +66,6 @@ export default function Movie() {
         Movies
       </div>
       <Pagination
-        inputShow={true}
         showPrev={showPrev}
         showNext={showNext}
         changePageNum={changePageNum}

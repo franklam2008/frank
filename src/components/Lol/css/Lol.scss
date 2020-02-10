@@ -1,34 +1,5 @@
 .lolCon {
   color: var(--textWhite);
-  .mainTitle{
-    // position: sticky;
-    // position: -webkit-sticky;
-    // top: 0; /* required */
-  }
-}
-.searchBar{
-  margin: 0 auto;
-  max-width: 400px;
-  border: 1px solid rgba(172, 172, 172, 0.5);
-  border-radius: 5px;
-  padding: 5px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s;
-  input{
-    color:var(--textWhite);
-    padding-left: 10px;
-    background-color: transparent;
-    border: none;
-    width: 100%;
-  }
-  input:focus {
-    outline: none;
-  }
-}
-.searchBar:focus-within{
-  border: 1px solid var(--pinkSaved);
 }
 
 .lolContent{

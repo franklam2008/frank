@@ -41,7 +41,7 @@ export default function MovieItem({ movie ,addMovie}) {
               </div>
               <div className="cardFooter">
                 <span className="date">{movie.release_date}</span>
-                <Button variant="outline-info">
+               
                   <a
                     href={"https://www.themoviedb.org/movie/" + movie.id}
                     rel="noopener noreferrer"
@@ -49,7 +49,7 @@ export default function MovieItem({ movie ,addMovie}) {
                   >
                     More Info
                   </a>
-                </Button>
+               
               </div>
             </div>
           </Col>

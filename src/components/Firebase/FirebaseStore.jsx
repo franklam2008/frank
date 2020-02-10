@@ -39,7 +39,7 @@ function reducer(state = defaultState, action = {}) {
       return { ...state, db: action.payload };
     //movies
     case "ADD_MOVIE":
-      return { ...state, addedMovies: [...state.addedMovies, action.payload] };
+      return { ...state, addedMovies: [ action.payload, ...state.addedMovies] };
     case "LOAD_MOVIES":
       return { ...state, addedMovies: action.payload };
     //radio

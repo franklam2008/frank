@@ -26,7 +26,7 @@
 
 .mainTitle {
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: normal;
   padding: 30px;
   color: var(--textWhite);
   img {
@@ -114,6 +114,52 @@
   border-radius: 5px;
   border: 1px solid var(--pinkSaved);
 }
+.searchBar{
+  margin: 0 auto;
+  max-width: 400px;
+  border: 1px solid rgba(172, 172, 172, 0.5);
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  svg{
+    color: var(--textWhite);
+  }
+  input{
+    color:var(--textWhite);
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  &:focus-within{
+    border: 1px solid var(--pinkSaved);
+  }
+  button{
+    position: absolute;
+    padding: 0 10px;
+    right: 0;
+    height: 100%;
+    background-color: var(--pinkSaved);
+    border: none;
+    color: var(--textWhite);
+    transition: .5s all;
+    &:hover{
+      background-color: var(--textWhite);
+    color: var(--pinkSaved);
+
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .tooltip {
     opacity: 0 !important;

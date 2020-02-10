@@ -3,7 +3,7 @@ import fire from "../../config/Fire";
 import { useStore } from "./FirebaseStore.jsx";
 var db = fire.firestore();
 
-function FirebaseFunc({ setLogin, login, setLoading }) {
+function FirebaseFunc({ setLogin, setLoading }) {
   const { state, dispatch } = useStore();
   const [readyToUpdate, setReadyToUpdate] = useState(false);
 
@@ -138,11 +138,11 @@ function FirebaseFunc({ setLogin, login, setLoading }) {
     if (boolean) {
       colors = {
         //dark
-        darkerBlueSaved: "#393e46",
-        darkBlueSaved: "#222831",
-        blueSaved: "#393e46",
-        lightBlueSaved: "#caccd1",
-        pinkSaved: "#f6c90e",
+        darkerBlueSaved: "#171622",
+        darkBlueSaved: "#2e2d38",
+        blueSaved: "#21252a",
+        lightBlueSaved: "#e52e71",
+        pinkSaved: "#ff8a00",
         textWhite: "#f3f4f7",
         subTextWhite: "#caccd1"
       };

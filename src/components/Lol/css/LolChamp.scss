@@ -14,17 +14,17 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.3s;
+    &:hover {
+      border: 3px solid var(--pinkSaved);
+    }
+    &:hover > img {
+      filter: brightness(0.5);
+      transform: scale(0.9);
+    }
   }
-  .frame:hover {
-    border: 3px solid var(--pinkSaved);
-  }
-  .frame:hover > img {
-    filter: brightness(0.5);
-    transform: scale(0.9);
-  }
+
   img {
     transform: scale(0.86);
     transition: 0.7s ease-out;
   }
-  
 }

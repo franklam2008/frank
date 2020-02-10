@@ -46,31 +46,68 @@
 .homeCon .homeSectionCon h3 {
   color: var(--textWhite);
   font-size: 1.2rem;
-  text-decoration: underline;
 }
 
-.homeCon .movieCon {
-  overflow-x: hidden;
+.homeCon .homeSectionCon h3 strong {
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--pinkSaved)), to(var(--lightBlueSaved)));
+  background-image: linear-gradient(90deg, var(--pinkSaved), var(--lightBlueSaved));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Montserrat", sans-serif;
 }
 
-.homeCon .movieCon .movieWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-x: scroll;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+.homeCon .homeSectionCon h3 span {
+  margin: 5px;
 }
 
-.homeCon .movieCon .movieWrapper::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+.homeCon .movieCon .carouselMovie svg {
+  color: var(--textWhite);
+  cursor: pointer;
 }
 
-.homeCon .movieCon img {
+.homeCon .movieCon .carouselMovie svg:hover {
+  color: var(--pinkSaved);
+}
+
+.homeCon .movieCon .carouselMovie .movie {
+  position: relative;
+}
+
+.homeCon .movieCon .carouselMovie .movie img {
   max-height: 200px;
   margin-right: 10px;
   border-radius: 3px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.homeCon .movieCon .carouselMovie .movie svg {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  opacity: 0;
+}
+
+.homeCon .movieCon .carouselMovie .movie .movieDashboardDelete {
+  right: 15px;
+  top: 5px;
+}
+
+.homeCon .movieCon .carouselMovie .movie .movieDashboardGoto {
+  left: 50%;
+  margin-left: -10px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.homeCon .movieCon .carouselMovie .movie:hover img {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.homeCon .movieCon .carouselMovie .movie:hover svg {
+  opacity: 1;
+  border-color: var(--pinkSaved);
 }
 
 .homeCon .btnLeft,
@@ -111,6 +148,8 @@
 
 .homeCon .coronaCon h3 span {
   font-size: 0.8rem;
+  margin: 0;
+  margin-left: 5px;
 }
 
 .homeCon .coronaCon .coronaCat {
@@ -175,6 +214,15 @@
 .homeCon .radioCon .radioWrapper::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.homeCon .youTubeCon .youTubeSpinner {
+  margin-bottom: 3px;
+  margin-left: 10px;
+}
+
+.homeCon .youTubeCon .react-player {
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 600px) {

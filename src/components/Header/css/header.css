@@ -118,6 +118,7 @@
 .App .container-fluid .row .sideBarMenu ul span {
   font-size: 16px;
   font-weight: 500;
+  font-family: "Montserrat", sans-serif;
   color: var(--subTextWhite);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -144,6 +145,10 @@
   transition: all 0.4s;
 }
 
+.App .container-fluid .row .sideBarMenu ul .menuItem:hover {
+  background-color: var(--darkBlueSaved);
+}
+
 .App .container-fluid .row .sideBarMenu ul .menuItem::before {
   content: "";
   position: absolute;
@@ -158,10 +163,6 @@
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-}
-
-.App .container-fluid .row .sideBarMenu ul .menuItem:hover {
-  background-color: var(--darkBlueSaved);
 }
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink .menuItem {

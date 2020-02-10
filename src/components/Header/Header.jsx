@@ -69,11 +69,7 @@ export default function Header({ openCol, setOpenCol }) {
             link: "todo"
           },
 
-          {
-            name: "Media",
-            icon: MdHeadset,
-            link: "media"
-          },
+         
           {
             name: "About",
             icon: AiOutlineQuestionCircle,
