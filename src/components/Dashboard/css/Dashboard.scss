@@ -3,12 +3,11 @@
   min-height: 200px;
   .header {
     width: 100%;
-
   }
   .colorSwitchCon {
     position: absolute;
-    right:30px;
-    top:35px;
+    right: 30px;
+    top: 35px;
     .custom-control {
       color: var(--textWhite);
     }
@@ -17,7 +16,7 @@
       border: none;
       box-shadow: 0.5px 1px 2px 0px rgba($color: #000000, $alpha: 0.2);
     }
-    .custom-control-input:checked~.custom-control-label::before{
+    .custom-control-input:checked ~ .custom-control-label::before {
       background-color: var(--darkerBlueSaved);
     }
   }
@@ -98,38 +97,37 @@
   }
   .coronaCon {
     color: var(--textWhite);
-   .coronaCard{
-     border:none;
-     .row div{
-       margin-top: 20px;
-       text-align: center;
-       .deaths {
-        color: rgb(192, 1, 1);
-      }
-      .recovered {
-        color: green;
-      }
-      button{
-        background-color: transparent;
-        color: var(--subTextWhite);
-        border:none;
-        &:focus{
-          outline: none;
+    .coronaCard {
+      border: none;
+      .row div {
+        margin-top: 20px;
+        text-align: center;
+        .deaths {
+          color: rgb(192, 1, 1);
+        }
+        .recovered {
+          color: green;
+        }
+        button {
+          background-color: transparent;
+          color: var(--subTextWhite);
+          border: none;
+          &:focus {
+            outline: none;
+          }
         }
       }
-     }
-   }
- 
+    }
+
     .card {
       background-color: transparent;
-  
+
       .coronaCat {
-          margin-top: 10px;
-          
-          text-transform: capitalize;
-          text-align: center;
-        }
-     
+        margin-top: 10px;
+
+        text-transform: capitalize;
+        text-align: center;
+      }
     }
   }
   .radioCon {
@@ -214,18 +212,16 @@ h3.colorHeader {
 }
 @media only screen and (max-width: 600px) {
   .homeCon {
-    .colorSwitchCon{
-      right:10px;
+    .colorSwitchCon {
+      right: 10px;
       display: inline;
       .custom-control {
         .custom-control-label {
           font-size: 0px;
         }
-        
       }
-    
     }
-    
+
     .movieCon {
       .carouselMovie {
         .movie {
@@ -241,14 +237,13 @@ h3.colorHeader {
         height: 300px !important;
       }
     }
-    .coronaCon{
+    .coronaCon {
       .card-header {
         display: flex;
         flex-wrap: wrap;
-        div{
+        div {
           width: 50%;
         }
-       
       }
     }
   }
