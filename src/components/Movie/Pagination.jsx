@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Row, Col, InputGroup, FormControl } from "react-bootstrap";
+import { Button, Row, Col} from "react-bootstrap";
 import { IoIosSearch } from "react-icons/io";
 
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";

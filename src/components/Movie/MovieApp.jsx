@@ -25,7 +25,6 @@ export default function Movie() {
 
   useEffect(() => {
     axios.get(currentPageUrl).then(response => {
-      // console.log(response)
       if (response.data.results.length !== 0) {
         setMovies(response.data.results);
         setError(false);

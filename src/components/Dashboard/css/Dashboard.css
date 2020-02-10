@@ -117,24 +117,37 @@
   color: var(--textWhite);
 }
 
-.homeCon .coronaCon h3 {
-  margin-bottom: 20px;
-}
-
-.homeCon .coronaCon .coronaCat {
-  margin-top: 10px;
-  float: left;
-  width: 50%;
-  text-transform: capitalize;
+.homeCon .coronaCon .coronaCard .row div {
+  margin-top: 20px;
   text-align: center;
 }
 
-.homeCon .coronaCon .deaths {
+.homeCon .coronaCon .coronaCard .row div .deaths {
   color: #c00101;
 }
 
-.homeCon .coronaCon .recovered {
+.homeCon .coronaCon .coronaCard .row div .recovered {
   color: green;
+}
+
+.homeCon .coronaCon .coronaCard .row div button {
+  background-color: transparent;
+  color: var(--subTextWhite);
+  border: none;
+}
+
+.homeCon .coronaCon .coronaCard .row div button:focus {
+  outline: none;
+}
+
+.homeCon .coronaCon .card {
+  background-color: transparent;
+}
+
+.homeCon .coronaCon .card .coronaCat {
+  margin-top: 10px;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .homeCon .radioCon {
@@ -250,6 +263,16 @@ h3.colorHeader span {
   .homeCon .youTubeCon .react-player {
     width: 250px !important;
     height: 300px !important;
+  }
+  .homeCon .coronaCon .card-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .homeCon .coronaCon .card-header div {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=Dashboard.css.map */

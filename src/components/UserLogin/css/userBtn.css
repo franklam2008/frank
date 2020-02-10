@@ -58,8 +58,6 @@
     height: 50px;
     width: 50px;
     padding: 3px;
-    -webkit-box-shadow: 2px 2px 5px 1px #646464;
-            box-shadow: 2px 2px 5px 1px #646464;
   }
   .signUp-btn div {
     height: 44px;
