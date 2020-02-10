@@ -8,13 +8,14 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 import {
   MdLocalMovies,
   MdFormatListBulleted,
-  MdHeadset,
   MdDashboard
 } from "react-icons/md";
 import "./css/header.css";
 
 export default function Header({ openCol, setOpenCol }) {
   const [spinOnce, setSpinOnce] = useState(false);
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
   return (
     <ul className="nav flex-column">
       <li>
@@ -37,10 +38,8 @@ export default function Header({ openCol, setOpenCol }) {
             id={spinOnce ? "menuCircle" : " "}
             className={spinOnce ? "spin-it-once menuCircle" : "menuCircle"}
           >
-            
           </div>
         </div>
-
         {[
           {
             name: "Dashboard",
@@ -62,14 +61,11 @@ export default function Header({ openCol, setOpenCol }) {
             icon: GiCrossedSwords,
             link: "lol"
           },
-
           {
             name: "Todo",
             icon: MdFormatListBulleted,
             link: "todo"
           },
-
-         
           {
             name: "About",
             icon: AiOutlineQuestionCircle,

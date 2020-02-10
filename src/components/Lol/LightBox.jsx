@@ -9,8 +9,6 @@ export default function LightBox({ champ, onHide, show, lightBoxData }) {
   if (champ.length < 1) {
     return <></>;
   }
-  // console.log(champ);
-
   return (
     <Modal
       className="LolChampLightBox"

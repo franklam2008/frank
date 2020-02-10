@@ -12,7 +12,7 @@ export default function YouTubePlayer() {
 
   return (
     <div className="homeSectionCon youTubeCon">
-      <h3>
+      <h3 className="colorHeader">
         <strong>YouTube Player</strong>
         {loading ? (
           <Spinner size="sm" className="youTubeSpinner" animation="border" />
@@ -28,7 +28,7 @@ export default function YouTubePlayer() {
           ref={youTubeSearchInput}
           onKeyPress={handleKeyPress}
         />
-        <button onClick={YouTubeScrape}>Search</button>
+        <button onClick={YouTubeScrape}>Enter</button>
       </div>
 
       {/* youtube */}
@@ -47,7 +47,6 @@ export default function YouTubePlayer() {
   function YouTubeScrape() {
     console.log("YouTube");
     const input = youTubeSearchInput.current.value;
-    console.log("Post", input);
     setLoading(true);
     axios
       // .post(`http://localhost:4000/youtube/${input}`, {

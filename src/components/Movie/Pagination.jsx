@@ -39,7 +39,7 @@ export default function Pagination({
               ref={movieSearchInput}
               onKeyPress={handleKeyPress} 
             />
-            <button onClick={handleSearchInput}>Search</button>
+            <button onClick={handleSearchInput}>Enter</button>
           </div>
         </Col>
         <Col

@@ -106,20 +106,11 @@
   .date {
     font-size: 12px;
   }
-  a {
-    color: var(--subTextWhite);
-    background-image: linear-gradient(
-      90deg,
-      var(--pinkSaved),
-      var(--lightBlueSaved)
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .movieInfo{
+    font-size: 12px;
+    margin: 0;
   }
-  a:hover{
-    border-bottom: .02px solid var(--textWhite);
-
-  }
+  
 }
 
 @media only screen and (max-width: 600px) {

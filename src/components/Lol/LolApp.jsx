@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Row, Col, Spinner, Button } from "react-bootstrap";
+import { Row, Col, Spinner } from "react-bootstrap";
 
 //Component
 import LolChamp from "./LolChamp";
@@ -65,12 +65,8 @@ export default function LolApp() {
         League of Legend
       </div>
       <Row className="mb-3">
-        <Col className=" text-center" lg={2}>
-          <Button className="logBtn" onClick={log}>
-            Log Champs
-          </Button>
-        </Col>
-        <Col className=" text-center" lg={{ span: "4", offset: "2" }}>
+        
+        <Col className=" text-center" lg={{ span: "4", offset: "4" }}>
           <div className="searchBar">
             <IoIosSearch />
             <input
@@ -106,18 +102,7 @@ export default function LolApp() {
       />
     </section>
   );
-  function log() {
-    console.log("champs", champs);
-    console.log("filteredChamps", filteredChamps);
-    console.log("selectedChamp", selectedChamp);
-    console.log("selectedChampObj", selectedChampObj);
-    console.log("lightBoxData", lightBoxData);
-    console.log("modalShow", modalShow);
-
-    // setModalShow(true);
-
-    
-  }
+  
   function handleInput(e) {
     // setSearch(true);
     filterChamps(e.target.value);

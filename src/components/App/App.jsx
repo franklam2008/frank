@@ -13,8 +13,6 @@ import "./css/App.css";
 import "./css/LightBox.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container,Row, Col } from "react-bootstrap";
-//JS
-
 //Store
 import FirebaseFunc from "../Firebase/Firebase.jsx";
 import LoginPage from "../LoginPage/LoginPage.jsx";
@@ -28,9 +26,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
-  let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+
   return (
     <Router>
       <UserProvider>

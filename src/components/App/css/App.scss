@@ -148,13 +148,13 @@
     padding: 0 10px;
     right: 0;
     height: 100%;
-    background-color: var(--pinkSaved);
+    background-color: transparent;
     border: none;
     color: var(--textWhite);
     transition: .5s all;
     &:hover{
-      background-color: var(--textWhite);
-    color: var(--pinkSaved);
+      background-color: var(--pinkSaved);
+    color: var(--textWhite);
 
     }
   }

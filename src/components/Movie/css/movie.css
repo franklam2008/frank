@@ -145,16 +145,9 @@
   font-size: 12px;
 }
 
-.movieCon .card .cardFooter a {
-  color: var(--subTextWhite);
-  background-image: -webkit-gradient(linear, left top, right top, from(var(--pinkSaved)), to(var(--lightBlueSaved)));
-  background-image: linear-gradient(90deg, var(--pinkSaved), var(--lightBlueSaved));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.movieCon .card .cardFooter a:hover {
-  border-bottom: 0.02px solid var(--textWhite);
+.movieCon .card .cardFooter .movieInfo {
+  font-size: 12px;
+  margin: 0;
 }
 
 @media only screen and (max-width: 600px) {

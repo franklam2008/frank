@@ -182,7 +182,7 @@
   padding: 0 10px;
   right: 0;
   height: 100%;
-  background-color: var(--pinkSaved);
+  background-color: transparent;
   border: none;
   color: var(--textWhite);
   -webkit-transition: .5s all;
@@ -190,8 +190,8 @@
 }
 
 .searchBar button:hover {
-  background-color: var(--textWhite);
-  color: var(--pinkSaved);
+  background-color: var(--pinkSaved);
+  color: var(--textWhite);
 }
 
 @media only screen and (max-width: 600px) {
