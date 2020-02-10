@@ -5,27 +5,27 @@
 
 .homeCon .header {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-right: 30px;
 }
 
-.homeCon .header .colorSwitchCol .custom-control {
+.homeCon .colorSwitchCon {
+  position: absolute;
+  right: 30px;
+  top: 35px;
+}
+
+.homeCon .colorSwitchCon .custom-control {
   color: var(--textWhite);
 }
 
-.homeCon .header .colorSwitchCol .custom-control-label:before {
+.homeCon .colorSwitchCon .custom-control-label:before {
   background-color: var(--darkerBlueSaved);
   border: none;
   -webkit-box-shadow: 0.5px 1px 2px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0.5px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.homeCon .colorSwitchCon .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--darkerBlueSaved);
 }
 
 .homeCon .homeSectionCon {
@@ -252,13 +252,11 @@ h3.colorHeader span {
 }
 
 @media only screen and (max-width: 600px) {
-  .homeCon .header .mainTitle {
-    margin-right: 10px;
+  .homeCon .colorSwitchCon {
+    right: 10px;
+    display: inline;
   }
-  .homeCon .header .custom-control {
-    color: var(--textWhite);
-  }
-  .homeCon .header .custom-control .custom-control-label {
+  .homeCon .colorSwitchCon .custom-control .custom-control-label {
     font-size: 0px;
   }
   .homeCon .movieCon .carouselMovie .movie img {

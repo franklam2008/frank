@@ -6,7 +6,7 @@ import MovieDash from "./MovieDash.jsx";
 import Corona from "./Corona.jsx";
 import Radio from "./Radio.jsx";
 import YouTubePlayer from "./YouTubePlayer.jsx";
-import {Col,Row,Form,} from "react-bootstrap";
+import { Col, Row, Form } from "react-bootstrap";
 
 export default function Home() {
   const { state, dispatch } = useStore();
@@ -22,30 +22,29 @@ export default function Home() {
           <img src={macIcon} alt="movie" draggable={false} />
           Dashboard
         </div>
-        <div className="colorSwitchCol">
-          <Form>
-            <Form.Check
-              type="switch"
-              id="custom-switch"
-              label="Dark Mode"
-              onChange={darkModeHandler}
-              ref={colorSwitch}
-            />
-          </Form>
-        </div>
+      </div>
+      <div className="colorSwitchCon">
+        <Form>
+          <Form.Check
+            type="switch"
+            id="custom-switch"
+            label="Dark Mode"
+            onChange={darkModeHandler}
+            ref={colorSwitch}
+          />
+        </Form>
       </div>
       <section className="container-fluid">
-        <MovieDash movies={state.addedMovies}/>
+        <MovieDash movies={state.addedMovies} />
         <Row>
           <Col lg={8}>
-           <Corona corona={state.corona}/>
+            <Corona corona={state.corona} />
           </Col>
           <Col lg={4}>
             <Radio radio={state.radio} />
           </Col>
         </Row>
         <YouTubePlayer />
-       
       </section>
     </div>
   );
