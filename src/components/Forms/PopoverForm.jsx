@@ -87,14 +87,15 @@ export default function PopoverForm() {
   }
   function sendForm(input) {
     axios
-      .post("https://localhost:4000/submit", input)
-
-      // .post("https://secure-peak-92770.herokuapp.com/submit", input)
-
+      // .post("http://localhost:4000/submit", input)
+      .post("https://secure-peak-92770.herokuapp.com/submit", input)
       .then(res => {
         console.log(res);
         setFormMsg(res.data);
       })
-      .catch(setFormMsg("Connected Error"));
+      .catch(err => {
+        console.log(err);
+        setFormMsg("Connected Error");
+      });
   }
 }

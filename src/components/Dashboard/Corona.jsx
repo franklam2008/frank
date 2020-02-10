@@ -41,7 +41,7 @@ export default function Corona({ corona }) {
                 <h3 className="colorHeader">
                   <span>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a>Details</a>
+                    <a>Detail</a>
                   </span>
                 </h3>
               </Accordion.Toggle>
