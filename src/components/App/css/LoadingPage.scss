@@ -1,0 +1,21 @@
+.loadingPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::after {
+    content: "";
+    background-image: url("../../assets/img/bg.jpg");
+    background-size: cover;
+    background-position: right;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+}

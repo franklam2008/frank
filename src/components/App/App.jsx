@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // pages
 import Header from "../Header/Header.jsx";
+import LoadingPage from "./LoadingPage.jsx";
 import PokemonApp from "../Pokemon/PokemonApp.jsx";
 import MovieApp from "../Movie/MovieApp.jsx";
 import About from "../About/About.jsx";
@@ -11,8 +12,9 @@ import ContactCon from "../ContactCon/ContactCon.jsx";
 // css
 import "./css/App.css";
 import "./css/LightBox.css";
+import "./css/LoadingPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container,Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 //Store
 import FirebaseFunc from "../Firebase/Firebase.jsx";
 import LoginPage from "../LoginPage/LoginPage.jsx";
@@ -30,17 +32,13 @@ function App() {
   return (
     <Router>
       <UserProvider>
-     
         <div className="App">
-        <Container fluid>
-          <FirebaseFunc
-            login={login}
-                setLoading={setLoading}
-                setLogin={setLogin}
-            />
+          <Container fluid>
+            <FirebaseFunc setLoading={setLoading} setLogin={setLogin} />
+            <LoadingPage loading={loading} />
             {login ? (
               <Row>
-                <Col className="backSideBar" xs={0} sm={1} md={1} lg={1}></Col>
+                <Col className="backSideBar" xs={0} sm={1}></Col>
                 <Col
                   id={openCol ? "openCol" : undefined}
                   className="sideBarMenu"
@@ -50,9 +48,7 @@ function App() {
                 </Col>
                 <Col
                   xs={12}
-                  md={11}
                   sm={11}
-                  lg={11}
                   id={openCol ? "mainConDark" : " "}
                   className="mainCon"
                 >
@@ -69,11 +65,7 @@ function App() {
                 </Col>
               </Row>
             ) : (
-              <LoginPage
-            
-                setLoading={setLoading}
-                loading={loading}
-              />
+              <LoginPage />
             )}
           </Container>
         </div>

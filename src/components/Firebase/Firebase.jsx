@@ -9,6 +9,9 @@ function FirebaseFunc({ setLogin, setLoading }) {
 
   //Run it once
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+     }, 1800);
     //firebase Auth State Changed
     fire.auth().onAuthStateChanged(authUser => {
       if (authUser) {
@@ -21,9 +24,9 @@ function FirebaseFunc({ setLogin, setLoading }) {
         setLogin(false);
       }
     });
+
     //load public data once
     //doc log from firestore
-
     var docRef = db.collection("public");
     //radio
     docRef
@@ -53,6 +56,7 @@ function FirebaseFunc({ setLogin, setLoading }) {
       .catch(error => {
         console.log("Error getting document:", error);
       });
+     
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -93,12 +97,14 @@ function FirebaseFunc({ setLogin, setLoading }) {
         });
     }
   }, [state.radio, state.data]);
+
   //update dark mode
   useEffect(() => {
     colorSwitchFunc(state.darkMode);
   }, [state.darkMode]);
   return <> </>;
 
+  // Function
   //User data once to local
   function loadUserData(authUser) {
     var docRef = db.collection("users");
@@ -123,7 +129,6 @@ function FirebaseFunc({ setLogin, setLoading }) {
             dispatch({ type: "DARKMODE", payload: darkMode });
           }
           setReadyToUpdate(true);
-          setLoading(false);
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
@@ -161,39 +166,10 @@ function FirebaseFunc({ setLogin, setLoading }) {
     Object.entries(colors).forEach(color =>
       document.documentElement.style.setProperty("--" + color[0], color[1])
     );
+
   }
 }
 
 export default FirebaseFunc;
-//collection log
-// docRef
-//   .get()
-//   .then(querySnapshot => {
-//     querySnapshot.forEach(doc => {
-//       tempArr.push(doc.data());
-//       console.log(doc.id, " => ", doc.data());
-//     });
-//   })
-//   .catch(error => {
-//     console.log("Error getting document:", error);
-//   });
 
-//Added youTubeChannels to Firestore
-// useEffect(() => {
-//   if (!state.login) {
-//     return;
-//   } else if (state.addedMovies.length > 1) {
-//     return;
-//   } else {
-//     console.log("updatedYouTubeChannels");
-//     db.collection("users")
-//       .doc(state.authUser.uid)
-//       .update({
-//         youTubeChannels: state.youTubeChannels
-//       })
-//       .catch(error => {
-//         console.error("Error adding document: ", error);
-//       });
-//   }
-//   // eslint-disable-next-line react-hooks/exhaustive-deps
-// }, [state.youTubeChannels]);
+

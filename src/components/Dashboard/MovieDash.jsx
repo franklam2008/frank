@@ -7,6 +7,7 @@ import { Spinner } from "react-bootstrap";
 import Img from "react-image";
 
 export default function MovieDash({ movies }) {
+  
   return (
     <div className="homeSectionCon movieCon">
       <h3 className="colorHeader">
