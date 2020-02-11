@@ -215,6 +215,13 @@
   color: var(--textWhite);
 }
 
+.homeCon .radioCon .radioWrapper .player-wrapper .audio {
+  width: 100%;
+  max-width: 500px;
+  -webkit-filter: var(--filter);
+          filter: var(--filter);
+}
+
 .homeCon .radioCon .radioWrapper::-webkit-scrollbar {
   width: 0;
   height: 0;

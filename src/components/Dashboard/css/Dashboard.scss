@@ -160,6 +160,12 @@
           text-align: center;
           color: var(--textWhite);
         }
+        .audio{
+          width: 100%;
+          max-width: 500px;
+          filter:var(--filter);
+        }
+     
       }
     }
     .radioWrapper::-webkit-scrollbar {

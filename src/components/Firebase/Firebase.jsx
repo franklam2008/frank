@@ -125,7 +125,9 @@ function FirebaseFunc({ setLogin, setLoading }) {
         lightBlueSaved: "#e52e71",
         pinkSaved: "#ff8a00",
         textWhite: "#f3f4f7",
-        subTextWhite: "#caccd1"
+        subTextWhite: "#caccd1",
+        filter:'invert(98%)'
+
       };
     } else {
       colors = {
@@ -136,7 +138,8 @@ function FirebaseFunc({ setLogin, setLoading }) {
         lightBlueSaved: "#FF2710",
         pinkSaved: "#FF7711",
         textWhite: "#393e46",
-        subTextWhite: "#303a52"
+        subTextWhite: "#303a52",
+        filter:'invert(0%)'
       };
     }
     Object.entries(colors).forEach(color =>

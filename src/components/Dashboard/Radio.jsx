@@ -1,5 +1,4 @@
 import React from "react";
-import ReactPlayer from "react-player";
 
 export default function Radio({ radio }) {
   return (
@@ -21,17 +20,20 @@ export default function Radio({ radio }) {
                 </a>
               </span>
             </h3>
-            <audio  src={post.fileURL} controls autoPlay/>
-            {/* <ReactPlayer
-              url={post.fileURL}
-              playing={false}
-              width="240px"
-              height="50px"
-              controls
-            /> */}
+            
+            <audio id={post.id} className="audio" controls="controls">
+              <source
+                type="audio/mpeg"
+                src={post.fileURL}
+              />
+            </audio>
+            
           </div>
         ))}
       </div>
     </div>
   );
+  function myFunction(x) {
+    x.classList.toggle("fa-thumbs-down");
+  }
 }
