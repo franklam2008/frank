@@ -21,14 +21,14 @@ export default function Radio({ radio }) {
                 </a>
               </span>
             </h3>
-
-            <ReactPlayer
+            <audio  src={post.fileURL} controls autoPlay/>
+            {/* <ReactPlayer
               url={post.fileURL}
               playing={false}
               width="240px"
               height="50px"
               controls
-            />
+            /> */}
           </div>
         ))}
       </div>
