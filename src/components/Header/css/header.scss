@@ -13,7 +13,7 @@
       position: fixed;
       // box-shadow: -4px 0px 7px 9px #2F4967;
       z-index: 5;
-      transition: all 0.4s;
+      transition: width 0.4s;
       ul {
         height: 100vh; /* Fallback for browsers that do not support Custom Properties */
         height: calc(var(--vh, 1vh) * 100);
@@ -154,9 +154,7 @@
     }
   }
 }
-.menuMainIcon {
-  margin-bottom: 30px;
-}
+
 /* spin starts */
 .spin-it-once {
   -webkit-animation: spin 1s; /* Chrome, Opera 15+, Safari 5+ */

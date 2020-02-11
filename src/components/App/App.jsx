@@ -18,7 +18,6 @@ import { Container, Row, Col } from "react-bootstrap";
 //Store
 import FirebaseFunc from "../Firebase/Firebase.jsx";
 import LoginPage from "../LoginPage/LoginPage.jsx";
-import "./AppEventListener";
 import { UserProvider } from "../Firebase/FirebaseStore.jsx";
 import LolApp from "../Lol/LolApp.jsx";
 

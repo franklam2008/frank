@@ -10,8 +10,8 @@
   overflow: hidden;
   position: fixed;
   z-index: 5;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
 }
 
 .App .container-fluid .row .sideBarMenu ul {
@@ -183,10 +183,6 @@
 
 .App .container-fluid .row .sideBarMenu ul a.activeLink span {
   color: var(--textWhite);
-}
-
-.menuMainIcon {
-  margin-bottom: 30px;
 }
 
 /* spin starts */
