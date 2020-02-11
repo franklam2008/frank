@@ -5,11 +5,14 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { FaRegArrowAltCircleRight, FaTimes } from "react-icons/fa";
 import { Spinner } from "react-bootstrap";
 import Img from "react-image";
+import { NavLink } from "react-router-dom";
 
 export default function MovieDash({ movies, dispatch }) {
   const [fullLength, setFullLength] = useState(false);
-  useEffect(() => { //check if length too short for Carousel
-    checkMovieArrLength(movies);
+  const [emptyMovieArr, setEmptyMovieArr] = useState(false);
+  useEffect(() => {
+    //check if length too short for Carousel
+    checkMovieArrLength(movies.length);
   }, [movies]);
 
   return (
@@ -52,37 +55,61 @@ export default function MovieDash({ movies, dispatch }) {
           }
         }}
       >
-        {movies.map(movie => (
-          <div className="movie" key={movie.id}>
-            <Img
-              draggable={false}
-              variant="top"
-              alt="movie"
-              src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
-              loader={<Spinner size="sm" className="" animation="border" />}
-              unloader={<p>Not Available</p>}
-            />
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={"https://www.themoviedb.org/movie/" + movie.id}
-            >
-              <FaRegArrowAltCircleRight className="movieDashboardGoto" />
-            </a>
-            <FaTimes
-              className="movieDashboardDelete"
-              onClick={() => deleteMovie(movie.id)}
-            />
+        {emptyMovieArr ? (
+          <div className="emptyMovie">
+            <h3 className="colorHeader">
+              <span>
+                <NavLink
+                  className="nav-link nav-item"
+                  activeClassName="activeLink"
+                  exact
+                  to="movieList"
+                >
+                  Click Here to add movie
+                </NavLink>
+              </span>
+            </h3>
           </div>
-        ))}
+        ) : (
+          movies.map(movie => (
+            <div className="movie" key={movie.id}>
+              <Img
+                draggable={false}
+                variant="top"
+                alt="movie"
+                src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                loader={<Spinner size="sm" className="" animation="border" />}
+                unloader={<p>Not Available</p>}
+              />
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={"https://www.themoviedb.org/movie/" + movie.id}
+              >
+                <FaRegArrowAltCircleRight className="movieDashboardGoto" />
+              </a>
+              <FaTimes
+                className="movieDashboardDelete"
+                onClick={() => deleteMovie(movie.id)}
+              />
+            </div>
+          ))
+        )}
       </Carousel>
     </div>
   );
   function deleteMovie(id) {
     dispatch({ type: "REMOVE_MOVIE", payload: id });
-    checkMovieArrLength(movies);
   }
-  function checkMovieArrLength(arr) {
-    arr.length > 8 ? setFullLength(true) : setFullLength(false);
+  function checkMovieArrLength(length) {
+    if (length > 8) {
+      setFullLength(true);
+      setEmptyMovieArr(false);
+    } else if (length === 0) {
+      setEmptyMovieArr(true);
+    } else {
+      setFullLength(false);
+      setEmptyMovieArr(false);
+    }
   }
 }

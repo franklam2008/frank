@@ -39,6 +39,15 @@
           color: var(--pinkSaved);
         }
       }
+      .emptyMovie {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          padding: 0;
+        }
+      }
       .movie {
         position: relative;
         img {
@@ -53,8 +62,8 @@
           position: absolute;
           color: var(--pinkSaved);
           opacity: 0;
-          &:hover{
-          color: var(--textWhite);
+          &:hover {
+            color: var(--textWhite);
           }
         }
         .movieDashboardDelete {

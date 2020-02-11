@@ -67,7 +67,6 @@ function FirebaseFunc({ setLogin, setLoading }) {
     } else if (!readyToUpdate) {
       return;
     } else {
-      console.log("State Updated to Firestore");
       db.collection("users")
         .doc(state.authUser.uid)
         .update(state)

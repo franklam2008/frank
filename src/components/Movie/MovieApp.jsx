@@ -119,7 +119,6 @@ export default function Movie() {
     // console.log(movie);
     const targetId = movie.id;
     let checkMovieInList = false;
-    console.log(movie);
 
     if (state.addedMovies !== []) {
       checkMovieInList = state.addedMovies.some(movie => movie.id === targetId);
