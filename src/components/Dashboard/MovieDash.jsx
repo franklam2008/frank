@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
@@ -6,8 +6,12 @@ import { FaRegArrowAltCircleRight, FaTimes } from "react-icons/fa";
 import { Spinner } from "react-bootstrap";
 import Img from "react-image";
 
-export default function MovieDash({ movies }) {
-  
+export default function MovieDash({ movies, dispatch }) {
+  const [fullLength, setFullLength] = useState(false);
+  useEffect(() => { //check if length too short for Carousel
+    checkMovieArrLength(movies);
+  }, [movies]);
+
   return (
     <div className="homeSectionCon movieCon">
       <h3 className="colorHeader">
@@ -15,22 +19,20 @@ export default function MovieDash({ movies }) {
       </h3>
       <Carousel
         className="carouselMovie"
-        arrowLeft={<IoIosArrowBack />}
-        arrowRight={<IoIosArrowForward />}
+        arrowLeft={fullLength ? <IoIosArrowBack /> : null}
+        arrowRight={fullLength ? <IoIosArrowForward /> : null}
         addArrowClickHandler
-        slidesPerScroll={4}
+        slidesPerScroll={1}
         slidesPerPage={9}
-        arrows
-        infinite
+        infinite={fullLength}
         breakpoints={{
           1500: {
             slidesPerPage: 7,
             clickToChange: false,
-            centered: false,
-            arrows: true
+            centered: false
           },
           1200: {
-            slidesPerPage: 6,
+            slidesPerPage: 6
           },
           1050: {
             slidesPerPage: 5
@@ -39,8 +41,7 @@ export default function MovieDash({ movies }) {
             slidesPerPage: 4
           },
           750: {
-            slidesPerPage: 2,
-            slidesPerScroll: 2
+            slidesPerPage: 2
           },
           500: {
             slidesPerPage: 2
@@ -67,11 +68,21 @@ export default function MovieDash({ movies }) {
               href={"https://www.themoviedb.org/movie/" + movie.id}
             >
               <FaRegArrowAltCircleRight className="movieDashboardGoto" />
-              <FaTimes className="movieDashboardDelete" />
             </a>
+            <FaTimes
+              className="movieDashboardDelete"
+              onClick={() => deleteMovie(movie.id)}
+            />
           </div>
         ))}
       </Carousel>
     </div>
   );
+  function deleteMovie(id) {
+    dispatch({ type: "REMOVE_MOVIE", payload: id });
+    checkMovieArrLength(movies);
+  }
+  function checkMovieArrLength(arr) {
+    arr.length > 8 ? setFullLength(true) : setFullLength(false);
+  }
 }

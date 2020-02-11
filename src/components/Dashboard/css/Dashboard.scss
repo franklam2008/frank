@@ -51,8 +51,11 @@
           height: 20px;
           width: 20px;
           position: absolute;
-
+          color: var(--pinkSaved);
           opacity: 0;
+          &:hover{
+          color: var(--textWhite);
+          }
         }
         .movieDashboardDelete {
           right: 15px;
@@ -69,8 +72,6 @@
         }
         &:hover svg {
           opacity: 1;
-
-          border-color: var(--pinkSaved);
         }
       }
     }

@@ -35,7 +35,7 @@ export default function Home() {
         </Form>
       </div>
       <section className="container-fluid">
-        <MovieDash movies={state.addedMovies} />
+        <MovieDash movies={state.addedMovies} dispatch={dispatch}/>
         <Row>
           <Col lg={8}>
             <Corona corona={state.corona} />

@@ -1,15 +1,11 @@
-import React, { useRef } from "react";
-
-import { Button, InputGroup, FormControl } from "react-bootstrap";
+import React from "react";
 //Firebase
 import { useStore } from "../Firebase/FirebaseStore.jsx";
 //css
 import { FaHeart } from "react-icons/fa";
 import "./css/about.css";
-
 export default function About() {
   const { state, dispatch } = useStore();
-  const dataInput = useRef();
   return (
     <section className="aboutCon">
       <div className="mainTitle">About</div>
@@ -32,10 +28,7 @@ export default function About() {
       <p className="madeWith">
         Made with <FaHeart className="" /> in Orlando, Florida
       </p>
-      <p> Test Section</p>
-      <h4 className="text-center">AuthUser</h4>
-      <p>{state.authUser.displayName ?? "No username"}</p>
-      <p>{state.authUser.email ?? "login"}</p>
+
       <h4 className="text-center"> Counter/test</h4>
       <div>{state.counter}</div>
       <button onClick={() => dispatch({ type: "ADD1" })}>Add</button>
@@ -43,40 +36,7 @@ export default function About() {
       <button onClick={() => dispatch({ type: "CHECK_STATE" })}>
         log state
       </button>
-      <h4 className="text-center"> Quick Snap Container</h4>
-      <InputGroup>
-        <FormControl
-          type="text"
-          ref={dataInput}
-          placeholder={"Data"}
-          aria-label="Search"
-          aria-describedby="basic-addon2"
-          onKeyPress={handleKeyPress}
-        />
-        <InputGroup.Append>
-          <Button variant="info" onClick={handleSearchInput}>
-            Search
-          </Button>
-        </InputGroup.Append>
-      </InputGroup>
       <p>{state.data}</p>
     </section>
   );
-
-  function handleSearchInput(e) {
-    const name = dataInput.current.value;
-
-    if (name === "") return;
-    dispatch({
-      type: "ADD_DATA",
-      payload: name
-    });
-    return;
-  }
-  function handleKeyPress(target) {
-    if (target.charCode === 13) {
-      handleSearchInput();
-    }
-    return;
-  }
 }

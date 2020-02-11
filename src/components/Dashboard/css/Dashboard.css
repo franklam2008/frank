@@ -64,7 +64,12 @@
   height: 20px;
   width: 20px;
   position: absolute;
+  color: var(--pinkSaved);
   opacity: 0;
+}
+
+.homeCon .movieCon .carouselMovie .movie svg:hover {
+  color: var(--textWhite);
 }
 
 .homeCon .movieCon .carouselMovie .movie .movieDashboardDelete {
@@ -86,7 +91,6 @@
 
 .homeCon .movieCon .carouselMovie .movie:hover svg {
   opacity: 1;
-  border-color: var(--pinkSaved);
 }
 
 .homeCon .btnLeft,

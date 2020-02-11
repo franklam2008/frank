@@ -11,7 +11,7 @@ import { useStore } from "../Firebase/FirebaseStore.jsx";
 
 
 export default function UserLightBox(props) {
-  const { state } = useStore();
+  const { state ,dispatch } = useStore();
   
   return (
     <Modal
@@ -24,7 +24,7 @@ export default function UserLightBox(props) {
         <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {state.login ? <Home authUser={state.authUser} /> : <Login />}
+        {state.login ? <Home authUser={state.authUser} dispatch={dispatch}/> : <Login />}
       </Modal.Body>
       <Modal.Footer>
         <Button variant="dark" onClick={props.onHide}>

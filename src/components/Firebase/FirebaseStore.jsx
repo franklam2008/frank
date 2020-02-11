@@ -6,12 +6,9 @@ const defaultState = {
   login: false,
   authUser: [],
   darkMode: null,
-  db: [],
-  data: [],
+ 
   addedMovies: [],
   radio: [],
-  youTubeVideo: [],
-  youTubeChannels: [],
   corona: []
 };
 
@@ -39,7 +36,14 @@ function reducer(state = defaultState, action = {}) {
       return { ...state, db: action.payload };
     //movies
     case "ADD_MOVIE":
-      return { ...state, addedMovies: [ action.payload, ...state.addedMovies] };
+      return { ...state, addedMovies: [action.payload, ...state.addedMovies] };
+    case "REMOVE_MOVIE":
+      return {
+        ...state,
+        addedMovies: [
+          ...state.addedMovies.filter(movie => movie.id !== action.payload)
+        ]
+      };
     case "LOAD_MOVIES":
       return { ...state, addedMovies: action.payload };
     //radio
@@ -59,9 +63,11 @@ function reducer(state = defaultState, action = {}) {
     case "ADD1":
       return { ...state, counter: state.counter + 1 };
     //log
+
     case "CHECK_STATE":
       console.log("stateNow", state);
       return { ...state };
+
     //default
     default:
       return state;

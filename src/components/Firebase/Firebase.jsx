@@ -79,24 +79,7 @@ function FirebaseFunc({ setLogin, setLoading }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
-  //Public Data to Firestore
-  useEffect(() => {
-    if (state.radio === undefined) {
-      return;
-    } else if (state.radio === []) {
-      return;
-    } else if (state.radio.length > 1) {
-      console.log("updated public Data");
-      fire
-        .database()
-        .ref("data")
-        .update({
-          radio: state.radio,
-          lastUpdates: "updateradio",
-          data: state.data
-        });
-    }
-  }, [state.radio, state.data]);
+ 
 
   //update dark mode
   useEffect(() => {
@@ -117,13 +100,7 @@ function FirebaseFunc({ setLogin, setLoading }) {
             const { addedMovies } = doc.data();
             dispatch({ type: "LOAD_MOVIES", payload: addedMovies });
           }
-          if (doc.data().hasOwnProperty("youTubeChannels")) {
-            const { youTubeChannels } = doc.data();
-            dispatch({
-              type: "LOAD_YOUTUBECHANNELS",
-              payload: youTubeChannels
-            });
-          }
+          
           if (doc.data().hasOwnProperty("darkMode")) {
             const { darkMode } = doc.data();
             dispatch({ type: "DARKMODE", payload: darkMode });
