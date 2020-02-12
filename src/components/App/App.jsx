@@ -39,7 +39,7 @@ function App() {
             <LoadingPage loading={loading} />
             {login ? (
               <Row>
-                <Col className="backSideBar" xs={0} sm={1}></Col>
+                <Col className="backSideBar" sm={0} md={1}></Col>
                 <Col
                   id={openCol ? "openCol" : undefined}
                   className="sideBarMenu"
@@ -48,8 +48,8 @@ function App() {
                   <Header setOpenCol={setOpenCol} openCol={openCol} />
                 </Col>
                 <Col
-                  xs={12}
-                  sm={11}
+                  sm={12}
+                  md={11}
                   id={openCol ? "mainConDark" : " "}
                   className="mainCon"
                 >
