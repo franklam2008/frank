@@ -33,7 +33,5 @@ export default function Radio({ radio }) {
       </div>
     </div>
   );
-  function myFunction(x) {
-    x.classList.toggle("fa-thumbs-down");
-  }
+  
 }

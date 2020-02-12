@@ -1,18 +1,14 @@
 import React from "react";
 import { Accordion, Card, Row, Col } from "react-bootstrap";
+import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
 
 export default function Corona({ corona }) {
+  
   return (
     <div className="homeSectionCon coronaCon">
       <h3 className="colorHeader">
         <strong>
-          <a
-            href="https://www.google.com/search?q=coronavirus"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
             Live Corona Data
-          </a>
         </strong>
         <span>
           <a
@@ -22,14 +18,24 @@ export default function Corona({ corona }) {
           >
             Source
           </a>
+          <IoMdArrowDropright />
         </span>
-        <span>(update every 30 mins)</span>
+        <span>
+          <a
+            href="https://www.google.com/search?q=coronavirus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            News
+          </a>
+          <IoMdArrowDropright />
+        </span>
         <span>Date: {getCurrentDate()}</span>
       </h3>
       <Accordion>
         <Card className="coronaCard">
           <Row>
-            <Col md={6}>Coronavirus: {corona['Total Case']}</Col>
+            <Col md={6}>Coronavirus: {corona["Total Case"]}</Col>
             <Col>
               Deaths: <span className="deaths">{corona.Deaths}</span>
             </Col>
@@ -41,7 +47,7 @@ export default function Corona({ corona }) {
                 <h3 className="colorHeader">
                   <span>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a>Detail</a>
+                    <a>Detail</a> <IoMdArrowDropdown className="mb-1" />
                   </span>
                 </h3>
               </Accordion.Toggle>
@@ -50,6 +56,7 @@ export default function Corona({ corona }) {
 
           <Accordion.Collapse eventKey="0">
             <div>
+         
               {Object.entries(corona).map(x => (
                 <div key={x[0]} className="coronaCat">
                   <p>
@@ -57,6 +64,7 @@ export default function Corona({ corona }) {
                   </p>
                 </div>
               ))}
+              
             </div>
           </Accordion.Collapse>
         </Card>

@@ -1,11 +1,12 @@
 import React from "react";
-//Firebase
-import { useStore } from "../Firebase/FirebaseStore.jsx";
 //css
 import { FaHeart } from "react-icons/fa";
 import "./css/about.css";
+
+// import anime from "animejs/lib/anime.es.js";
+// import * as THREE from 'js/three.module.js';
 export default function About() {
-  const { state, dispatch } = useStore();
+ 
   return (
     <section className="aboutCon">
       <div className="mainTitle">About</div>
@@ -18,25 +19,67 @@ export default function About() {
       >
         <p>ifranklam.com </p>
       </a>
-      <a
-        href="https://quirky-shirley-a7ad09.netlify.com/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <p>quirky-shirley-a7ad09</p>
-      </a>
+     
       <p className="madeWith">
         Made with <FaHeart className="" /> in Orlando, Florida
       </p>
 
-      <h4 className="text-center"> Counter/test</h4>
-      <div>{state.counter}</div>
-      <button onClick={() => dispatch({ type: "ADD1" })}>Add</button>
-      <button onClick={() => dispatch({ type: "MINUS1" })}>Subtract</button>
-      <button onClick={() => dispatch({ type: "CHECK_STATE" })}>
-        log state
-      </button>
-      <p>{state.data}</p>
+   
+
+      <div className="anime"></div>
+  
+   
     </section>
   );
+  
 }
+  // anime({
+  //   targets: ".anime",
+  //   keyframes: [
+  //     { translateY: -40 },
+  //     { translateX: 250 },
+  //     { translateY: 40 },
+  //     { translateX: 0 },
+  //     { translateY: 0 }
+  //   ],
+  //   duration: 4000,
+  //   easing: "easeOutElastic(1, .8)",
+  //   loop: true
+  // });
+//   var ctx = document.getElementById('myChart');
+//   var myChart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//         datasets: [{
+//             label: '# of Votes',
+//             data: [12, 19, 3, 5, 2, 3],
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             borderColor: [
+//                 'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });

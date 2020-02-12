@@ -86,11 +86,11 @@ export default function MovieDash({ movies, dispatch }) {
                 rel="noopener noreferrer"
                 href={"https://www.themoviedb.org/movie/" + movie.id}
               >
-                <FaRegArrowAltCircleRight className="movieDashboardGoto" />
+                <FaRegArrowAltCircleRight className="movieDashboardGoto" title="More Detail"/>
               </a>
               <FaTimes
                 className="movieDashboardDelete"
-                onClick={() => deleteMovie(movie.id)}
+                onClick={() => deleteMovie(movie.id)}title="Delete this movie"
               />
             </div>
           ))

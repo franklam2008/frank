@@ -13,4 +13,11 @@
   font-size: 25px;
   padding-bottom: 7.5px;
 }
+
+.aboutCon .anime {
+  background-color: green;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
 /*# sourceMappingURL=about.css.map */

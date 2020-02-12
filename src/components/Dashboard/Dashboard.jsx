@@ -7,6 +7,7 @@ import Corona from "./Corona.jsx";
 import Radio from "./Radio.jsx";
 import YouTubePlayer from "./YouTubePlayer.jsx";
 import { Col, Row, Form } from "react-bootstrap";
+import CoronaChart from "./CoronaChart.jsx";
 
 export default function Home() {
   const { state, dispatch } = useStore();
@@ -35,16 +36,23 @@ export default function Home() {
         </Form>
       </div>
       <section className="container-fluid">
-        <MovieDash movies={state.addedMovies} dispatch={dispatch}/>
+        <MovieDash movies={state.addedMovies} dispatch={dispatch} />
         <Row>
           <Col lg={8}>
-            <Corona corona={state.corona} />
+            <YouTubePlayer />
           </Col>
           <Col lg={4}>
             <Radio radio={state.radio} />
           </Col>
         </Row>
-        <YouTubePlayer />
+        <Row>
+          <Col lg={5}>
+            <Corona corona={state.corona} />
+          </Col>
+          <Col lg={7}>
+            <CoronaChart />
+          </Col>
+        </Row>
       </section>
     </div>
   );
