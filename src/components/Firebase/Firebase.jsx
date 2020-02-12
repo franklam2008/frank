@@ -119,15 +119,15 @@ function FirebaseFunc({ setLogin, setLoading }) {
     if (boolean) {
       colors = {
         //dark
-        darkerBlueSaved: "#171622",
-        darkBlueSaved: "#2e2d38",
-        blueSaved: "#21252a",
+        darkerBlueSaved: "#0f0e16",
+        darkBlueSaved: "#1f1c28",
+        blueSaved: "#0d0c14",
         lightBlueSaved: "#e52e71",
         pinkSaved: "#ff8a00",
         textWhite: "#f3f4f7",
         subTextWhite: "#caccd1",
         filter:'invert(98%)'
-
+        // 0f0e16
       };
     } else {
       colors = {

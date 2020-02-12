@@ -8,7 +8,6 @@ import Radio from "./Radio.jsx";
 import YouTubePlayer from "./YouTubePlayer.jsx";
 import { Col, Row, Form } from "react-bootstrap";
 import CoronaChart from "./CoronaChart.jsx";
-
 export default function Home() {
   const { state, dispatch } = useStore();
   const colorSwitch = useRef();
@@ -17,12 +16,14 @@ export default function Home() {
   }, [state.darkMode]);
 
   return (
-    <div className="homeCon">
+    <div className="homeCon page">
       <div className="header">
+      
         <div className="mainTitle">
           <img src={macIcon} alt="movie" draggable={false} />
           Dashboard
         </div>
+        
       </div>
       <div className="colorSwitchCon">
         <Form>

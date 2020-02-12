@@ -27,7 +27,7 @@ export default function TodoApp() {
   }, [todos]);
 
   return (
-    <div className="todoCon">
+    <div className="todoCon page">
       <div className="mainTitle">Todo</div>
       <Container>
         <Row className="title">

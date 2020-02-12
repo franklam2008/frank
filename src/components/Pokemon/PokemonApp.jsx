@@ -47,7 +47,7 @@ export default function Pokemon() {
   }, [currentPageUrl]);
 
   return (
-    <section className="pokemonCon">
+    <div className="pokemonCon page">
       <div className="mainTitle">
         <img src={pokeBallIcon} alt="movie" />
         Pokemon
@@ -65,7 +65,7 @@ export default function Pokemon() {
         <PokemonList pokemon={pokemon}></PokemonList>
       )}
       
-    </section>
+    </div>
   );
 
   function gotoNextPage() {

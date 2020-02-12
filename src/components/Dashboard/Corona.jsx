@@ -10,6 +10,7 @@ export default function Corona({ corona }) {
         <strong>
             Live Corona Data
         </strong>
+        <div />
         <span>
           <a
             href="https://www.worldometers.info/coronavirus/"
@@ -59,9 +60,9 @@ export default function Corona({ corona }) {
          
               {Object.entries(corona).map(x => (
                 <div key={x[0]} className="coronaCat">
-                  <p>
-                    {x[0]}: <span className={x[0]}>{x[1]}</span>
-                  </p>
+                  <span>{x[0]}: </span>
+                    <span className={x[0]}>{x[1]}</span>
+                  
                 </div>
               ))}
               

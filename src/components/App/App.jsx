@@ -11,6 +11,7 @@ import TodoApp from "../Todo/TodoApp.jsx";
 import ContactCon from "../ContactCon/ContactCon.jsx";
 // css
 import "./css/App.css";
+import "./css/pageTransition.css";
 import "./css/LightBox.css";
 import "./css/LoadingPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,7 +21,8 @@ import FirebaseFunc from "../Firebase/Firebase.jsx";
 import LoginPage from "../LoginPage/LoginPage.jsx";
 import { UserProvider } from "../Firebase/FirebaseStore.jsx";
 import LolApp from "../Lol/LolApp.jsx";
-
+//js
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 function App() {
   const [openCol, setOpenCol] = useState(false);
   const [login, setLogin] = useState(false);
@@ -52,15 +54,27 @@ function App() {
                   className="mainCon"
                 >
                   <ContactCon />
-                  <Switch>
-                    {/* Paths to different Pages */}
-                    <Route exact path="/" component={Dashboard} />
-                    <Route path="/pokemon" component={PokemonApp} />
-                    <Route path="/movieList" component={MovieApp} />
-                    <Route path="/todo" component={TodoApp} />
-                    <Route path="/lol" component={LolApp} />
-                    <Route path="/about" component={About} />
-                  </Switch>
+                  <Route
+                    render={({ location }) => (
+                      <TransitionGroup>
+                        <CSSTransition
+                          key={location.key}
+                          timeout={450}
+                          classNames="fade"
+                        >
+                          <Switch location={location}>
+                            {/* Paths to different Pages */}
+                            <Route exact path="/" component={Dashboard} />
+                            <Route path="/pokemon" component={PokemonApp} />
+                            <Route path="/movieList" component={MovieApp} />
+                            <Route path="/todo" component={TodoApp} />
+                            <Route path="/lol" component={LolApp} />
+                            <Route path="/about" component={About} />
+                          </Switch>
+                        </CSSTransition>
+                      </TransitionGroup>
+                    )}
+                  />
                 </Col>
               </Row>
             ) : (

@@ -174,9 +174,17 @@
 }
 
 .homeCon .coronaCon .card .coronaCat {
+  margin: 0 auto;
   margin-top: 10px;
+  max-width: 300px;
   text-transform: capitalize;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .homeCon .radioCon {

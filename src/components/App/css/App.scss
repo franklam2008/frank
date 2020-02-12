@@ -18,10 +18,10 @@
   background-color: var(--darkBlueSaved);
 }
 .mainCon {
-  background-color: var(--darkBlueSaved);
   min-height: 100.1vh;
   width: 100%;
   position: relative;
+  // overflow-x: hidden;
 }
 
 .mainTitle {
@@ -95,7 +95,7 @@
     padding: 0 0.5em;
     line-height: 1.5em;
     // this is really the only tricky part, you need to specify the background color of the container element...
-    color: #b4b3a7;
+    color: #8a8a8a;
     background-color: var(--darkBlueSaved);
   }
 }
@@ -160,12 +160,22 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+ 
+  .mainCon {
+    padding-top: 10px;
+    padding-left: 40px !important;
+  }
+ 
+}
 @media only screen and (max-width: 600px) {
   .tooltip {
     opacity: 0 !important;
   }
   .mainCon {
     padding-top: 10px;
+    padding-left: 15px !important;
+
   }
   .mainTitle {
     font-size: 1.2rem;

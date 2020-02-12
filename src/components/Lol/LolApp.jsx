@@ -51,15 +51,10 @@ export default function LolApp() {
     setLightBoxData(true);
   }, [selectedChamp]);
 
-  if (loading)
-    return (
-      <div className="loadingScreen">
-        <Spinner size="lg" className="" animation="border" />
-        <p>Loading...</p>
-      </div>
-    );
+  
+    
   return (
-    <section className="lolCon">
+    <section className="lolCon page">
       <div className="mainTitle">
         <img src={lol} alt="League" />
         League of Legend
@@ -81,7 +76,13 @@ export default function LolApp() {
       </Row>
 
       <Row className="lolContent">
-        {Object.keys(filteredChamps).map(champ => (
+      {loading?
+    
+    <div className="loadingScreen">
+      <Spinner size="lg" className="" animation="border" />
+      <p>Loading...</p>
+    </div>:
+        Object.keys(filteredChamps).map(champ => (
           <Col xs={4} md={4} lg={2} xl={1} key={champs[champ].key}>
             <LolChamp
               champ={champs[champ]}

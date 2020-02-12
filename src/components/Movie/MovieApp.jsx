@@ -50,16 +50,8 @@ export default function Movie() {
       });
   }, [currentPageUrl]);
 
-  //loading screen
-  if (loading)
-    return (
-      <div className="loadingScreen">
-        <Spinner size="lg" className="" animation="border" />
-        <p>Loading...</p>
-      </div>
-    );
   return (
-    <section className="movieCon">
+    <div className="movieCon page">
       <div className="mainTitle">
         <img src={movieIcon} alt="movie" />
         Movies
@@ -78,14 +70,20 @@ export default function Movie() {
       {error && <p className="inputError">"No Result"</p>}
 
       <Row className="movieList mt-3">
-        {movies.map(movie => (
-          <Col key={movie.id} md={6} lg={6} xl={4}>
-            <MovieItem movie={movie} addMovie={() => addMovie(movie)} />
-          </Col>
-        ))}
+        {loading ? (
+          <div className="loadingScreen">
+            <Spinner size="lg" className="" animation="border" />
+            <p>Loading...</p>
+          </div>
+        ) : (
+          movies.map(movie => (
+            <Col key={movie.id} md={6} lg={6} xl={4}>
+              <MovieItem movie={movie} addMovie={() => addMovie(movie)} />
+            </Col>
+          ))
+        )}
       </Row>
-     
-    </section>
+    </div>
   );
 
   function changePageNum(url, add, num, check) {

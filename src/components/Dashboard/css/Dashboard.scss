@@ -19,6 +19,7 @@
     .custom-control-input:checked ~ .custom-control-label::before {
       background-color: var(--darkerBlueSaved);
     }
+    
   }
   .homeSectionCon {
     background-color: var(--darkerBlueSaved);
@@ -136,10 +137,13 @@
       background-color: transparent;
 
       .coronaCat {
+        margin: 0 auto;
         margin-top: 10px;
-
+        max-width: 300px;
         text-transform: capitalize;
         text-align: center;
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
