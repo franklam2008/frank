@@ -22,3 +22,7 @@ const fire = firebase.initializeApp(config);
 
 
 export default fire;
+
+//recaptcha
+//site key 6LfSstgUAAAAADuVpvVy62l44Jh00WdG5S4W2gut
+//secret key 6LfSstgUAAAAAIFLofJXyTPkW4cl8-hvmjFCIvnq
