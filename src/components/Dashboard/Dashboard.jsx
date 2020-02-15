@@ -39,10 +39,10 @@ export default function Home() {
       <section className="container-fluid">
         <MovieDash movies={state.addedMovies} dispatch={dispatch} />
         <Row>
-          <Col lg={8}>
+          <Col lg={7}>
             <YouTubePlayer />
           </Col>
-          <Col lg={4}>
+          <Col lg={5}>
             <Radio radio={state.radio} />
           </Col>
         </Row>

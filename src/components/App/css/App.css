@@ -58,14 +58,14 @@
 }
 
 #mainConDark:after {
-  position: absolute;
+  position: fixed;
   content: "";
   display: block;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.74);
   z-index: 3;
   mix-blend-mode: multiply;
 }
