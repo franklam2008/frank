@@ -7,7 +7,7 @@ export default function Radio({ radio }) {
         <strong>Radio</strong>
       </h3>
       <div className="radioWrapper">
-        {radio.map(post => (
+        {/* {radio.map(post => (
           <div className="player-wrapper" key={post.id}>
             <h3 className="colorHeader">
               <span>
@@ -29,7 +29,7 @@ export default function Radio({ radio }) {
             </audio>
             
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
