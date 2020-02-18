@@ -32,16 +32,17 @@ export default function YouTubePlayer() {
       </div>
 
       {/* youtube */}
-      {youtube ? (
-        <div className="player-wrapper">
+
+      <div className="player-wrapper">
+        {youtube ? (
           <ReactPlayer
             className="react-player"
             url={youtubeURL}
             playing
             controls
           />
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </div>
   );
   function YouTubeScrape() {

@@ -77,4 +77,11 @@
   transition: opacity 150ms linear, transform 150ms;
   transition: opacity 150ms linear, transform 150ms, -webkit-transform 150ms;
 }
+
+@media only screen and (max-width: 768px) {
+  .page {
+    padding-bottom: 60px;
+    overflow-x: hidden;
+  }
+}
 /*# sourceMappingURL=LoadingPage.css.map */

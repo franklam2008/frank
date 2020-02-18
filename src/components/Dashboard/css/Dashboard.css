@@ -327,6 +327,24 @@ h3.colorHeader span {
   .homeCon .movieCon .carouselMovie .movie img {
     max-height: 170px;
   }
+  .homeCon .youTubeCon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .homeCon .youTubeCon .searchBar {
+    width: 100%;
+  }
+  .homeCon .youTubeCon .player-wrapper {
+    min-height: 30px;
+  }
   .homeCon .youTubeCon .react-player {
     width: 250px !important;
     height: 300px !important;
