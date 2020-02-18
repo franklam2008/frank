@@ -27,7 +27,8 @@ export default function CoronaChart() {
     "Feb 11",
     "Feb 12",
     "Feb 13",
-    "Feb 14"
+    "Feb 14",
+    "Feb 15"
   ];
   var data1 = {
     labels: labels,
@@ -58,7 +59,8 @@ export default function CoronaChart() {
           45170,
           59283,
           64437,
-          67100
+          67100,
+          69197
         ],
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgba(255, 99, 132, 1)",
@@ -95,7 +97,8 @@ export default function CoronaChart() {
           1115,
           1261,
           1383,
-          1526
+          1526,
+          1669
         ],
 
         backgroundColor: "rgba(255, 99, 132, 0.2)",

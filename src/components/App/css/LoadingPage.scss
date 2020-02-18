@@ -1,3 +1,4 @@
+//loadingPage
 .loadingPage {
   height: 100vh;
   width: 100vw;
@@ -22,4 +23,47 @@
     position: absolute;
     z-index: -1;
   }
+}
+//lightBox
+.modal{
+  .modal-title {
+    padding-left: 50px;
+  }
+  .modal-header,.modal-footer{
+    border: none;
+  }
+  .modal-content{
+    background-color: var(--blueSaved);
+    color: var(--textWhite);
+   
+  }
+}
+//pageTransition
+//fix the double appear pages bug
+.page {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+  
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 10px);
+  transition: opacity 150ms linear, transform 150ms;
 }

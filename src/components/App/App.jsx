@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // pages
 import Header from "../Header/Header.jsx";
+import BottomNav from "../Header/BottomNav.jsx";
 import LoadingPage from "./LoadingPage.jsx";
 import PokemonApp from "../Pokemon/PokemonApp.jsx";
 import MovieApp from "../Movie/MovieApp.jsx";
@@ -11,10 +12,7 @@ import TodoApp from "../Todo/TodoApp.jsx";
 import ContactCon from "../ContactCon/ContactCon.jsx";
 // css
 import "./css/App.css";
-import "./css/pageTransition.css";
-import "./css/LightBox.css";
 import "./css/LoadingPage.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 //Store
 import FirebaseFunc from "../Firebase/Firebase.jsx";
@@ -46,6 +44,7 @@ function App() {
                   ref={wrapperRef}
                 >
                   <Header setOpenCol={setOpenCol} openCol={openCol} />
+                  <BottomNav setOpenCol={setOpenCol} openCol={openCol} />
                 </Col>
                 <Col
                   sm={12}

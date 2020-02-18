@@ -3,6 +3,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 import "firebase/firestore";
+import "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyBflIb5MQhjqiDIo5DJFU7gBc1n2L_dyhk",
@@ -19,7 +20,6 @@ const config = {
 //RGAPI-09149d97-39a1-48b8-8ddd-6bae6d5f58c5
 
 const fire = firebase.initializeApp(config);
-
 
 export default fire;
 

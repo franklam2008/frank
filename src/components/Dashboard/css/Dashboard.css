@@ -239,6 +239,10 @@
   height: 0;
 }
 
+.homeCon .youTubeCon {
+  overflow: hidden;
+}
+
 .homeCon .youTubeCon .youTubeSpinner {
   margin-bottom: 3px;
   margin-left: 10px;
