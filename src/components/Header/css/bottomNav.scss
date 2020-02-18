@@ -1,0 +1,36 @@
+.bottomNav {
+  position: fixed;
+  z-index: 3;
+  background-color: var(--darkerBlueSaved);
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  .bottomNavItem {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--subTextWhite);
+    opacity: 0.7;
+    .description {
+      font-size: 0.8em;
+    }
+    svg {
+      font-size: 1.5em;
+    }
+
+    &:hover {
+    opacity: 1;
+    text-decoration: none;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bottomNav {
+    display: flex;
+  }
+}

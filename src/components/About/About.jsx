@@ -7,7 +7,7 @@ import firebase from "firebase/app";
 var storage = firebase.storage();
 
 var storageRef = storage.ref();
-var pngRef = storageRef.child("frank.png");
+// var pngRef = storageRef.child("frank.png");
 var radioRef = storageRef.child("0211.mp3");
 export default function About() {
   const [url, setUrl] = useState('false');
@@ -19,7 +19,7 @@ export default function About() {
         // Insert url into an <img> tag to "download"
         console.log(url);
         
-        // setUrl(url)
+        setUrl(url)
       })
       .catch(function(error) {
         // A full list of error codes is available at

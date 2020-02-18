@@ -255,8 +255,6 @@ body::-webkit-scrollbar-thumb {
   }
   .mainTitle {
     font-size: 1.2rem;
-    margin: 0 auto;
-    text-align: center;
   }
   .mainTitle img {
     width: 45px;

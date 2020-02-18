@@ -68,15 +68,14 @@
   border: 2px solid var(--pinkSaved);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #contact-form {
     background-color: var(--blueSaved);
     padding: 10px 10px;
     max-width: 300px;
   }
   .ContactBtn {
-    right: 10px;
-    bottom: 15px;
+    display: none;
   }
 }
 /*# sourceMappingURL=ContactForm.css.map */

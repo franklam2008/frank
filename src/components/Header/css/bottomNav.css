@@ -1,0 +1,53 @@
+.bottomNav {
+  position: fixed;
+  z-index: 3;
+  background-color: var(--darkerBlueSaved);
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  display: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottomNav .bottomNavItem {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--subTextWhite);
+  opacity: 0.7;
+}
+
+.bottomNav .bottomNavItem .description {
+  font-size: 0.8em;
+}
+
+.bottomNav .bottomNavItem svg {
+  font-size: 1.5em;
+}
+
+.bottomNav .bottomNavItem:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .bottomNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=bottomNav.css.map */

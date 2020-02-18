@@ -243,9 +243,7 @@
     border-right: 2px solid var(--pinkSaved);
   }
   .App .container-fluid .row .sideBarMenu {
-    height: 90px;
-    background-color: rgba(0, 0, 0, 0);
-    width: 65px;
+    width: 0px;
   }
   .App .container-fluid .row .sideBarMenu ul .menuIconCon {
     padding: 15px 7px;

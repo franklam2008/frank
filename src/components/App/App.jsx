@@ -44,8 +44,9 @@ function App() {
                   ref={wrapperRef}
                 >
                   <Header setOpenCol={setOpenCol} openCol={openCol} />
-                  <BottomNav setOpenCol={setOpenCol} openCol={openCol} />
                 </Col>
+                <BottomNav setOpenCol={setOpenCol} openCol={openCol} />
+
                 <Col
                   sm={12}
                   md={11}
