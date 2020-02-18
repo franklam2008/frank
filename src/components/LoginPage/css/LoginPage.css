@@ -54,7 +54,23 @@
 }
 
 .loginPage .loginCon .loginImgCol .loginImg {
-  max-width: 250px;
+  max-width: 150px;
+}
+
+.loginPage .loginCon .loginForm div.signUpCon {
+  color: var(--subTextWhite);
+  opacity: .95;
+  font-size: .85em;
+  text-align: center;
+}
+
+.loginPage .loginCon .loginForm div.signUpCon span.signUp {
+  cursor: pointer;
+  color: #5555fa !important;
+}
+
+.loginPage .loginCon .loginForm div.signUpCon span.signUp:hover {
+  text-decoration: underline;
 }
 
 .loginPage .loginCon .loginForm .form-error {
@@ -70,7 +86,7 @@
   background-image: url("../../assets/img/bg.jpg");
   background-size: cover;
   background-position: right;
-  opacity: 0.5;
+  opacity: 0.25;
   top: 0;
   left: 0;
   bottom: 0;
@@ -84,6 +100,19 @@
     padding: 40px 30px;
     border-radius: 0px;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .loginPage .loginCon .loginForm .btn {
     margin-bottom: 10px;

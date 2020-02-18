@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import fire from "../../config/Fire";
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 
 export default function LoginForm({ setSignUpPage }) {
-
   const [error, setError] = useState("");
   const emailInput = useRef();
   const passwordInput = useRef();
@@ -32,22 +31,17 @@ export default function LoginForm({ setSignUpPage }) {
             placeholder="Password"
           />
         </Form.Group>
-        <Row>
-          <Col>
-            <Button variant="warning" type="submit" block onClick={handleLogin}>
-              Sign In
-            </Button>
-          </Col>
-          <Col>
-            <Button
-              variant="outline-secondary"
-              block
-              onClick={() => setSignUpPage(true)}
-            >
-              Sign Up
-            </Button>
-          </Col>
-        </Row>
+        <Button variant="warning" type="submit" block onClick={handleLogin}>
+          Sign In
+        </Button>
+        <div className="signUpCon">
+        Don't have an account yet?{" "}
+        <span className="signUp" onClick={() => setSignUpPage(true)}>
+          {" "}
+          Sign Up
+        </span>
+        </div>
+        
       </Form>
       <span className="form-error">{error}</span>
       <hr className="hr-text" data-content="Or Login with" />
@@ -83,7 +77,6 @@ export default function LoginForm({ setSignUpPage }) {
             block
             disabled
             onClick={facebookSignIn}
-
           >
             Facebook
           </Button>
@@ -101,7 +94,6 @@ export default function LoginForm({ setSignUpPage }) {
             GitHub
           </Button>
         </Col>{" "}
-       
       </Row>
     </section>
   );
@@ -117,10 +109,8 @@ export default function LoginForm({ setSignUpPage }) {
         setError(error.message);
         console.log(error);
       });
-     
   }
 
-  
   function handleLogin(e) {
     e.preventDefault();
     const email = emailInput.current.value;
@@ -128,12 +118,9 @@ export default function LoginForm({ setSignUpPage }) {
     login(email, password);
   }
 
-
-
-  
   function googleSignIn() {
-    console.log('Google Sign In');
-    
+    console.log("Google Sign In");
+
     var provider = new firebase.auth.GoogleAuthProvider();
 
     fire
@@ -158,9 +145,8 @@ export default function LoginForm({ setSignUpPage }) {
       });
   }
 
-
-  function facebookSignIn(){
-    console.log('Facebook Sign In');
+  function facebookSignIn() {
+    console.log("Facebook Sign In");
 
     // var provider = new firebase.auth.FacebookAuthProvider();
     // firebase.auth().signInWithPopup(provider).then(function(result) {

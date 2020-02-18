@@ -33,10 +33,24 @@
       text-align: center;
       align-self: center;
       .loginImg {
-        max-width: 250px;
+        max-width: 150px;
       }
     }
     .loginForm {
+      div.signUpCon{
+        color: var(--subTextWhite);
+        opacity: .95;
+        font-size: .85em;
+        text-align: center;
+        span.signUp{
+          cursor: pointer;
+          color:rgb(85, 85, 250) !important;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+   
       .form-error {
         color: var(--pinkSaved);
       }
@@ -50,7 +64,7 @@
     background-image: url("../../assets/img/bg.jpg");
     background-size: cover;
     background-position: right;
-    opacity: 0.5;
+    opacity: 0.25;
     top: 0;
     left: 0;
     bottom: 0;
@@ -65,8 +79,12 @@
     .loginCon {
       padding: 40px 30px;
       border-radius: 0px;
+      
       height: 100vh;
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       .loginForm {
         .btn {
           margin-bottom: 10px;
