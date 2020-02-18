@@ -8,9 +8,24 @@
 }
 
 .homeCon .colorSwitchCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   right: 30px;
   top: 35px;
+}
+
+.homeCon .colorSwitchCon .lightIcon {
+  display: none;
+  margin-right: .5em;
+  color: var(--textWhite);
 }
 
 .homeCon .colorSwitchCon .custom-control {
@@ -301,8 +316,10 @@ h3.colorHeader span {
 
 @media only screen and (max-width: 600px) {
   .homeCon .colorSwitchCon {
-    right: 10px;
-    display: inline;
+    right: 1.5em;
+  }
+  .homeCon .colorSwitchCon .lightIcon {
+    display: initial;
   }
   .homeCon .colorSwitchCon .custom-control .custom-control-label {
     font-size: 0px;

@@ -16,34 +16,32 @@ export default function BottomNav({ setOpenCol, openCol }) {
   };
   return (
     <>
-     <div className="bottomNav">
-      <div
-        className="bottomNavItem"
-        onClick={() => {
-          setOpenCol(!openCol);
-        }}
-      >
-        <IoIosMenu />
-        <div className="description">Menu</div>
-      </div>
+      <div className="bottomNav">
+        <div
+          className="bottomNavItem"
+          onClick={() => {
+            setOpenCol(!openCol);
+          }}
+        >
+          <IoIosMenu />
+          <div className="description">Menu</div>
+        </div>
 
-      <NavLink className="bottomNavItem" exact to="/">
-        <MdDashboard />
-        <div className="description">Dashboard</div>
-      </NavLink>
-      <div className="bottomNavItem" onClick={handleClick}>
-        <AiOutlineMessage />
-        <div className="description">Contact</div>
+        <NavLink className="bottomNavItem" exact to="/">
+          <MdDashboard />
+          <div className="description">Dashboard</div>
+        </NavLink>
+        <div className="bottomNavItem" onClick={handleClick}>
+          <AiOutlineMessage />
+          <div className="description">Contact</div>
+        </div>
       </div>
-     
-    </div>
-    <ContactSection
+      <ContactSection
         target={target}
         show={show}
         setShow={setShow}
         setTarget={setTarget}
       />
     </>
-   
   );
 }
