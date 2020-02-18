@@ -24,7 +24,7 @@ export default function Radio({ radio }) {
             <audio id={post.id} className="audio" controls="controls">
               <source
                 type="audio/mpeg"
-                src={post.fileURL}
+                src='https://firebasestorage.googleapis.com/v0/b/frank-app-58b31.appspot.com/o/radio%2F0211.mp3?alt=media&token=aef23cde-9ec3-4782-b317-55eea621f715'
               />
             </audio>
             
