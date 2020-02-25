@@ -3,50 +3,32 @@ import { Container, Row, Col } from "react-bootstrap";
 //css
 import { FaHeart } from "react-icons/fa";
 import "./css/about.css";
-import firebase from "firebase/app";
-var storage = firebase.storage();
+import { Spinner } from "react-bootstrap";
+import Axios from "axios";
 
-var storageRef = storage.ref();
-// var pngRef = storageRef.child("frank.png");
-var radioRef = storageRef.child("0211.mp3");
 export default function About() {
-  const [url, setUrl] = useState('false');
-  function load() {
-    console.log("test");
-    radioRef
-      .getDownloadURL()
-      .then(function(url) {
-        // Insert url into an <img> tag to "download"
-        console.log(url);
-        
-        setUrl(url)
+  const [loading, setLoading] = useState(false);
+  function refreshRadio(){
+    setLoading(true)
+    Axios
+      .get(`https://secure-peak-92770.herokuapp.com/refreshRadio`)
+      .then(response => {
+       console.log(response);
+      setLoading(false)
       })
-      .catch(function(error) {
-        // A full list of error codes is available at
-        // https://firebase.google.com/docs/storage/web/handle-errors
-        switch (error.code) {
-          case "storage/object-not-found":
-            // File doesn't exist
-            console.log("File doesn't exist");
-
-            break;
-
-          case "storage/unauthorized":
-            // User doesn't have permission to access the object
-            break;
-
-          case "storage/canceled":
-            // User canceled the upload
-            break;
-
-          case "storage/unknown":
-            // Unknown error occurred, inspect the server response
-            break;
-
-          default:
-            console.log("error");
-        }
-      });
+      .catch(error => console.log(error));
+  }
+  function refreshCorona(){
+    setLoading(true) 
+    Axios.get(`https://secure-peak-92770.herokuapp.com/refreshCorona`)
+      .then(response => {
+       console.log(response);
+       
+      })
+      .catch(error => console.log(error));
+  }function load() {
+    console.log("test");
+    
   }
   return (
     <section className="aboutCon page">
@@ -70,7 +52,9 @@ export default function About() {
               Made with <FaHeart className="" /> in Orlando, Florida
             </p>
             <button onClick={load}>load</button>
-            <img src={url} alt="" />
+            <button onClick={refreshRadio}>refreshRadio</button>
+            <button onClick={refreshCorona}>refreshCorona</button>
+            {loading?<Spinner></Spinner>:null}
           </Col>
         </Row>
       </Container>
