@@ -10,8 +10,12 @@ import { FiSun } from "react-icons/fi";
 import { Col, Row, Form } from "react-bootstrap";
 import CoronaChart from "./CoronaChart.jsx";
 export default function Home() {
+  
   const { state, dispatch } = useStore();
+
+
   const colorSwitch = useRef();
+
   useEffect(() => {
     document.getElementById("custom-switch").checked = state.darkMode;
   }, [state.darkMode]);

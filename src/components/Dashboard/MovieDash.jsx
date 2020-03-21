@@ -65,7 +65,7 @@ export default function MovieDash({ movies, dispatch }) {
                   exact
                   to="movieList"
                 >
-                  Click Here to add movie
+                  Click here to add movie
                 </NavLink>
               </span>
             </h3>
