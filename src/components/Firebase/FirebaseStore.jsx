@@ -6,10 +6,10 @@ const defaultState = {
   login: false,
   authUser: [],
   darkMode: null,
- 
   addedMovies: [],
   radio: [],
-  corona: []
+  corona: [],
+  textPlaceHolder: "",
 };
 
 const UserContext = createContext(null);
@@ -41,8 +41,8 @@ function reducer(state = defaultState, action = {}) {
       return {
         ...state,
         addedMovies: [
-          ...state.addedMovies.filter(movie => movie.id !== action.payload)
-        ]
+          ...state.addedMovies.filter((movie) => movie.id !== action.payload),
+        ],
       };
     case "LOAD_MOVIES":
       return { ...state, addedMovies: action.payload };
@@ -57,13 +57,18 @@ function reducer(state = defaultState, action = {}) {
     //YouTubeChannels
     case "LOAD_YOUTUBECHANNELS":
       return { ...state, youTubeChannels: action.payload };
+    //TextPlaceHolder
+    case "UPDATE_TEXT":
+      return { ...state, textPlaceHolder: action.payload };
+    case "LOAD_TEXT":
+      return { ...state, textPlaceHolder: action.payload };
+
     //counter
     case "MINUS1":
       return { ...state, counter: state.counter - 1 };
     case "ADD1":
       return { ...state, counter: state.counter + 1 };
     //log
-
     case "CHECK_STATE":
       console.log("stateNow", state);
       return { ...state };

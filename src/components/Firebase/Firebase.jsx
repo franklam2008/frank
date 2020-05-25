@@ -10,10 +10,10 @@ function FirebaseFunc({ setLogin, setLoading }) {
   //Run it once
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
-     }, 1800);
+      setLoading(false);
+    }, 1800);
     //firebase Auth State Changed
-    fire.auth().onAuthStateChanged(authUser => {
+    fire.auth().onAuthStateChanged((authUser) => {
       if (authUser) {
         const { displayName, email, uid } = authUser;
         dispatch({ type: "LOGIN_USER", payload: { displayName, email, uid } });
@@ -32,31 +32,45 @@ function FirebaseFunc({ setLogin, setLoading }) {
     docRef
       .doc("radio-morning")
       .get()
-      .then(doc => {
+      .then((doc) => {
         if (doc.exists) {
           dispatch({ type: "LOAD_RADIO", payload: doc.data()["radio"] });
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error getting document:", error);
       });
     //corona
     docRef
       .doc("corona")
       .get()
-      .then(doc => {
+      .then((doc) => {
         if (doc.exists) {
           dispatch({ type: "LOAD_CORONA", payload: doc.data() });
         } else {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error getting document:", error);
       });
-     
+    //Text
+
+    docRef
+      .doc("textPlaceHolder")
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          dispatch({ type: "LOAD_TEXT", payload: doc.data().text });
+        } else {
+          console.log("No such document!"); // doc.data() will be undefined in this case
+        }
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -70,7 +84,7 @@ function FirebaseFunc({ setLogin, setLoading }) {
       db.collection("users")
         .doc(state.authUser.uid)
         .update(state)
-        .catch(error => {
+        .catch((error) => {
           console.error("Error adding document: ", error);
         });
     }
@@ -78,12 +92,11 @@ function FirebaseFunc({ setLogin, setLoading }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
- 
-
   //update dark mode
   useEffect(() => {
     colorSwitchFunc(state.darkMode);
   }, [state.darkMode]);
+
   return <> </>;
 
   // Function
@@ -93,13 +106,13 @@ function FirebaseFunc({ setLogin, setLoading }) {
     docRef
       .doc(authUser.uid)
       .get()
-      .then(doc => {
+      .then((doc) => {
         if (doc.exists) {
           if (doc.data().hasOwnProperty("addedMovies")) {
             const { addedMovies } = doc.data();
             dispatch({ type: "LOAD_MOVIES", payload: addedMovies });
           }
-          
+
           if (doc.data().hasOwnProperty("darkMode")) {
             const { darkMode } = doc.data();
             dispatch({ type: "DARKMODE", payload: darkMode });
@@ -109,7 +122,7 @@ function FirebaseFunc({ setLogin, setLoading }) {
           console.log("No such document!"); // doc.data() will be undefined in this case
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error getting document:", error);
       });
     return;
@@ -126,7 +139,7 @@ function FirebaseFunc({ setLogin, setLoading }) {
         pinkSaved: "#ff8a00",
         textWhite: "#f3f4f7",
         subTextWhite: "#caccd1",
-        filter:'invert(98%)'
+        filter: "invert(98%)",
         // 0f0e16
       };
     } else {
@@ -139,16 +152,13 @@ function FirebaseFunc({ setLogin, setLoading }) {
         pinkSaved: "#FF7711",
         textWhite: "#393e46",
         subTextWhite: "#303a52",
-        filter:'invert(0%)'
+        filter: "invert(0%)",
       };
     }
-    Object.entries(colors).forEach(color =>
+    Object.entries(colors).forEach((color) =>
       document.documentElement.style.setProperty("--" + color[0], color[1])
     );
-
   }
 }
 
 export default FirebaseFunc;
-
-
