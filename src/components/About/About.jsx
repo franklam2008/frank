@@ -38,16 +38,11 @@ export default function About() {
   }
   function submit() {
     const text = textInput.current.value;
-    console.log(text);
-    console.log(state);
     dispatch({ type: "UPDATE_TEXT", payload: text });
     db.collection("public")
       .doc("textPlaceHolder")
       .set({
         text: text,
-      })
-      .then(function () {
-        console.log("Document successfully written!");
       })
       .catch(function (error) {
         console.error("Error writing document: ", error);
